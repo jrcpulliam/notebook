@@ -1,0 +1,9 @@
+# Site settings
+title: JD's notebook
+email: dushoff@mcmaster.ca
+baseurl: "" 
+url: "/" # the base hostname & protocol for your site
+twitter_username: jd_mathbio
+
+# Build settings
+markdown: kramdown
