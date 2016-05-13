@@ -50,7 +50,6 @@ not:
 Sources += _config.yml Gemfile
 Sources += _includes/* _layouts/* css/* _sass/*
 
-
 ######################################################################
 
 ### Makestuff
