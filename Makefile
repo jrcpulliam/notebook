@@ -11,16 +11,37 @@ target pngtarget pdftarget vtarget acrtarget: notarget
 
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
-# include $(ms)/perl.def
+include $(ms)/perl.def
 
 ##################################################################
 
-## Content
+# Aesthetics
 
 # Notebook picture
 Sources += notebook.jpg
 
-######################################################################
+##################################################################
+
+## Materials
+
+Sources += $(wildcard *.md) updates.html
+
+Sources += $(wildcard materials/*.*)
+Sources += $(wildcard _drafts/*.md)
+
+# Posts
+
+# Posts are made from drafts as a side effect of making *.post
+Sources += $(wildcard _posts/*.*)
+Sources += post.pl
+
+post: current.post
+current.post: current.md
+
+%.post: %.md post.pl
+	$(PUSH)
+	$(shell_execute)
+
 
 ### Makestuff
 
