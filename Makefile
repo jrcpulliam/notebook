@@ -51,7 +51,7 @@ moments.html: moments.md
 LocalImages = $(ImageTargets:%=images/%)
 Sources += $(LocalImages)
 $(LocalImages): images/%: %
-	cd images && $(LN) ../$* .
+	$(copy)
 
 # Aesthetics
 
