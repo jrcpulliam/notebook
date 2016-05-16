@@ -20,4 +20,4 @@ But eventually remembered learning in high school that "similar" and "congruent"
 
 or even this:
 
-![Rotating picture of nested solution](/images/filledCircle.Rout-2.png)
+![Rotating picture of nested solution]({{site.github.url}}/images/filledCircle.Rout-2.png)
