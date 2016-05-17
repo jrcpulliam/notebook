@@ -1,4 +1,5 @@
 # notebook
+# http://localhost:4000
 ### Hooks for the editor to set the default target
 current: target
 
@@ -24,6 +25,8 @@ Sources += notebook.jpg
 
 ## Materials
 
+Sources += $(materials/*)
+
 Sources += $(wildcard *.md) updates.html
 
 Sources += $(wildcard materials/*.*)
@@ -41,16 +44,6 @@ current.post: current.md
 %.post: %.md post.pl
 	$(PUSH)
 	$(shell_execute)
-
-# Jekyll
-
-not:
-	$(RMF) about.md feed.xml
-
-Sources += _config.yml Gemfile
-Sources += _includes/* _layouts/* css/* _sass/*
-
-######################################################################
 
 ### Makestuff
 
