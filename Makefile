@@ -7,7 +7,6 @@ target pngtarget pdftarget vtarget acrtarget: notarget
 
 ##################################################################
 
-
 # make files
 
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
