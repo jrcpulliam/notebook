@@ -21,6 +21,8 @@ I might share links to individual pages from here, but the general idea will be 
 	{% endfor %}
 </ul>
 
+# [Older updates](updates.html)
+
 # In progress (stuff I hope I'm working on)
 
 * [moments](moments.html)
