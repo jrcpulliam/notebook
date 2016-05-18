@@ -16,7 +16,7 @@ I was confused ...
 
 But eventually remembered learning in high school that "similar" and "congruent" are not actually the same thing, and realized that I could just do this:
 
-![Straight picture of nested solution]({{site.github.url}}/images/filledCircle.Rout-0.png)
+![Straight picture of nested solution](/notebook/images/filledCircle.Rout-0.png)
 
 or even this:
 
