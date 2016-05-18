@@ -26,6 +26,7 @@ I might share links to individual pages from here, but the general idea will be 
 # In progress (stuff I hope I'm working on)
 
 * [moments](moments.html)
+* [Quantile-based distributions](qbd.html)
 
 # Planned (stuff I'd like to be working on)
 
