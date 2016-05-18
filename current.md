@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Martini glass follow-up
-slug: Martini glass follow-up
+title: DHS Downloading
+slug: DHS Downloading
 ---
 
-In fact, the two-dimensional answer ($$q=p^2$$) is right in three dimensions as well! This must mean that the third dimension scales as $$q^{1/2}$$. It's [explained nicely by Laurent Lessard](http://www.laurentlessard.com/bookproofs/overflowing-martini-glass/).
+Put some scripts in the [_private_ DHS Downloading repo](https://github.com/mac-theobio/DHS_downloads). There is an authorization problem; either DHS has updated its security or moved its scripts. Need to investigate, because it would be great to get the pipeline working again.
 
-I verified with a [cute-ish R script](/martini.R).
