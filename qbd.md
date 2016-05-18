@@ -3,8 +3,6 @@ layout: page
 title: Quantile-based distributions
 ---
 
-* [test link](/notebook/current.html)
-
 There are various applications where you might want to go from a set of quantiles (and associated probabilities) to an actual approximate distribution.
 
 In particular:
