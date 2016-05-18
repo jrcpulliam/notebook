@@ -6,7 +6,7 @@ slug: Filled circle
 
 Gavin wrote me to say:
 
-> Divide a square and a circle each into two complementary subsets that are pairwise similar: $$S_1|S_2$$, $$C_1|C_2$$, with $$S_1 \sim C_1$$, $$S_2 \sim C_2$$.
+> Divide a square and a circle each into two complementary subsets that are pairwise similar: S_1;S_2, C_1;C_2, with S_1~C_1, S_2~C_2.
 
 I was confused ...
 
