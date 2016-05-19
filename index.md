@@ -30,6 +30,4 @@ I might share links to individual pages from here, but the general idea will be 
 
 # Planned (stuff I'd like to be working on)
 
-* Rescue the Gavin stuff (laptop)
-* Martini glass problem
-* DHS pipeline stuff
+* New DHS

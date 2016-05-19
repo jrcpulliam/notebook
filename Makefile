@@ -8,6 +8,9 @@ target pngtarget pdftarget vtarget acrtarget: current.post
 
 ##################################################################
 
+## Edit hooks
+Sources += current.md moments.md qbd.md
+
 # make files
 
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md

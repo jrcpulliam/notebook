@@ -6,7 +6,9 @@ slug: Moment framework
 
 Working with Daniel Park on generalized exponentials (in theory), but we've gotten deeply into a bunch of moment stuff related to my thesis. On the bus today, while I was missing the stop, I started thinking yet again about terminology.
 
-I think I want to try writing $$T_o(v; D)$$ for **T**ype, **o**rder, **v**ariable, **D**omain, e.g. $$T_0(\sigma;D)$$ for the total number of susceptibles (this is a weird example, because the σ doesn't affect anything when $$o=0$$. $$σ^2$$.
+I think I want to try writing $$T_o(v; D)$$ for **T**ype, **o**rder, **v**ariable, **D**omain, e.g. $$T_0(\sigma;S)$$ for the total number of susceptibles (this is a weird example, because the σ doesn't affect anything when $$o=0$$. $$σ^2$$.
+
+Specifically, $$T_o(v; D) = \int v(a)^o D(a) da$$.
 
 ## SI example
 
@@ -41,7 +43,7 @@ The DD assumption is that $$M_2 = (1+\kappa) M^2$$. This closes the chain, and w
 
 $$M = \hat M S^\kappa$$. $$\hat M$$ is the value of $$M$$ when everyone is susceptible; observed values are lower.
 
-We can write $$κ = κ_2$$ and extend this idea to $$\kappa_i = \frac{M_iM_{i-2}}{M_{i-1}^2}.$$
+We can write $$κ = κ_2$$ and extend this idea to $$\kappa_i = \frac{M_iM_{i-2}}{M_{i-1}^2} - 1.$$
 
 [[Equation chain for the κs]]. Can we get some understanding from the equation for κ itself?
 

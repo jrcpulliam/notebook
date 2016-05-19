@@ -49,3 +49,4 @@ We only really want one free parameter, so it's tempting to fix one of them, but
 
 The constraint that I seem to like is $$\mu_N = 1/\sigma_N\equiv\phi$$. This parameterization has the advantage of being symmetric and normal when $$\phi=0$$. I wrote [some code to find φ](https://raw.githubusercontent.com/dushoff/scratch/master/johnson.R) and am working on densities and validation and such.
 
+### Analytics
