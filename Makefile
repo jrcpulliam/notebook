@@ -23,12 +23,10 @@ include $(ms)/perl.def
 
 Sources += $(materials/*)
 
-Sources += $(wildcard *.md *.php *.html)
+Sources += $(wildcard *.md) updates.html
 
 Sources += $(wildcard materials/*.*)
 Sources += $(wildcard _drafts/*.md)
-Sources += $(wildcard _plugins/*.*)
-Sources += $(wildcard _comments/*.*)
 
 # Posts
 
