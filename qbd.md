@@ -53,4 +53,19 @@ $$\lambda$$ and $$\varepsilon$$ determine the location and scale of the resultin
 
 The constraint that I seem to like is $$\mu = s\equiv\phi$$. This parameterization has the advantage of being symmetric and normal when $$\phi=0$$. I wrote [some code to find φ](https://raw.githubusercontent.com/dushoff/scratch/master/johnson.R) and am working on densities and validation and such.
 
-### Analytics
+### Density calculation
+
+This calculation is boring, especially if it's right, but I may as well write it down:
+
+* $$ j = λ τ(z+μ; s)$$, where τ is the scaled sinh transformation.
+
+* $$ dj = λ τ'(z+μ; s) dz $$.
+
+* $$\frac{f(z)}{ λ τ'(z+μ; s)} dj = f(z) dz $$.
+
+* $$ g(j) = \frac{f(z)}{ λ τ'(z+μ; s)}$$, where $$g$$ is the density over $$j$$.
+
+We also have:
+
+* $$τ = \sinh(sx)/s$$.
+* $$τ' = \cosh(sx)$$!
