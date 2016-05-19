@@ -1,5 +1,5 @@
 # notebook
-# http://localhost:4000
+# http://localhost:4000/notebook/
 # http://dushoff.github.io/notebook/
 ### Hooks for the editor to set the default target
 current: target

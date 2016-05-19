@@ -4,6 +4,8 @@ title: Quantile-based distributions
 slug: Quantile-based distributions
 ---
 
+[This work has been updated](/notebook/qbd.html)
+
 There are various applications where you might want to go from a set of quantiles (and associated probabilities) to an actual approximate distribution.
 
 In particular:
