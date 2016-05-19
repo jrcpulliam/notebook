@@ -57,15 +57,15 @@ The constraint that I seem to like is $$\mu = s\equiv\phi$$. This parameterizati
 
 This calculation is boring, especially if it's right, but I may as well write it down:
 
-* $$ j = λ τ(z+μ; s)$$, where τ is the scaled sinh transformation.
+* $$ j = λ τ(z; s)$$, where τ is the scaled sinh transformation.
 
-* $$ dj = λ τ'(z+μ; s) dz $$.
+* $$ dj = λ τ'(z; s) dz $$.
 
-* $$\frac{f(z)}{ λ τ'(z+μ; s)} dj = f(z) dz $$.
+* $$\frac{f(z)}{ λ τ'(z; s)} dj = f(z) dz $$.
 
-* $$ g(j) = \frac{f(z)}{ λ τ'(z+μ; s)}$$, where $$g$$ is the density over $$j$$.
+* $$ g(j) = \frac{f(z)}{ λ τ'(z; s)}$$, where $$g$$ is the density over $$j$$.
 
 We also have:
 
 * $$τ = \sinh(sx)/s$$.
-* $$τ' = \cosh(sx)$$!
+* $$τ' = \cosh(sx)$$. Simpler than expected!
