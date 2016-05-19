@@ -4,6 +4,8 @@ title: Moment framework
 slug: Moment framework
 ---
 
+[This work has been updated](/notebook/moments.html)
+
 Working with Daniel Park on generalized exponentials (in theory), but we've gotten deeply into a bunch of moment stuff related to my thesis. On the bus today, while I was missing the stop, I started thinking yet again about terminology.
 
 I think I want to try writing $$T_o(v; D)$$ for **T**ype, **o**rder, **v**ariable, **D**omain, e.g. $$T_0(\sigma;D)$$ for the total number of susceptibles (this is a weird example, because the σ doesn't affect anything when $$o=0$$. $$σ^2$$.
