@@ -126,11 +126,13 @@ $(document).ready(function () {
 </ul>
 <p>To use, you can load the code.</p>
 <pre class="r"><code>source(&quot;https://raw.githubusercontent.com/dushoff/scratch/v0.3/johnson.R&quot;)</code></pre>
-<p>To evaluate a data point, you would use <code>jsqdens</code> to estimate the density at the observed point:</p>
+<p>To evaluate a data point, you would use <code>jsqdens</code> to estimate the density at the observed point.</p>
+<p>For example, if the prediction was 40 (50%CI, 7–122), and the observation was 195, you could construct a Johnson distribution on the log scale, and then project back and find the density of the distribution at the observed value, by saying:</p>
 <pre class="r"><code>print(jsqdens(obs=195, q=c(7, 40, 122), P=0.5, logq=TRUE))</code></pre>
 <pre><code>## [1] 0.0008830056</code></pre>
-<p><span class="math inline">\(q\)</span> is the prediction with CIs; <span class="math inline">\(P=0.5\)</span> represents 50% CIs, and <code>logq</code> is used to do the calculation on the log scale (where it belongs for incidence; we might do something different for peak week, for example).</p>
-<p>Since <span class="math inline">\(q\)</span> is passed as a separate parameter, the easiest way to implement this on a data frame would probably be to use <code>plyr</code>.</p>
+<p><span class="math inline">\(q\)</span> is the prediction with CIs; <span class="math inline">\(P=0.5\)</span> represents 50% CIs, and <code>logq</code> is used to do the calculation on the log scale.</p>
+<p>The log scale seems like the sensible one to use for incidece or peak size. We might use the untransformed scale for incidence; we might do something different for peak week, for example.</p>
+<p>Since <span class="math inline">\(q\)</span> is passed as a separate parameter, the easiest way to implement this on a data frame would probably be to use <code>plyr</code>. I’m happy to keep working on this, if there is interest.</p>
 </div>
 
 
