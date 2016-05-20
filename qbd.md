@@ -23,7 +23,7 @@ I've been trying two different approaches to this:
 
 * skew normal (there's a wiki page about this, and [I tweeted about it](https://twitter.com/jd_mathbio/status/591371109045534720)). There is working code to parametrize and sample, but I suddenly gave up on the density part because I was frustrated that the skew normal couldn't match things with very high skew. This can match exactly three quantiles (when it can).
 
-* Johnson-SU distributions. In my understanding, these involve sinh transformations of the normal distribution. This can match four quantiles, which will rarely be wanted, so we need some sort of constraint to restrict the parameter space and get a canonical distribution for three quantiles.
+* Johnson-SU distributions. These involve sinh transformations of the normal distribution. This can match four quantiles, which will rarely be wanted, so we need some sort of constraint to restrict the parameter space and get a canonical distribution for three quantiles.
 
 Bolker also has code which works using monotonic splines, which seems less elegant (and therefore possibly less defensible, especially for _post hoc_ application), but definitely more flexible (in particular, can be used for either 3 or 5 parameters).
 
@@ -37,11 +37,11 @@ The method should be:
 
 ## Johnson distributions
 
-In my understanding, a deviate $$x$$ from a [Johnson distribution](https://en.wikipedia.org/wiki/Johnson%27s_SU-distribution) is obtained by transforming a deviate $$z$$ from a normal distribution.
+A deviate $$x$$ from a [Johnson distribution](https://en.wikipedia.org/wiki/Johnson%27s_SU-distribution) is obtained by transforming a deviate $$z$$ from a normal distribution.
 
-I've been struggling with the best way to parameterize this idea. Part of the reason is that I want to put the non-trivial scaling step inside the sinh transformation for numerical stability. 
+I changed the parameterization somewhat, partly because I want to put the non-trivial scaling step inside the sinh transformation for numerical stability. 
 
-Right now, I'm using:
+I am using:
 
 * $$z = z_0+\mu$$
 * $$j_0 = \sinh(s z)/s$$
@@ -49,9 +49,11 @@ Right now, I'm using:
 
 The starting point $$z_0$$ is a standard normal, and the ending point $$j$$ is the desired Johnson distribution.
 
-$$\lambda$$ and $$\varepsilon$$ determine the location and scale of the resulting Johnson distribution. We therefore need to use $$\mu$$ and $$s$$ to determine the shape.  We only want one free parameter, so it's tempting to fix one of them, but there seems no natural way to do this. Or, there is a natural way for each parameter, but it doesn't work: holding $$\mu=0$$ means that the Johnson distribution is symmetric, which is not at all what we want. Holding $$s=1$$ works pretty well, but limits the amount of skew that can be achieved, so we can't fit every case.
+$$\lambda$$ and $$\varepsilon$$ determine the location and scale of the resulting Johnson distribution. We therefore need to use $$\mu$$ and $$s$$ to determine the shape.  
 
-The constraint that I seem to like is $$\mu = s\equiv\phi$$. This parameterization has the advantage of being symmetric and normal when $$\phi=0$$. I wrote [some code to find φ](https://raw.githubusercontent.com/dushoff/scratch/master/johnson.R) and am working on densities and validation and such.
+The most appealling idea is to fix $$s=1$$. This works well, but limits the amount of skew that can be achieved, so we can't fit every case. The other idea that _seems_ appealling is to fix $$\mu=0$$; in this case, the resulting Johnson distribution is symmetric, which is not at all what we want. 
+
+The next simplest constraint, in my opinion, is $$\mu = s\equiv\phi$$. This has the advantage of being symmetric and normal when $$\phi=0$$. I wrote [some code to find to find and calculate densities from these constrained Johnson distributions](https://raw.githubusercontent.com/dushoff/scratch/master/johnson.R).
 
 ### Density calculation
 
@@ -69,3 +71,5 @@ We also have:
 
 * $$τ = \sinh(sx)/s$$.
 * $$τ' = \cosh(sx)$$. Simpler than expected!
+
+This is in fact boring: I have validated that it can be used to produce correct densities when implemented in R.
