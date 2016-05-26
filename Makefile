@@ -4,7 +4,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: current.post 
+target pngtarget pdftarget vtarget acrtarget: moments.Rout 
 
 ##################################################################
 
@@ -50,6 +50,7 @@ filledCircle.Rout: filledCircle.R
 
 # Ongoing
 moments.html: moments.md
+moments.Rout: moments.R
 
 ##################################################################
 
