@@ -9,13 +9,13 @@
 
 	deltaT <- 0.5 ## [day]
 
-	finTime <- 300 ## [day]
+	finTime <- 100 ## [day]
 
 	## State variables
 
 	S <- 8e5 ## People
 	I <- 1 ## People
-	R <- 8e6 - S
+	R <- 0 ## People
 
 	## Transition rates [people/day]
 
