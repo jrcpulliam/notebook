@@ -35,7 +35,7 @@ Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
 post: current.post
-current.md: current.md
+current.md:
 
 %.post: %.md post.pl
 	$(PUSH)
