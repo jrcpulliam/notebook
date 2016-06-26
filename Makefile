@@ -21,12 +21,18 @@ include $(ms)/perl.def
 
 ## Materials
 
-Sources += $(materials/*)
-
 Sources += $(wildcard *.md) updates.html
 
 Sources += $(wildcard materials/*.*)
 Sources += $(wildcard _drafts/*.md)
+
+## Things made here that we want to be visible
+Sources += $(wildcard products/*.*)
+products:
+	mkdir $@
+
+products/%: % products
+	$(CP) $< $@
 
 # Posts
 
@@ -58,7 +64,6 @@ sir.Rout: sir.R
 tmp.Rout: tmp.R
 lecture.Rout: lecture.R
 
-
 ##################################################################
 
 # Images
@@ -73,7 +78,6 @@ $(LocalImages): images/%: %
 
 # Notebook picture
 Sources += notebook.jpg
-
 
 # Jekyll
 
