@@ -78,7 +78,7 @@ $(LocalImages): images/%: %
 
 # Notebook picture
 Sources += notebook.jpg
-banner.jpg: notebook.jpg Makefile
+banner.jpg: notebook.jpg
 	convert $< -crop 4096x1600+0+350 $@
 
 # Jekyll
