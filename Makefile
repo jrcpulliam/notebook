@@ -4,7 +4,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: current.post 
+target pngtarget pdftarget vtarget acrtarget: banner.jpg 
 
 ##################################################################
 
@@ -78,6 +78,8 @@ $(LocalImages): images/%: %
 
 # Notebook picture
 Sources += notebook.jpg
+banner.jpg: notebook.jpg Makefile
+	convert $< -crop 4096x1600+0+350 $@
 
 # Jekyll
 
