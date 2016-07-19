@@ -27,6 +27,7 @@ I might share links to individual pages from here, but the general idea will be 
 
 * [moments](moments.html)
 * [Quantile-based distributions](qbd.html)
+* [Pools and memory](pools.html)
 
 # Planned (stuff I'd like to be working on)
 
