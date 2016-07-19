@@ -51,4 +51,6 @@ We can compare CI to P using $$k_0=1$$, but this will always make the CI look st
 
 There is also a natural normalization, which we already used for II. More generally, we set $$k_0$$ so that the kernel function integrates to 1. This will generally make _shorter_ memories seem more effective: if we really attempt to take the CI limit with this normalization, we find that CI has _zero_ effect within a finite time window, so that's definitely not what we want.
 
+This normalization makes good sense for long time periods. In particular, any memory function should give the same _equilibrium_ value of $$\phi$$, for systems which reach equilibrium. To do this correctly with CI, you would need $$h$$ to be slow compared to the disease process, but fast compared to the whole time scale of dynamics you were studying. 
+
 We could also just try different values of $$h$$ (or distributions of $$k$$) but admit that we can't directly compare their effectiveness parameters.
