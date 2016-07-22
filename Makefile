@@ -16,6 +16,7 @@ Sources += current.md moments.md qbd.md
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
 include $(ms)/perl.def
+include $(ms)/git.def
 
 ##################################################################
 
