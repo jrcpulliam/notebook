@@ -10,6 +10,10 @@ target pngtarget pdftarget vtarget acrtarget: notarget
 
 # make files
 
+Makefile:
+	@echo Working on this branch is disabled
+	splakiorn
+
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
 include $(ms)/perl.def
