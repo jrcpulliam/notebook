@@ -10,7 +10,9 @@ target pngtarget pdftarget vtarget acrtarget: notarget
 
 # make files
 
-Makefile:
+Makefile: crash
+
+crash:
 	@echo Working on this branch is disabled
 	splakiorn
 
