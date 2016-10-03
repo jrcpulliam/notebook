@@ -60,10 +60,13 @@ moments.html: moments.md
 moments.Rout: moments.R
 
 # Developing
-
 sir.Rout: sir.R
 tmp.Rout: tmp.R
 lecture.Rout: lecture.R
+
+# Simple fitting of growing-epidemic data (Chowell, Bernardin)
+genFit.md:
+genFit.Rout: genFit.R
 
 ##################################################################
 
