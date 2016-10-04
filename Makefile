@@ -4,7 +4,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: banner.jpg 
+target pngtarget pdftarget vtarget acrtarget: current.md 
 
 ##################################################################
 
@@ -42,7 +42,8 @@ Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
 post: current.post
-current.md:
+current.md: pools.md
+	perl -npe 's/layout:\s+page/layout: post/' $< > $@
 
 %.post: %.md post.pl
 	$(PUSH)
