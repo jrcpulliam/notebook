@@ -12,7 +12,7 @@ Infectious Diseases](http://www.ncts.ntu.edu.tw/templet3/index.php?nid=73&bid=2)
 * [Introduction to dynamical modeling](https://github.com/dushoff/disease_model_talks/blob/NTU16.y/dynamics.draft.pdf)
 * [Mathematical foundations for dynamics](https://github.com/dushoff/disease_model_talks/blob/NTU16.y/foundations.draft.pdf)
 
-The first is closely based on [ICI3D](http://www.ici3d.org/) lectures I've given for years at MMED and DAIDD; the second is more foundational and was meant to cover topics requested by Hirioshi Nishiura.
+The first is closely based on [ICI3D](http://www.ici3d.org/) lectures I've given for years at MMED and DAIDD; the second is more foundational and was meant to cover topics requested by Hiroshi Nishiura.
 
 Also, in the same newly cleaned directory are two "lectures" that I gave to the plenary group in the same course:
 

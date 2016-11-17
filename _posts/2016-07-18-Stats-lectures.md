@@ -24,4 +24,4 @@ Infectious Diseases](http://www.ncts.ntu.edu.tw/templet3/index.php?nid=73&bid=2)
 * [Statistical philosophy](https://github.com/dushoff/statistics_talks/blob/NTU16/philosophy.draft.pdf)
 * [Fitting dynamical models to data](https://github.com/dushoff/statistics_talks/blob/NTU16.w/fitting.draft.pdf)
 
-The first is closely based on [ICI3D](http://www.ici3d.org/) lectures I've given for years at MMED and DAIDD; the second is more foundational and was meant to cover topics requested by Hirioshi Nishiura.
+These are closely based on [ICI3D](http://www.ici3d.org/) lectures I've given for years at MMED and DAIDD.
