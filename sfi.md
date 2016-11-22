@@ -1,8 +1,0 @@
----
-layout: page
-title: Disease aging and adaptation
----
-
-Had a nice time recently at the [JSMF](https://www.jsmf.org/)-[SFI](https://www.santafe.edu/) __Workshop on complex systems science – the Arrow of Time, Adaptation and Aging.__ 
-
-Gave an informal talk; as usual with informal talks, it's hard to say whether the [slides](https://github.com/dushoff/Disease_evolution/blob/sfi_slides/git_push/talk.draft.pdf) are of much use.
