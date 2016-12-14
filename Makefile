@@ -4,7 +4,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: current.md 
+target pngtarget pdftarget vtarget acrtarget: pythagoras.Rout 
 
 ##################################################################
 
@@ -55,6 +55,8 @@ Sources += $(wildcard *.R)
 
 # ImageTargets += filledCircle.Rout.pdf filledCircle.Rout-0.png filledCircle.Rout-2.png
 filledCircle.Rout: filledCircle.R
+
+pythagoras.Rout: pythagoras.R
 
 # Ongoing
 moments.html: moments.md
