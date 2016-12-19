@@ -12,16 +12,26 @@ plot(NULL, NULL
 xsign <- c(1, 1, -1, -1)
 ysign <- c(1, -1, 1, -1)
 
+gcd <- function(x,y) {
+	r <- x%%y;
+	return(ifelse(r, gcd(y, r), y))
+}
+
+
 for (i in 2:max){
 	for (j in 1:(i-1)){
 		a <- 2*i*j
 		b <- i^2 - j^2
 		c <- i^2 + j^2
 
-		if(c<=max^2)
-		points(cex=psize*sqrt(c)/max
-			, c(xsign*a, xsign*b)
-			, c(ysign*b, ysign*a)
-		)
+		if(c<=max^2){
+			color = ifelse(gcd(a, b)==1, "blue", "black")
+			print (list(a, b, color))
+			points(cex=psize*sqrt(c)/max
+				, c(xsign*a, xsign*b)
+				, c(ysign*b, ysign*a)
+				, col=color
+			)
+		}
 	}
 }
