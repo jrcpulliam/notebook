@@ -26,16 +26,17 @@ prime <- Vectorize(function(x){
 })
 
 for (i in 2:max){
-	for (j in 1:(i-1)){
+	for (j in 0:(i-1)){
 		a <- 2*i*j
 		b <- i^2 - j^2
 		c <- i^2 + j^2
 
 		if(c<=max^2){
-			color = ifelse(prime(c), "red", 
-				ifelse(gcd(a, b)==1, "blue", "black")
+			color = ifelse(gcd(a, b)>1
+				, "black"
+				, ifelse(prime(c), "red", "blue") 
 			)
-			# print (data.frame(a, b, color))
+			print (data.frame(a, b, color))
 			points(cex=psize*sqrt(c)/max
 				, c(xsign*a, xsign*b)
 				, c(ysign*b, ysign*a)
