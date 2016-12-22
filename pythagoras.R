@@ -32,11 +32,10 @@ for (i in 2:max){
 		c <- i^2 + j^2
 
 		if(c<=max^2){
-			color = ifelse(gcd(a, b)>1
-				, "black"
-				, ifelse(prime(c), "red", "blue") 
+			color = ifelse(prime(c), "red", 
+				ifelse(gcd(a, b)==1, "blue", "black")
 			)
-			print (data.frame(a, b, color))
+			# print (data.frame(a, b, color))
 			points(cex=psize*sqrt(c)/max
 				, c(xsign*a, xsign*b)
 				, c(ysign*b, ysign*a)

@@ -53,10 +53,11 @@ current.md: pythagoras.md
 
 Sources += $(wildcard *.R)
 
-# ImageTargets += filledCircle.Rout.pdf filledCircle.Rout-0.png filledCircle.Rout-2.png
 filledCircle.Rout: filledCircle.R
 
 pythagoras.Rout: pythagoras.R
+
+logistic.Rout: logistic.R
 
 # Ongoing
 moments.html: moments.md
@@ -70,6 +71,9 @@ lecture.Rout: lecture.R
 # Simple fitting of growing-epidemic data (Chowell, Bernardin)
 genFit.md:
 genFit.Rout: genFit.R
+
+elves.out: elves.pl
+	$(PUSH)
 
 ##################################################################
 
