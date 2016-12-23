@@ -27,5 +27,18 @@ sub pick{
 	return pick(round(\@a));
 }
 
-my @a=1..3014387;
+sub calc{
+	my $a = shift @_;
+	my $p=1;
+	$p *=3 while $p<$a;
+	my $q = $p/9;
+	return $a - $q*int((9*$q-$a)/$q);
+}
+
+my $a=3014387;
+
+my @a=1..$a;
 say pick(\@a);
+say calc($a);
+say calc(2);
+
