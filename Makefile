@@ -20,6 +20,7 @@ include $(ms)/git.def
 
 ##################################################################
 
+## materials and products are both deprecated for git_push; wonder if anything there matters
 ## Materials
 
 Sources += $(wildcard *.md) updates.html
@@ -51,7 +52,7 @@ current.md: pythagoras.md
 
 # Scripts
 
-Sources += $(wildcard *.R)
+Sources += $(wildcard *.R *.pl)
 
 filledCircle.Rout: filledCircle.R
 
