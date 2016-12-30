@@ -4,7 +4,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: elves.out 
+target pngtarget pdftarget vtarget acrtarget: current.md 
 
 ##################################################################
 
@@ -43,7 +43,7 @@ Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
 post: current.post
-current.md: pythagoras.md
+current.md: elves.md
 	perl -npe 's/layout:\s+page/layout: post/' $< > $@
 
 %.post: %.md post.pl
