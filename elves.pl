@@ -1,30 +1,27 @@
+use warnings;
 use strict;
 use 5.10.0;
 
 ## Go through one round of elves. Mark those removed, and return a new array of the others
 sub round{
-	my @a = @{shift @_};
+	my $a = shift;
 
 	my @marked;
-	my $pos=@a;
-	for (my $i=0; $i<@a; $i++){
+	my $pos=@$a;
+	for my $i (0..$#$a) {
 		next if defined $marked[$i];
-		$marked[($pos/2)%@a]=1;
+		$marked[($pos/2)%@$a]=1;
 		$pos += 3;
 	}
 
-	my @next;
-	for (my $i=0; $i<@a; $i++){
-		push @next, $a[$i] unless defined $marked[$i];
-	}
-	return \@next;
+        return [map { $a->[$_] } grep { !defined $marked[$_] } 0..$#$a];
 }
 
 # Reduce until you have one elf, and then return its number
 sub pick{
-	my @a = @{shift @_};
-	return $a[0] if @a == 1;
-	return pick(round(\@a));
+	my $a = shift;
+        $a = round($a) while @$a > 1;
+        return $a->[0];
 }
 
 sub calc{

@@ -4,13 +4,11 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: average.out 
+target pngtarget pdftarget vtarget acrtarget: average.Rout 
 
 ##################################################################
 
 ## Edit hooks
-Sources += current.md moments.md qbd.md
-
 # make files
 
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
@@ -78,6 +76,8 @@ elves.out: elves.pl
 
 average.out: average.pl
 	$(PUSH)
+
+average.Rout: average.out average.R
 
 ##################################################################
 
