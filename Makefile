@@ -76,6 +76,9 @@ genFit.Rout: genFit.R
 elves.out: elves.pl
 	$(PUSH)
 
+average.out: average.pl
+	$(PUSH)
+
 ##################################################################
 
 # Images
