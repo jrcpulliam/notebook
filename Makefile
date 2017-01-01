@@ -4,7 +4,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: average.Rout 
+target pngtarget pdftarget vtarget acrtarget: fractions.Rout 
 
 ##################################################################
 
@@ -71,13 +71,23 @@ lecture.Rout: lecture.R
 genFit.md:
 genFit.Rout: genFit.R
 
+##################################################################
+
+### Rec math (other stuff?)
+
 elves.out: elves.pl
 	$(PUSH)
+elves.html: elves.md
 
+## Batting averages
 average.out: average.pl
 	$(PUSH)
-
+average.md:
 average.Rout: average.out average.R
+
+## Fractions
+fractions.Rout: fractions.R
+
 
 ##################################################################
 
@@ -115,4 +125,5 @@ Sources += _includes/* _layouts/* css/* _sass/*
 -include $(ms)/visual.mk
 
 -include $(ms)/wrapR.mk
+-include $(ms)/pandoc.mk
 # -include $(ms)/oldlatex.mk
