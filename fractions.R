@@ -1,4 +1,4 @@
-max <- 20
+max <- 25
 
 nums <- matrix(c(0, 1, 1, 0), nrow=2)
 
@@ -35,7 +35,7 @@ for (l in 1:max){
 		val <- n/d
 		size <- n+d
 	})
-	with (nf, points(val, size, pch=19, cex=1/size, col="blue"))
+	with (nf, points(val, size, pch=19, cex=1/sqrt(size), col="blue"))
 	with (nf, lines(val, size, lwd=1/size))
 }
 print(nums)

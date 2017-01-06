@@ -9,4 +9,4 @@ What is the smallest number of at-bats required to achieve a given (3 digit) ave
 
 * [Slick, inefficient recursive code](/notebook/average.pl)
 * [Simple, uninteresting plotting code](/notebook/average.R)
-* [pdf version of plot](/notebook/git_push/average.Rout.pdf)
+* [Higher quality (pdf) version of plot](/notebook/git_push/average.Rout.pdf)

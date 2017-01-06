@@ -4,7 +4,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: current.md 
+target pngtarget pdftarget vtarget acrtarget: fractions.Rout 
 
 ##################################################################
 
@@ -87,7 +87,6 @@ average.Rout: average.out average.R
 
 ## Fractions
 fractions.Rout: fractions.R
-
 
 ##################################################################
 
