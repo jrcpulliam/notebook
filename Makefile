@@ -4,7 +4,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: fractions.Rout 
+target pngtarget pdftarget vtarget acrtarget: post 
 
 ##################################################################
 
@@ -41,7 +41,7 @@ Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
 post: current.post
-current.md: average.md
+current.md: syphilisHAART.md
 	perl -npe 's/layout:\s+page/layout: post/' $< > $@
 
 %.post: %.md post.pl
