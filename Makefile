@@ -4,7 +4,8 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: post 
+# target pngtarget pdftarget vtarget acrtarget: post 
+target pngtarget pdftarget vtarget acrtarget: cards.Rout 
 
 ##################################################################
 
@@ -55,6 +56,8 @@ Sources += $(wildcard *.R *.pl)
 filledCircle.Rout: filledCircle.R
 
 pythagoras.Rout: pythagoras.R
+
+cards.Rout: cards.R
 
 logistic.Rout: logistic.R
 
