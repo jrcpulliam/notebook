@@ -4,7 +4,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-# target pngtarget pdftarget vtarget acrtarget: post 
+# target pngtarget pdftarget vtarget acrtarget: cards.Rout 
 target pngtarget pdftarget vtarget acrtarget: cards.Rout 
 
 ##################################################################
