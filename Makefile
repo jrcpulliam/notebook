@@ -4,7 +4,8 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: fractions.Rout 
+# target pngtarget pdftarget vtarget acrtarget: cards.Rout 
+target pngtarget pdftarget vtarget acrtarget: cards.Rout 
 
 ##################################################################
 
@@ -41,7 +42,7 @@ Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
 post: current.post
-current.md: elves.md
+current.md: syphilisHAART.md
 	perl -npe 's/layout:\s+page/layout: post/' $< > $@
 
 %.post: %.md post.pl
@@ -55,6 +56,8 @@ Sources += $(wildcard *.R *.pl)
 filledCircle.Rout: filledCircle.R
 
 pythagoras.Rout: pythagoras.R
+
+cards.Rout: cards.R
 
 logistic.Rout: logistic.R
 
@@ -87,7 +90,6 @@ average.Rout: average.out average.R
 
 ## Fractions
 fractions.Rout: fractions.R
-
 
 ##################################################################
 
