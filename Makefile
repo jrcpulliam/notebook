@@ -1,5 +1,5 @@
 # notebook (gh-pages branch, which is the only one I use)
-# http://localhost:4000/notebook/
+# http://localhost:4111/notebook/
 # http://dushoff.github.io/notebook/
 ### Hooks for the editor to set the default target
 current: target

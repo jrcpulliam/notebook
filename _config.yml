@@ -4,6 +4,7 @@ email: dushoff@mcmaster.ca
 baseurl: "/notebook" 
 url: "http://dushoff.github.io" # the base hostname & protocol for your site
 twitter_username: jd_mathbio
+port: 4111
 
 # Build settings
 markdown: kramdown
