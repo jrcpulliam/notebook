@@ -113,7 +113,7 @@ banner.jpg: notebook.jpg
 not:
 	$(RMF) about.md feed.xml
 
-Sources += _config.yml $(wildcard Gemfile.*)
+Sources += _config.yml $(wildcard Gemfile_*)
 Sources += _includes/* _layouts/* css/* _sass/*
 
 ######################################################################
