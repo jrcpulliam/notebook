@@ -4,8 +4,8 @@
 ### Hooks for the editor to set the default target
 current: target
 
-# target pngtarget pdftarget vtarget acrtarget: cards.Rout 
-target pngtarget pdftarget vtarget acrtarget: cards.Rout 
+# target pngtarget pdftarget vtarget acrtarget: pythagoras.cp.html 
+target pngtarget pdftarget vtarget acrtarget: pythagoras.cp.html 
 
 ##################################################################
 
@@ -92,6 +92,18 @@ average.Rout: average.out average.R
 fractions.Rout: fractions.R
 
 ##################################################################
+
+# Blogging
+## CP raw html suppresses mathjax (somehow)
+## CP rendered html doubles mathjax (fix by hand?)
+## Blogger is just absolutely fricking crazy about <p>, <br> and <div> tags. No easy fix for this, either.
+
+# Maybe just give up on blogger…
+
+pythagoras.cp.html: cp.pl
+
+%.cp.html: _site/%.html cp.pl
+	$(PUSH)
 
 # Images
 
