@@ -17,15 +17,18 @@ lfun <- function(x, r, steps){
 
 
 x0 <- 0.4
-cut <- 1000
-view <- 50
+cut <- 4000
+view <- 80
 start <- 3
 end <- 4
 rr <- 1001
 
 steps <- cut+view
 look <- seq(cut+1, steps)
-plot(NULL, NULL, xlim=c(start, end), ylim=c(0, 1))
+plot(NULL, NULL
+	, xlim=c(start, end), ylim=c(0, 1)
+	, ylab="Long-term density", xlab="R0"
+)
 
 i <- 1
 cv <- numeric(rr)
