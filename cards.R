@@ -33,9 +33,12 @@ lines(size, ddiff, type="b", pch=3)
 print(ddiff)
 
 cards <- 8
-reps <- 1e1
+reps <- 1e3
+# reps <- 1e1
 
 dw <- gw <- 0
+
+print(round(factorial(1:10)/exp(1)))
 
 for (n in 1:reps){
 	deck <- sample(1:cards, cards, replace=FALSE)

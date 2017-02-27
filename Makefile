@@ -1,5 +1,5 @@
 # notebook (gh-pages branch, which is the only one I use)
-# http://localhost:4000/notebook/
+# http://localhost:4111/notebook/
 # http://dushoff.github.io/notebook/
 ### Hooks for the editor to set the default target
 current: target
@@ -93,6 +93,18 @@ fractions.Rout: fractions.R
 
 ##################################################################
 
+# Blogging
+## CP raw html suppresses mathjax (somehow)
+## CP rendered html doubles mathjax (fix by hand?)
+## Blogger is just absolutely fricking crazy about <p>, <br> and <div> tags. No easy fix for this, either.
+
+# Maybe just give up on blogger…
+
+pythagoras.cp.html: cp.pl
+
+%.cp.html: _site/%.html cp.pl
+	$(PUSH)
+
 # Images
 
 # Things we want pushed and referred to
@@ -113,7 +125,8 @@ banner.jpg: notebook.jpg
 not:
 	$(RMF) about.md feed.xml
 
-Sources += _config.yml Gemfile
+## Using underscore because we don't want to track .lock file
+Sources += _config.yml $(wildcard Gemfile_*)
 Sources += _includes/* _layouts/* css/* _sass/*
 
 ######################################################################
