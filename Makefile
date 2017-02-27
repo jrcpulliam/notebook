@@ -24,11 +24,11 @@ include $(ms)/git.def
 
 Sources += $(wildcard *.md) updates.html
 
-Sources += $(wildcard materials/*.*)
+# Sources += $(wildcard materials/*.*)
 Sources += $(wildcard _drafts/*.md)
 
 ## Things made here that we want to be visible
-Sources += $(wildcard products/*.*)
+# Sources += $(wildcard products/*.*)
 products:
 	mkdir $@
 
