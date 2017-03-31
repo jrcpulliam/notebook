@@ -4,8 +4,8 @@
 ### Hooks for the editor to set the default target
 current: target
 
-# target pngtarget pdftarget vtarget acrtarget: elves.out 
-target pngtarget pdftarget vtarget acrtarget: elves.out 
+# target pngtarget pdftarget vtarget acrtarget: gamma_shape.Rout 
+target pngtarget pdftarget vtarget acrtarget: gamma_shape.Rout 
 
 ##################################################################
 
@@ -18,6 +18,8 @@ include $(ms)/perl.def
 include $(ms)/git.def
 
 ##################################################################
+
+gamma_shape.Rout: gamma_shape.R
 
 ## materials and products are both deprecated for git_push; wonder if anything there matters
 ## Materials
