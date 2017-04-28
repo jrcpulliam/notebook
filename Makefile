@@ -4,8 +4,8 @@
 ### Hooks for the editor to set the default target
 current: target
 
-# target pngtarget pdftarget vtarget acrtarget: gamma_shape.Rout 
-target pngtarget pdftarget vtarget acrtarget: gamma_shape.Rout 
+# target pngtarget pdftarget vtarget acrtarget: era.out 
+target pngtarget pdftarget vtarget acrtarget: era.out 
 
 ##################################################################
 
@@ -89,6 +89,11 @@ average.out: average.pl
 	$(PUSH)
 average.md:
 average.Rout: average.out average.R
+
+### Hmm. this all seems a bunch of nonsense. Understand (document?) before trying to hack.
+era.out: era.pl
+	$(PUSH)
+era.Rout: era.out era.R
 
 ## Fractions
 fractions.Rout: fractions.R
