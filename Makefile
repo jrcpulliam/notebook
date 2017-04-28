@@ -4,7 +4,6 @@
 ### Hooks for the editor to set the default target
 current: target
 
-# target pngtarget pdftarget vtarget acrtarget: era.out 
 target pngtarget pdftarget vtarget acrtarget: era.out 
 
 ##################################################################
@@ -77,6 +76,10 @@ genFit.md:
 genFit.Rout: genFit.R
 
 ##################################################################
+
+## Testing
+
+deriv.Rout: deriv.R
 
 ### Rec math (other stuff?)
 
