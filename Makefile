@@ -97,6 +97,11 @@ average.out: average.pl
 average.md:
 average.Rout: average.out average.R
 
+### Hmm. this all seems a bunch of nonsense. Understand (document?) before trying to hack.
+era.out: era.pl
+	$(PUSH)
+era.Rout: era.out era.R
+
 ## Fractions
 fractions.Rout: fractions.R
 
