@@ -4,7 +4,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: deriv.Rout 
+target pngtarget pdftarget vtarget acrtarget: moments.html 
 
 ##################################################################
 
@@ -46,6 +46,8 @@ post: current.post
 current.md: syphilisHAART.md
 	perl -npe 's/layout:\s+page/layout: post/' $< > $@
 
+current.html:
+
 %.post: %.md post.pl
 	$(PUSH)
 	$(shell_execute)
@@ -65,6 +67,8 @@ logistic.Rout: logistic.R
 # Ongoing
 moments.html: moments.md
 moments.Rout: moments.R
+
+diversity.html: diversity.md
 
 # Developing
 sir.Rout: sir.R
