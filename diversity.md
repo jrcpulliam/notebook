@@ -23,7 +23,12 @@ We can ask, is there a simple way to generalize this estimate if we think that t
 
 The basis of the rarity estimate is that the probability that two samples chosen without replacement from the sample will match is an unbiased estimate of the probability that two samples chosen from the hypothetical infinite pool will match. If we want to consider the pool as finite, we need to define rarity in terms of the probability that two samples chosen from the larger pool _with replacement_ will match. This is because of the reason.
 
-This probability can be estimated from the sample by imagining that we first pick  a focus of type $$i$$, then pick from the infinite pool by first asking whether the pick is the same individual as the focus, and – if not – picking at random from the other individuals in the sample. This gives a probability estimate of:
+This probability can be estimated from the sample by imagining that we first pick  a focus of type $$i$$, then pick from the infinite pool by first asking whether the pick is the same individual as the focus, and – if not – picking at random from the other individuals in the sample. This gives a conditional probability estimate of:
 
 $$ \frac{1}{N} + \frac{N-1}{N} \frac{k_i-1}{S-1}.$$
 
+and thus a rarity estimate of: 
+
+$$ \frac{N(S-1)}{N(k-1) + S-k}.$$
+
+We can assume that $$N \gg S$$, so this estimate will be very close to the classical estimate when $$k>1$$; when $$k=1$$, then estimate is $$N$$. These estimates are based on a principled approximation of Simpson diversity, which should correspond to a good (but biased) estimate of Simpson-Hill diversity. The rarities are on the high side, and there may be better values to use when $$\ell > -1$$. On the other hand, these numbers can be used right now to provide an upper estimate that does not (strictly) diverge. It would be interesting to apply to specific cases.

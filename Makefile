@@ -68,6 +68,7 @@ logistic.Rout: logistic.R
 moments.html: moments.md
 moments.Rout: moments.R
 
+# http://localhost:4111/notebook/diversity.html
 diversity.html: diversity.md
 
 # Developing
