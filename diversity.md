@@ -10,6 +10,37 @@ Hill diversity is a set of diversity measures that have simple relationships to 
 
 Hill diversity is typically expressed as a reciprocal of mean average abundance. Here we argue that is simpler to express Hill diversity as a mean "rarity", and also that expressing it this way may clarify some questions related to estimating diversity.
 
+The Hill diversity is defined as:
+$$
+\left(
+	\sum{p_i^q}
+\right)^{1/(1-q)}.
+$$
+
+Where $$p_i$$ is the proportion of the sampled population consisting of species $$i$$, and $$q$$ is an index. Hill diversities are interesting because they are "effective species numbers" (see below) and because the most common diversity measures (Simpson diversity, Shannon diversity and richness) can all be transformed to Hill numbers (with different indices).
+
+We here choose to interpret Hill diversity as a weighted, filtered mean over the population. We do this by writing $$\ell = 1-q$$, and rewriting the Hill diversity as a power mean:
+$$
+\left(
+	\sum{p_i r_i^\ell}
+\right)^{1/\ell}.
+$$
+This works when $$r_i = 1/p_i$$ -- that is, the Hill diversity is a weighted, filtered mean of the _rarity_ of species in the community.
+
+* Richness (total number of species) now corresponds to $$\ell=1$$: the _arithmetic_ mean of rarity (it's really cool how this works out)
+
+* Shannon-Hill diversity corresponds to $$\ell=0$$: the _geometric_ mean.
+
+* Simpson-Hill diversity corresponds to $$\ell=-1$$: the _harmonic_ mean.
+
+This intuition can blah blah.
+
+Estimation
+--------
+
+In addition to helping intuition, this perspective potentially provides insight into estimation. In particular, if we are interested in estimating diversity from a sample, we will in general want to set $$\hat p_i$$, our estimate of $$p_i$$ to be equal to the observed proportion, but in general we will _not_ want to set $$\hat r_i = 1/p_i$$ (for most estimators $$\hat r_i$$ will be larger than $$1/p_i$$, reflecting the fact that our best guess at diversity is larger than the diversity observed in a sample).
+
+
 Finite pool size
 ----------------
 
