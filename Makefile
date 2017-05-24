@@ -11,10 +11,10 @@ target pngtarget pdftarget vtarget acrtarget: moments.html
 ## Edit hooks
 # make files
 
-Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
-include stuff.mk
-include $(ms)/perl.def
-include $(ms)/git.def
+Sources = Makefile .gitignore README.md sub.mk LICENSE.md
+include sub.mk
+-include $(ms)/perl.def
+-include $(ms)/git.def
 
 ##################################################################
 
@@ -146,10 +146,6 @@ Sources += _includes/* _layouts/* css/* _sass/*
 
 ######################################################################
 
-### Makestuff
-
-## Change this name to download a new version of the makestuff directory
-# Makefile: start.makestuff
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
