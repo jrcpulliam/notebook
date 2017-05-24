@@ -27,11 +27,11 @@ $$
 $$
 This works when $$r_i = 1/p_i$$ -- that is, the Hill diversity is a weighted, filtered mean of the _rarity_ of species in the community.
 
-* Richness (total number of species) now corresponds to $$\ell=1$$ -- the _arithmetic_ mean of rarity (it's really cool how this works out)
+* Richness (total number of species) now corresponds to $$\ell=1$$: the _arithmetic_ mean of rarity (it's really cool how this works out)
 
-* Shannon-Hill diversity corresponds to $$\ell=0$$ -- the _geometric mean.
+* Shannon-Hill diversity corresponds to $$\ell=0$$: the _geometric_ mean.
 
-* Simpson-Hill diversity corresponds to $$\ell=-1$$ -- the _geometric mean.
+* Simpson-Hill diversity corresponds to $$\ell=-1$$: the _harmonic_ mean.
 
 This intuition can blah blah.
 
