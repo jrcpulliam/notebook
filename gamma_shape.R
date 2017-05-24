@@ -1,4 +1,3 @@
-
 days <- 20
 steps <- 100
 shape <- 20

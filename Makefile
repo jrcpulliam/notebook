@@ -4,21 +4,21 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: moments.html 
-
 ##################################################################
 
 ## Edit hooks
 # make files
 
-Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
-include stuff.mk
-include $(ms)/perl.def
-include $(ms)/git.def
+Sources = Makefile .gitignore README.md sub.mk LICENSE.md
+include sub.mk
+-include $(ms)/perl.def
+-include $(ms)/git.def
 
 ##################################################################
 
 gamma_shape.Rout: gamma_shape.R
+
+log1p.Rout: log1p.ssv log1p.R
 
 ## materials and products are both deprecated for git_push; wonder if anything there matters
 ## Materials
