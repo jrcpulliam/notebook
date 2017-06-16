@@ -20,6 +20,7 @@ include sub.mk
 
 gamma_shape.Rout: gamma_shape.R
 
+# Log-plus-one as a scale
 log1p.Rout: log1p.ssv log1p.R
 
 ## materials and products are both deprecated for git_push; wonder if anything there matters
