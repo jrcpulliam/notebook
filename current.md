@@ -1,7 +1,6 @@
 I was _so_ excited the other night when I realized I had figured out something new and interesting about the decimal expansion of 1/19. Something I hadn't noticed, despite the fact that 1/19 has been one of my favorite decimal expansions for decades.
 
-Powers of 5
-===========
+## Powers of 5
 
 I'll start at the beginning. Repeating decimals tend to have all sorts of cool patterns and properties. A nice simple one about 1/19 is that you can generate it from the powers of 5. More or less.
 
@@ -37,8 +36,7 @@ The better way is "pre-emptive carrying". Instead of saying "5×5 = 25", we say 
 …
 ```
 
-Checking
---------
+### Checking
 
 We can tell it's right because it repeats with the right period (it has to be 18 or a factor of 18, more on that later (probably not, unless someone asks me)), and because it produces the same answer as the other crazy methods we're going to try later.
 
@@ -56,11 +54,14 @@ Bizarrely, we _can't_ tell it's right using R:
 
 R is perfectly willing to give you up to 22 digits, but only seems to get the first 16 right, ever.
 
-Another power example
----------------------
+### Another power example
 
 Another cool example of pre-emptive carrying, and this sort of series, is 1/49. Try it yourself. This code gives a nice-looking version of the answer, for comparison (or for the lazy)
 
 ```
 echo "scale=44; 1/49" | bc -l | perl -pe "s/[0-9]{2}/ $&/g"
 ```
+
+## Dividing by 4
+
+Anyway, that's not the cool part. I've known that forever, thanks largely to Tim Koch.
