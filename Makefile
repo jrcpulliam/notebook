@@ -48,7 +48,7 @@ Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
 post: current.post
-current.md: syphilisHAART.md
+current.md: 19.md
 	perl -npe 's/layout:\s+page/layout: post/' $< > $@
 
 current.html:
