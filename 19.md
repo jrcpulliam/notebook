@@ -62,6 +62,6 @@ Another cool example of pre-emptive carrying, and this sort of series, is 1/49. 
 echo "scale=44; 1/49" | bc -l | perl -pe "s/[0-9]{2}/ $&/g"
 ```
 
-## Dividing by 4
+### Dividing by 4
 
 Anyway, that's not the cool part. I've known that forever, thanks largely to Tim Koch.
