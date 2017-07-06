@@ -4,7 +4,7 @@ I'll start at the beginning. Repeating decimals tend to have all sorts of cool p
 
 1/19 is 5/95 = 5/(100-5) ≡ 5/(H-5), where H=100. If we define h=1/H and multiply, then:
 
-1/19 = 5/(1-5h) = 5 + 5×5 + 5×5^2 + …
+1/19 = 5/(1-5h) = 5 + 5×5h + 5×5^2 h^2 + …
 
 We can try to write that out as:
 
