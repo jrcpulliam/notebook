@@ -67,6 +67,8 @@ cards.Rout: cards.R
 
 logistic.Rout: logistic.R
 
+19.html: 19.md
+
 # Ongoing
 moments.html: moments.md
 moments.Rout: moments.R
