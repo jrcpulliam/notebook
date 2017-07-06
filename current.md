@@ -6,7 +6,7 @@ I'll start at the beginning. Repeating decimals tend to have all sorts of cool p
 
 1/19 is 5/95 = 5/(100-5) ≡ 5/(H-5), where H=100. If we define h=1/H and multiply, then:
 
-1/19 = 5/(1-5h) = 5 + 5×5h + 5×5^2 h^2 + …
+1/19 = 5/(1-5h) = 5 + 5×5h + 5×5² h² + …
 
 We can try to write that out as:
 
@@ -62,6 +62,33 @@ Another cool example of pre-emptive carrying, and this sort of series, is 1/49. 
 echo "scale=44; 1/49" | bc -l | perl -pe "s/[0-9]{2}/ $&/g"
 ```
 
-### Dividing by 4
+## Dividing by 4
 
 Anyway, that's not the cool part. I've known that forever, thanks largely to Tim Koch.
+
+_Another_ nice way to derive the expansion for 1/19 is by expanding 1/19=21/399.
+
+1/19 = 21/(4H-1) = 21h/(4-h) = 21/4 h + 21/4² h² + …
+
+It would be a huge mess to do this just by blocks, something like:
+
+. 0525 013125 00328125 …
+
+But we can do it neatly with tricks again. 21/4 = 5, with remainder 1, so we write 05 and then save the 1. For the next step, we put the 1 in front of 05 and 105/4 = 26r1. And so on.
+
+```
+1/19 = 
+.         21/4 = 5r1
+05        105/4 = 26r1
+26        126/4 = 31r2
+31        231/4 = 57r3
+57        357/4 = 89r1
+89        189/4 = 47r1
+47        147/4 = 36r3
+36        336/4 = 84r0
+84        084/4 = 21r0
+21        021/4 = 05r1
+05
+…
+```
+
