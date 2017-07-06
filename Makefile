@@ -18,6 +18,8 @@ include sub.mk
 
 ##################################################################
 
+martini.Rout: martini.R
+
 gamma_shape.Rout: gamma_shape.R
 
 # Log-plus-one as a scale
