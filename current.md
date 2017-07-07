@@ -6,7 +6,7 @@ I'll start at the beginning. Repeating decimals tend to have all sorts of cool p
 
 1/19 is 5/95 = 5/(100-5) ≡ 5/(H-5), where H=100. If we define h=1/H and multiply, then:
 
-1/19 = 5/(1-5h) = 5 + 5×5h + 5×5² h² + …
+1/19 = 5h/(1-5h) = 5 + 5²h + 5³ h² + …
 
 We can try to write that out as:
 
@@ -74,7 +74,7 @@ It would be a huge mess to do this just by blocks, something like:
 
 . 0525 013125 00328125 …
 
-But we can do it neatly with tricks again. 21/4 = 5, with remainder 1, so we write 05 and then save the 1. For the next step, we put the 1 in front of 05 and 105/4 = 26r1. And so on.
+But we can do it neatly with another trick: putting off the remainder. 21/4 = 5, with remainder 1, so we write 05 and then save the 1. For the next step, we put the 1 in front of 05 and 105/4 = 26r1. And so on.
 
 ```
 1/19 = 
@@ -92,8 +92,15 @@ But we can do it neatly with tricks again. 21/4 = 5, with remainder 1, so we wri
 …
 ```
 
+
 Same answer (as promised above). Pretty cool.
 
 ## Fibonacci style
 
 But still not the part that got me so excited.
+
+Same answer. What are the odds ‽
+
+## Fibonacci
+
+_Still_ not the reason why I got excited, though.

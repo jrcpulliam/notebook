@@ -51,7 +51,7 @@ post: current.post
 current.md: 19.md
 	perl -npe 's/layout:\s+page/layout: post/' $< > $@
 
-current.html:
+current.html: 19.md
 
 %.post: %.md post.pl
 	$(PUSH)
