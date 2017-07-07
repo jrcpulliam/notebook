@@ -92,3 +92,8 @@ But we can do it neatly with tricks again. 21/4 = 5, with remainder 1, so we wri
 …
 ```
 
+Same answer (as promised above). Pretty cool.
+
+## Fibonacci style
+
+But still not the part that got me so excited.
