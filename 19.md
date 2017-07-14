@@ -93,14 +93,8 @@ But we can do it neatly with another trick: putting off the remainder. 21/4 = 5,
 ```
 
 
-Same answer (as promised above). Pretty cool.
-
 ## Fibonacci style
 
-But still not the part that got me so excited.
+Same answer. What are the odds‽
 
-Same answer. What are the odds ‽
-
-## Fibonacci
-
-_Still_ not the reason why I got excited, though.
+But _still_ not the part that got me so excited. I figured that out decades ago as well.
