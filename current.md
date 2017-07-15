@@ -23,10 +23,10 @@ The better way is "pre-emptive carrying". Instead of saying "5×5 = 25", we say 
 ```
 1/19 = 
 .
-05        (×5 + 1 = 26)
-26        (×5 + 1 = 131)
-31        (×5 + 2 = 157)
-57        (×5 + 4 = 289)
+05        (×5 + 1 = 26) (the one is pre-emptively carried from 131)
+26        (×5 + 1 = 131) (the one is pre-emptively carried from 157)
+31        (×5 + 2 = 157) (the two is pre-emptively carried from 289)
+57        (×5 + 4 = 289) …
 89        (×5 + 2 = 447)
 47        (×5 + 1 = 236)
 36        (×5 + 4 = 184)
@@ -80,9 +80,9 @@ But we can do it neatly with another trick: putting off the remainder. 21/4 = 5,
 1/19 = 
 .         21/4 = 5r1
 05        105/4 = 26r1
-26        126/4 = 31r2
-31        231/4 = 57r3
-57        357/4 = 89r1
+26        126/4 = 31r2 (the 1 is the remainder from the line above)
+31        231/4 = 57r3 (the 2 is the remainder from the line above)
+57        357/4 = 89r1 …
 89        189/4 = 47r1
 47        147/4 = 36r3
 36        336/4 = 84r0
@@ -92,9 +92,32 @@ But we can do it neatly with another trick: putting off the remainder. 21/4 = 5,
 …
 ```
 
-
 ## Fibonacci style
 
 Same answer. What are the odds‽
 
-But _still_ not the part that got me so excited. I figured that out decades ago as well.
+But _still_ not the part that got me excited recently. I figured that out decades ago as well.
+
+The reason I'm excited, is that I was recently thinking about [this conversation from 1999](https://groups.google.com/forum/#!search/rec.puzzles$20dushoff$20fibonacci$20repeating$20decimals/rec.puzzles/-0zwc8AS_K4/5U-XavaZZqgJ) (of course). It talks about how:
+
+1/89 = 1/(T² - T - 1) (where T=ten), has an expansion that follows the rules of [the Fibonacci numbers](https://en.wikipedia.org/wiki/Fibonacci_number) (each number is based on the sum of the two before it). So that's cool, but 1/89 is kind of a long expansion, and expanding things in groups of 1 (instead of 2) decimals feels a bit ticky. By the way, there's also a one-digit way to do 1/19: since 19=2T-1, you can expand it by dividing each digit by two (exactly parallel to dividing pairs of digits by 4).  
+
+So the other day, in the shower, I was wondering about 9899 = H² - H -1, and whether it has any nice factors. Imagine my surprise when I found out that 1/19 = 521/9899! That means that we can write the expansion 1/19 using Fibonacci rules.
+
+```
+1/19 = 
+.         start with the 5 from 521
+05        (+ 21 = 26) (the 21 is from 521)
+26        (+ 5 = 31)
+31        (+ 26 = 57)
+57        (+ 31 + 1 = 89) (the one is pre-emptively carried from the next sum)
+89        (+ 57 + 1 = 147) …
+47        (+ 89 = 136)
+36        (+ 47 + 1 = 84)
+84        (+ 36 + 1 = 121)
+21        (+ 84 = 105)
+05
+…
+```
+
+Yet another fun way to generate the same decimal! I can die happy now.
