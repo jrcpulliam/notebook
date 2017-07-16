@@ -53,6 +53,7 @@ current.md: 19.md
 
 current.html: 19.md
 
+current.post: current.md post.pl
 %.post: %.md post.pl
 	$(PUSH)
 	$(shell_execute)
