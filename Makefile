@@ -20,6 +20,8 @@ include sub.mk
 
 martini.Rout: martini.R
 
+quiz.Rout: quiz.R
+
 gamma_shape.Rout: gamma_shape.R
 
 # Log-plus-one as a scale
