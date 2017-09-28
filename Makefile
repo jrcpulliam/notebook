@@ -18,6 +18,8 @@ include sub.mk
 
 ##################################################################
 
+conditional_kernel.html: conditional_kernel.md
+
 martini.Rout: martini.R
 
 quiz.Rout: quiz.R
