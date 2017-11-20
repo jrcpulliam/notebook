@@ -1,0 +1,199 @@
+> 
+> # Generated using wrapR file nmds_comp.wrapR.r
+> source('nmds_comp.R', echo=TRUE)
+
+> library(vegan)
+
+> library(MASS)
+
+> library(ggplot2)
+
+> theme_set(theme_bw())
+
+> data(dune)
+
+> mdis <- vegdist(dune, method = "horn")
+
+> comp <- function(dis, mdsfun, transfun, label = "") {
++     osc <- scores(mdsfun(dis))[, 1:2]
++     tsc_raw <- scores(mdsfun(transfun(dis)))[, 1:2]
+ .... [TRUNCATED] 
+
+> comp(mdis, isoMDS, sqrt, "MASS")
+initial  value 15.055292 
+iter   5 value 12.029918
+final  value 11.701729 
+converged
+initial  value 18.481215 
+iter   5 value 12.237512
+iter  10 value 11.791150
+iter  10 value 11.782588
+final  value 11.706502 
+converged
+               x            y distance
+1   -0.444537885 -0.334118394     orig
+2   -0.217424959 -0.153342889     orig
+3   -0.047726785 -0.259354254     orig
+4    0.041304978 -0.211080402     orig
+5   -0.342938223 -0.009328173     orig
+6   -0.237231814  0.104905501     orig
+7   -0.277278029 -0.026935755     orig
+8    0.141169406 -0.122658455     orig
+9    0.004694433 -0.213580897     orig
+10  -0.277213837  0.043767797     orig
+11  -0.193230334  0.163006011     orig
+12   0.240764709 -0.317837681     orig
+13   0.126592925 -0.367849739     orig
+14   0.427888972  0.271817687     orig
+15   0.469879210  0.089577621     orig
+16   0.527028574 -0.068529330     orig
+17  -0.408583872  0.501615743     orig
+18  -0.053060986  0.262064447     orig
+19  -0.030409631  0.510588120     orig
+20   0.550313149  0.137273041     orig
+110 -0.447941236 -0.327445329    trans
+21  -0.219764197 -0.152580415    trans
+31  -0.048812224 -0.257104335    trans
+41   0.039301107 -0.205587757    trans
+51  -0.338898206 -0.009273108    trans
+61  -0.232628898  0.105143644    trans
+71  -0.275573590 -0.024808078    trans
+81   0.138876785 -0.122732289    trans
+91   0.004360464 -0.220427657    trans
+101 -0.275365191  0.045473616    trans
+111 -0.188458206  0.164972833    trans
+121  0.243186280 -0.318708864    trans
+131  0.125540130 -0.365683348    trans
+141  0.429464876  0.274600668    trans
+151  0.469697910  0.089500035    trans
+161  0.526151753 -0.071185198    trans
+171 -0.425230479  0.489736501    trans
+181 -0.048764943  0.264113216    trans
+191 -0.031056963  0.509981934    trans
+201  0.555914829  0.132013932    trans
+
+> comp(mdis, metaMDS, sqrt, "vegan")
+Run 0 stress 0.1167489 
+Run 1 stress 0.1207077 
+Run 2 stress 0.1207075 
+Run 3 stress 0.1207075 
+Run 4 stress 0.2160555 
+Run 5 stress 0.1207076 
+Run 6 stress 0.1207075 
+Run 7 stress 0.116749 
+... Procrustes: rmse 0.000172413  max resid 0.0005282887 
+... Similar to previous best
+Run 8 stress 0.1167489 
+... Procrustes: rmse 2.100455e-05  max resid 7.338154e-05 
+... Similar to previous best
+Run 9 stress 0.2363597 
+Run 10 stress 0.1167489 
+... Procrustes: rmse 2.630364e-05  max resid 8.009948e-05 
+... Similar to previous best
+Run 11 stress 0.1167489 
+... New best solution
+... Procrustes: rmse 4.876973e-06  max resid 1.194389e-05 
+... Similar to previous best
+Run 12 stress 0.223388 
+Run 13 stress 0.1207075 
+Run 14 stress 0.116749 
+... Procrustes: rmse 0.0001604796  max resid 0.0004975065 
+... Similar to previous best
+Run 15 stress 0.1167489 
+... New best solution
+... Procrustes: rmse 3.90939e-06  max resid 1.212379e-05 
+... Similar to previous best
+Run 16 stress 0.2018966 
+Run 17 stress 0.2661842 
+Run 18 stress 0.1207075 
+Run 19 stress 0.1167491 
+... Procrustes: rmse 0.0001541766  max resid 0.0004654988 
+... Similar to previous best
+Run 20 stress 0.1207076 
+*** Solution reached
+Run 0 stress 0.1167489 
+Run 1 stress 0.2846997 
+Run 2 stress 0.1207076 
+Run 3 stress 0.1207076 
+Run 4 stress 0.1207075 
+Run 5 stress 0.1167489 
+... New best solution
+... Procrustes: rmse 4.529485e-05  max resid 0.0001611432 
+... Similar to previous best
+Run 6 stress 0.2048697 
+Run 7 stress 0.1975723 
+Run 8 stress 0.205092 
+Run 9 stress 0.1167489 
+... Procrustes: rmse 6.049802e-05  max resid 0.0002175363 
+... Similar to previous best
+Run 10 stress 0.1167489 
+... Procrustes: rmse 6.677146e-05  max resid 0.0002107179 
+... Similar to previous best
+Run 11 stress 0.1967236 
+Run 12 stress 0.1167489 
+... New best solution
+... Procrustes: rmse 2.139447e-05  max resid 7.088344e-05 
+... Similar to previous best
+Run 13 stress 0.2008659 
+Run 14 stress 0.1167489 
+... New best solution
+... Procrustes: rmse 1.706356e-05  max resid 4.862118e-05 
+... Similar to previous best
+Run 15 stress 0.1207075 
+Run 16 stress 0.1167489 
+... Procrustes: rmse 1.947353e-05  max resid 5.568505e-05 
+... Similar to previous best
+Run 17 stress 0.1167489 
+... Procrustes: rmse 4.85251e-05  max resid 0.0001428916 
+... Similar to previous best
+Run 18 stress 0.1898865 
+Run 19 stress 0.1167489 
+... Procrustes: rmse 3.95916e-05  max resid 0.0001052577 
+... Similar to previous best
+Run 20 stress 0.1167489 
+... Procrustes: rmse 2.903581e-05  max resid 8.474208e-05 
+... Similar to previous best
+*** Solution reached
+              x           y distance
+1   -0.38422518 -0.33205841     orig
+2   -0.18700852 -0.15260892     orig
+3   -0.02759461 -0.23696536     orig
+4    0.04934252 -0.18314288     orig
+5   -0.30845693 -0.03036277     orig
+6   -0.22031751  0.08015606     orig
+7   -0.24905738 -0.04123923     orig
+8    0.13417110 -0.10340033     orig
+9    0.01819411 -0.19934993     orig
+10  -0.25381217  0.02301667     orig
+11  -0.18417600  0.13577194     orig
+12   0.23689289 -0.27071975     orig
+13   0.13824121 -0.32395736     orig
+14   0.37484419  0.27875163     orig
+15   0.41838953  0.11330870     orig
+16   0.47754736 -0.02925971     orig
+17  -0.39763732  0.42570579     orig
+18  -0.06319604  0.23338480     orig
+19  -0.06127543  0.45795106     orig
+20   0.48913418  0.15501800     orig
+110 -0.38421698 -0.33206796    trans
+21  -0.18700965 -0.15260616    trans
+31  -0.02758712 -0.23697549    trans
+41   0.04936086 -0.18320379    trans
+51  -0.30846230 -0.03035742    trans
+61  -0.22031648  0.08015244    trans
+71  -0.24906250 -0.04124192    trans
+81   0.13417159 -0.10340109    trans
+91   0.01817464 -0.19929280    trans
+101 -0.25382225  0.02301924    trans
+111 -0.18419258  0.13576898    trans
+121  0.23689129 -0.27071422    trans
+131  0.13824532 -0.32395659    trans
+141  0.37483922  0.27874483    trans
+151  0.41838115  0.11332092    trans
+161  0.47755660 -0.02925633    trans
+171 -0.39760525  0.42571941    trans
+181 -0.06320765  0.23337827    trans
+191 -0.06127417  0.45795017    trans
+201  0.48913625  0.15501949    trans
+> # Wrapped output file nmds_comp.wrapR.rout
+> 

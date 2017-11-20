@@ -25,6 +25,8 @@ gamma_shape.Rout: gamma_shape.R
 # Log-plus-one as a scale
 log1p.Rout: log1p.ssv log1p.R
 
+######################################################################
+
 ## materials and products are both deprecated for git_push; wonder if anything there matters
 ## Materials
 
@@ -41,6 +43,8 @@ products:
 products/%: % products
 	$(CP) $< $@
 
+######################################################################
+
 # Posts
 
 # Posts are made from drafts as a side effect of making *.post
@@ -51,12 +55,14 @@ post: current.post
 current.md: 19.md
 	perl -npe 's/layout:\s+page/layout: post/' $< > $@
 
-current.html: 19.md
+current.html: trapman.md
 
 current.post: current.md post.pl
 %.post: %.md post.pl
 	$(PUSH)
 	$(shell_execute)
+
+######################################################################
 
 # Scripts
 
@@ -71,6 +77,8 @@ cards.Rout: cards.R
 logistic.Rout: logistic.R
 
 19.html: 19.md
+
+nmds_comp.Rout: nmds_comp.R
 
 # Ongoing
 moments.html: moments.md
