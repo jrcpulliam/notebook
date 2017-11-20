@@ -29,6 +29,7 @@ Need a better plan for how to ship things out to a more public site.
 * [moments](moments.html)
 * [Quantile-based distributions](qbd.html)
 * [Pools and memory](pools.html)
+* [Conditional kernels](conditional_kernel.html)
 
 # Planned (stuff I'd like to be working on)
 

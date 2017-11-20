@@ -18,7 +18,12 @@ include sub.mk
 
 ##################################################################
 
+# http://localhost:4111/notebook/conditional_kernel.html
+conditional_kernel.html: conditional_kernel.md
+
 martini.Rout: martini.R
+
+quiz.Rout: quiz.R
 
 gamma_shape.Rout: gamma_shape.R
 
