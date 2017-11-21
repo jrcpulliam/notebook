@@ -33,5 +33,12 @@ comp <- function(dis, mdsfun, transfun, label=""){
 	return(sc)
 }
 
-comp(mdis, isoMDS, sqrt, "MASS")
-comp(mdis, metaMDS, sqrt, "vegan")
+comp(mdis, isoMDS, sqrt, "MASS/iso")
+comp(mdis, metaMDS, sqrt, "vegan/mono")
+
+## Wrapper so we can try vegan/iso
+## This gives an error with engine = isoMDS, but not with monoMDS, which is weird and I'm dropping it.
+metaISO <- function (dis){
+	return(metaMDS(dis, engine="isoMDS"))
+}
+# comp(mdis, metaISO, sqrt, "vegan/iso")
