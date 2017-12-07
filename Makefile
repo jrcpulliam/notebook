@@ -30,6 +30,9 @@ gamma_shape.Rout: gamma_shape.R
 # Log-plus-one as a scale
 log1p.Rout: log1p.ssv log1p.R
 
+walt.out: walt.in walt.pl
+	$(PUSH)
+
 ######################################################################
 
 ## materials and products are both deprecated for git_push; wonder if anything there matters
