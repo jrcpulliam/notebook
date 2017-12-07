@@ -30,6 +30,7 @@ gamma_shape.Rout: gamma_shape.R
 # Log-plus-one as a scale
 log1p.Rout: log1p.ssv log1p.R
 
+Sources += walt.in
 walt.out: walt.in walt.pl
 	$(PUSH)
 
