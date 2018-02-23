@@ -133,6 +133,13 @@ fractions.Rout: fractions.R
 
 ##################################################################
 
+## MRE about R craziness
+
+## Can't reproduce which.max craziness from 3SS!
+which.Rout: which.R
+
+##################################################################
+
 # Blogging
 ## CP raw html suppresses mathjax (somehow)
 ## CP rendered html doubles mathjax (fix by hand?)
@@ -144,6 +151,8 @@ pythagoras.cp.html: cp.pl
 
 %.cp.html: _site/%.html cp.pl
 	$(PUSH)
+
+######################################################################
 
 # Images
 
