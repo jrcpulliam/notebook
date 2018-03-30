@@ -54,7 +54,7 @@ We can ask, is there a simple way to generalize this estimate if we think that t
 
 The basis of the rarity estimate is that the probability that two samples chosen without replacement from the sample will match is an unbiased estimate of the probability that two samples chosen from the hypothetical infinite pool will match. If we want to consider the pool as finite, we need to define rarity in terms of the probability that two samples chosen from the larger pool _with replacement_ will match. This is because of the reason.
 
-This probability can be estimated from the sample by imagining that we first pick  a focus of type $$i$$, then pick from the infinite pool by first asking whether the pick is the same individual as the focus, and – if not – picking at random from the other individuals in the sample. This gives a conditional probability estimate of:
+This probability can be estimated from the sample by imagining that we first pick  a focus of type $$i$$, then pick from the large pool by first asking whether the pick is the same _individual_ as the focus, and – if not – picking at random from the other individuals in the sample. This gives a conditional probability estimate of:
 
 $$ \frac{1}{N} + \frac{N-1}{N} \frac{k_i-1}{S-1}.$$
 
