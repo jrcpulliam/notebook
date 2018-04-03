@@ -6,7 +6,9 @@ title: Hill diversity
 Diversity as mean rarity
 =============================
 
-Diversity is widely seen as an important ecosystem metric. Diversity can be measured in different ways, and different measures may be useful for different purposes. Diversity measures span a range, roughly, from richness (which reflects only ) to can consider number of species present, or can be describes as ranging
+Diversity is widely seen as an important ecosystem metric. Diversity can be measured in different ways, and different measures may be useful for different purposes. The simplest diversity metric is species richness: the total number of species in an ecosystem (or in a particular guild). Richness has an important conceptual limitation, and an important practical limitation. The conceptual limitation is that the number of species alone often does not capture important aspects of functional diversity. An ecosystem with ten species of vascular plant may be dominated by a single species, or it may have large number of each species, and a correspondingly larger amount of interspecific interaction going on. The practical limitation is that richness is particularly hard to measure from finite sample.
+
+however: suffers from Diversity measures jcan combine different aspects of functional diversity (how blikely are interacting individuals span a range, roughly, from richness (which reflects only the total number of species) to can consider number of species present, or can be describes as ranging
 
 Hill diversity is a set of diversity measures that have simple relationships to the main established measures of diversity, while putting them on a common scale that can be interpreted as an effective number of species.
 

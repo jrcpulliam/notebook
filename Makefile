@@ -96,6 +96,9 @@ moments.Rout: moments.R
 # http://localhost:4111/notebook/diversity.html
 diversity.html: diversity.md
 
+## Branch text, hopefully for a manuscript
+rarity.html: rarity.md
+
 # Developing
 sir.Rout: sir.R
 tmp.Rout: tmp.R
