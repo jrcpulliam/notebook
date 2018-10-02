@@ -89,6 +89,8 @@ logistic.Rout: logistic.R
 
 nmds_comp.Rout: nmds_comp.R
 
+islr_boot.Rout: islr_boot.R
+
 # Ongoing
 moments.html: moments.md
 moments.Rout: moments.R
