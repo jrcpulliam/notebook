@@ -123,12 +123,14 @@ elves.out: elves.pl
 elves.html: elves.md
 
 ## Batting averages
+Ignore += average.out
 average.out: average.pl
 	$(PUSH)
 average.md:
 average.Rout: average.out average.R
 
 ### Hmm. this all seems a bunch of nonsense. Understand (document?) before trying to hack.
+Ignore += era.out
 era.out: era.pl
 	$(PUSH)
 era.Rout: era.out era.R
