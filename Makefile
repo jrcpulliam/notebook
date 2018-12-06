@@ -1,6 +1,10 @@
 # notebook (gh-pages branch, which is the only one I use)
 # http://localhost:4111/notebook/
 # http://dushoff.github.io/notebook/
+# make serve
+
+# http://localhost:4111/notebook/rarity.html
+# http://dushoff.github.io/notebook/rarity.html
 
 ### Hooks for the editor to set the default target
 current: target
@@ -99,6 +103,7 @@ moments.Rout: moments.R
 diversity.html: diversity.md
 
 ## Branch text, hopefully for a manuscript
+## Why does this
 rarity.html: rarity.md
 
 # Developing
@@ -182,6 +187,9 @@ not:
 ## Using underscore because we don't want to track .lock file
 Sources += _config.yml $(wildcard Gemfile_*)
 Sources += _includes/* _layouts/* css/* _sass/*
+
+Gemfile:
+	/bin/ln -s Gemfile_sb $@
 
 ######################################################################
 
