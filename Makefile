@@ -40,6 +40,19 @@ walt.out: walt.in walt.pl
 
 ######################################################################
 
+## checkplots and millipedes
+
+## Create data
+checkdata.Rout: checkdata.R
+
+## Run tests
+checkstats.Rout: checkdata.Rout checkstats.R
+
+## Do checks
+checkfuns.Rout: checkfuns.R
+
+######################################################################
+
 ## materials and products are both deprecated for git_push; wonder if anything there matters
 ## Materials
 
