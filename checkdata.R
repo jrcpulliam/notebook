@@ -1,12 +1,13 @@
 
-## Data for checking scripts
+## Data to check with checking scripts
 
 library(tidyverse)
 
-points <- 10
-reps <- 2000
+points <- 8
 reps <- 20
+reps <- 2000
 
-norm <- rerun(reps, rnorm(points))
+normList <- rerun(reps, rnorm(points))
+expList <- rerun(reps, rexp(points)-1)
 
-print(norm)
+repList <- lapply(normList, function(v){return(c(v, v, v))})

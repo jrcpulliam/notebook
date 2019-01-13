@@ -1,4 +1,6 @@
-# Started from https://github.com/maw501/ISLR-R-Labs/blob/master/5.%20Resampling%20Methods.R
+# Started from https://github.com/maw501/ISLR-R-Labs/blob/master/
+# … which is not longer there. NOt so clear what this was for. Delete?
+# 2019 Jan 11 (Fri)
 
 library(ISLR)
 library(boot)

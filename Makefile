@@ -49,7 +49,7 @@ checkdata.Rout: checkdata.R
 checkstats.Rout: checkdata.Rout checkstats.R
 
 ## Do checks
-checkfuns.Rout: checkfuns.R
+checkfuns.Rout: checkstats.Rout checkfuns.R
 
 ######################################################################
 
