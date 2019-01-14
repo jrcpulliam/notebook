@@ -1,12 +1,13 @@
 
-multTest <- function(datList, test){
+multT <- function(datList){
 	return(as.data.frame(t(sapply(datList, function(d){
-		t <- test(d)
-		return(c(p=t$p.value, ci=t$conf.int))
+		t <- t.test(d)
+		p <- (1-sign(t$statistic)*(1-t$p.value))/2
+		return(c(p=p, ci=t$conf.int))
 	}))))
 }
 
-normT <- multTest(normList, t.test)
-expT <- multTest(expList, t.test)
-normX <- multTest(repList, t.test)
+normT <- multT(normList)
+expT <- multT(expList)
+normX <- multT(repList)
 
