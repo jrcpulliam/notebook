@@ -15,8 +15,16 @@ current: target
 ## Edit hooks
 # make files
 
-Sources = Makefile .ignore README.md sub.mk LICENSE.md
-include sub.mk
+Sources = Makefile README.md LICENSE.md
+
+ms = makestuff
+Sources += $(ms)
+Makefile: $(ms)/Makefile
+
+$(ms)/%.mk: $(ms)/Makefile ;
+$(ms)/Makefile:
+	git submodule update -i
+
 -include $(ms)/perl.def
 -include $(ms)/git.def
 
