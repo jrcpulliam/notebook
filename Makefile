@@ -25,6 +25,7 @@ $(ms)/%.mk: $(ms)/Makefile ;
 $(ms)/Makefile:
 	git submodule update -i
 
+-include $(ms)/os.mk
 -include $(ms)/perl.def
 -include $(ms)/git.def
 
@@ -126,6 +127,7 @@ moments.Rout: moments.R
 diversity.html: diversity.md
 
 ## Branch text, hopefully for a manuscript
+## Why does this
 Ignore += rarity.html
 rarity.html: rarity.md
 
@@ -219,7 +221,6 @@ Gemfile:
 	/bin/ln -s Gemfile_sb $@
 
 ######################################################################
-
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
