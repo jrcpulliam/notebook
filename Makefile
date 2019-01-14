@@ -126,7 +126,7 @@ moments.Rout: moments.R
 diversity.html: diversity.md
 
 ## Branch text, hopefully for a manuscript
-## Why does this
+Ignore += rarity.html
 rarity.html: rarity.md
 
 # Developing
@@ -212,6 +212,8 @@ not:
 ## Using underscore because we don't want to track .lock file
 Sources += _config.yml $(wildcard Gemfile_*)
 Sources += _includes/* _layouts/* css/* _sass/*
+
+Ignore += .sass-cache/ Gemfile Gemfile.lock _site/
 
 Gemfile:
 	/bin/ln -s Gemfile_sb $@
