@@ -51,6 +51,8 @@ checkstats.Rout: checkdata.Rout checkstats.R
 ## Do checks
 checkfuns.Rout: checkstats.Rout checkfuns.R
 
+milli.Rout: checkstats.Rout milli.R
+
 ######################################################################
 
 ## materials and products are both deprecated for git_push; wonder if anything there matters
