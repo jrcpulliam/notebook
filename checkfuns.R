@@ -6,7 +6,7 @@ checkplot <- function(pvec, breaks=seq(0,1,0.05)){
 	pval_df <- data.frame(pvals=pvec)
 	return(ggplot(pval_df, aes(pvals))
 		+ geom_histogram(breaks=breaks)
-		+ geom_hline(yintercept=nrow(pval_df)/length(breaks))
+		+ geom_hline(yintercept=nrow(pval_df)/(length(breaks)-1))
 	)
 }
 
