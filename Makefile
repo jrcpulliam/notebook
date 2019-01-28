@@ -35,6 +35,7 @@ $(ms)/Makefile:
 conditional_kernel.html: conditional_kernel.md
 
 unitary.Rout: unitary.R
+birthday.Rout: unitary.Rout birthday.R
 
 martini.Rout: martini.R
 
