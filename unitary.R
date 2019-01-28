@@ -11,7 +11,8 @@ sums <- function(target, numVals, minDen=1){
 	minDen <- pmax(minDen 
 		, 1+floor(den(target)/num(target))
 	)
-	maxDen <- floor(2*den(target)/num(target))
+	maxDen <- floor(numVals*den(target)/num(target))
+	## print(c(target, numVals, minDen, maxDen))
 	if (minDen>maxDen) return(NULL)
 	l <- list()
 	lc <- 0
@@ -28,9 +29,12 @@ sums <- function(target, numVals, minDen=1){
 
 sub <- function(x, y){
 	share <- gcd(den(x), den(y))
+	n <- (den(y)*num(x) - den(x)*num(y))/share
+	d <- den(y)*den(x)/share
+	s <- gcd(n, d)
 	return(c(
-		num = (den(y)*num(x) - den(x)*num(y))/share
-		, den = den(y)*den(x)/share
+		num = n/s
+		, den = d/s
 	))
 }
 
@@ -39,6 +43,8 @@ gcd <- function(x, y){
 	return(gcd(y%%x, x))
 }
 
+## length(sums(c(num=3, den=14), 3))
+## length(sums(c(num=3, den=14), 4))
 length(sums(c(num=1, den=1), 1))
 length(sums(c(num=1, den=1), 2))
 length(sums(c(num=1, den=1), 3))
