@@ -1,7 +1,7 @@
 den <- function(f){ return (f[["den"]])}
 num <- function(f){ return (f[["num"]])}
 
-sums <- function(target, numVals, minDen=1){
+sums <- function(target, numVals, minDen=1, first=FALSE){
 	## print(c(target, numVals, minDen))
 	if (numVals==1){
 		if ((den(target) < minDen) || (num(target)>1))
@@ -18,10 +18,11 @@ sums <- function(target, numVals, minDen=1){
 	lc <- 0
 	for (d in minDen:maxDen){
 		new <- sub(target, c(num=1, den=d))
-		for (v in sums(new, numVals-1, minDen=d+1)){
+		for (v in sums(new, numVals-1, minDen=d+1, first)){
 			lc <- lc+1
 			l[[lc]] <- c(d, v)
 		}
+		if(length(l) > 0 && first) return(l)
 	}
 	if (length(l) == 0) return(NULL)
 	return(l)
@@ -43,11 +44,7 @@ gcd <- function(x, y){
 	return(gcd(y%%x, x))
 }
 
-## length(sums(c(num=3, den=14), 3))
+print(sums(c(num=3, den=14), 3))
+print(sums(c(num=3, den=14), 3, first=TRUE))
 ## length(sums(c(num=3, den=14), 4))
-length(sums(c(num=1, den=1), 1))
-length(sums(c(num=1, den=1), 2))
-length(sums(c(num=1, den=1), 3))
-length(sums(c(num=1, den=1), 4))
-length(sums(c(num=1, den=1), 5))
-length(sums(c(num=1, den=1), 6))
+## length(sums(c(num=1, den=1), 1))
