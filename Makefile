@@ -34,6 +34,8 @@ $(ms)/Makefile:
 # http://localhost:4111/notebook/conditional_kernel.html
 conditional_kernel.html: conditional_kernel.md
 
+vitaminA.Rout: vitaminA.R
+
 martini.Rout: martini.R
 
 quiz.Rout: quiz.R
