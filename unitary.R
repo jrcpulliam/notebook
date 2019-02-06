@@ -46,5 +46,5 @@ gcd <- function(x, y){
 
 print(sums(c(num=3, den=14), 3))
 print(sums(c(num=3, den=14), 3, first=TRUE))
-## length(sums(c(num=3, den=14), 4))
+length(sums(c(num=3, den=14), 4))
 ## length(sums(c(num=1, den=1), 1))
