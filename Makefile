@@ -41,6 +41,8 @@ unitary.Rout: unitary.R
 birthday.Rout: unitary.Rout birthday.R
 fourunits.Rout: unitary.Rout fourunits.R
 
+## Explore RE trick and other multivariate stuff at data lunch
+multivariate.Rout: multivariate.R
 
 martini.Rout: martini.R
 
