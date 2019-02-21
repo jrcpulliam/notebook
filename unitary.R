@@ -28,6 +28,7 @@ sums <- function(target, numVals, minDen=1, first=FALSE){
 	return(l)
 }
 
+## Subtract fractions
 sub <- function(x, y){
 	share <- gcd(den(x), den(y))
 	n <- (den(y)*num(x) - den(x)*num(y))/share
