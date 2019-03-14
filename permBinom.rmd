@@ -48,7 +48,7 @@ our observation (7 "successes") would be consistent with $p$ between the seventh
 
 ## A permutation binomial test 
 
-If we do this thousands of times, and take the 0.025 quantile of the lower limit and the 0.975 quantile of the upper limit, we should have a very good approximation of the standard binomial test.
+If we do this thousands of times, and take the 0.025 quantile of the lower limit and the 0.975 quantile of the upper limit, we get a very good approximation of the standard binomial test.
 
 ```{r}
 sprob <- function(x, n){
@@ -72,3 +72,5 @@ btest(x, n)
 ```
 
 This is suspiciously close to the answer above. So now we have an interesting conceptualization, and also a reasonably fast, accurate method of estimating binomial confidence intervals which could be used in the event that all of the copies of the binomial formula were destroyed in some sort of freak accident.
+
+The question is: can we apply this idea to do something practical?

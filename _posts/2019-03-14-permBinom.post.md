@@ -96,8 +96,8 @@ A permutation binomial test
 ---------------------------
 
 If we do this thousands of times, and take the 0.025 quantile of the
-lower limit and the 0.975 quantile of the upper limit, we should have a
-very good approximation of the standard binomial test.
+lower limit and the 0.975 quantile of the upper limit, we get a very
+good approximation of the standard binomial test.
 
     sprob <- function(x, n){
         vals <- c(0, sort(runif(n)), 1)
@@ -123,3 +123,5 @@ interesting conceptualization, and also a reasonably fast, accurate
 method of estimating binomial confidence intervals which could be used
 in the event that all of the copies of the binomial formula were
 destroyed in some sort of freak accident.
+
+The question is: can we apply this idea to do something practical?
