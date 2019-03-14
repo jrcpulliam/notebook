@@ -40,7 +40,8 @@ alice.Rout: alice.R
 
 ## Wiki import dev
 
-permBinom.rmd: pernBinom.wikitext wtrmd.pl
+Sources += $(wildcard *.rmd)
+%.rmd: %.wikitext wtrmd.pl
 	$(PUSH)
 
 ######################################################################

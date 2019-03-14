@@ -8,8 +8,7 @@ while(<>){
 		s/===(.*)===/###$1/;
 		s/==(.*)==/##$1/;
 		s|.*</source-file>.*|```|;
-		s/.*source-file.*filename="([^"]*)".*/```{r $1,cache=TRUE}/;
-		s/\.R,cache/,cache/;
+		s/.*source-file.*filename="([^"]*)\.R".*/```{r}/;
 		s/\$\$/\$/g;
 		say;
 	}
