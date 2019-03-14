@@ -105,6 +105,7 @@ products/%: % products
 Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
+Ignore += current.post
 post: current.post
 current.md: sucker.md
 	perl -npe 's/layout:\s+page/layout: post/' $< > $@
