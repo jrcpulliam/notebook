@@ -31,6 +31,12 @@ $(ms)/Makefile:
 
 ##################################################################
 
+sucker.html: sucker.md
+sucker.html: sucker.md
+alice.Rout: alice.R
+
+##################################################################
+
 # http://localhost:4111/notebook/conditional_kernel.html
 conditional_kernel.html: conditional_kernel.md
 
