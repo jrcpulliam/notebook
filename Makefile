@@ -4,8 +4,10 @@
 # make serve
 
 ## Suppress pandoc (don't want to pandoc here, we want to make serve instead)
-## Links from posts are broken. Link to regular pages for now??
-## Maybe change the local /notebook? Inelegant!
+
+## URL problem:
+## Use relative pathnames for plain pages; /notebook/ for posts.
+## Move on!
 
 ### Hooks for the editor to set the default target
 current: target
@@ -114,15 +116,15 @@ products/%: % products
 Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
-Ignore += current.post
 post: current.post
-current.md: 
-	perl -npe 's/layout:\s+page/layout: post/' $< > $@
-
-current.post: current.md post.pl
-%.post: %.md post.pl
+Ignore += current.post
+sucker.post: sucker.post.md post.pl
+%.post: %.post.md post.pl
 	$(PUSH)
 	$(shell_execute)
+%.post.md: %.md
+	perl -npe 's/layout:\s+page/layout: post/' $< > $@
+
 
 ######################################################################
 
