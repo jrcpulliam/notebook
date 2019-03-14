@@ -6,6 +6,8 @@
 # http://localhost:4111/notebook/rarity.html
 # http://dushoff.github.io/notebook/rarity.html
 
+## Suppress pandoc (don't want to pandoc here, we want to make serve instead)
+
 ### Hooks for the editor to set the default target
 current: target
 -include target.mk
@@ -109,8 +111,6 @@ Ignore += current.post
 post: current.post
 current.md: sucker.md
 	perl -npe 's/layout:\s+page/layout: post/' $< > $@
-
-current.html: trapman.md
 
 current.post: current.md post.pl
 %.post: %.md post.pl
@@ -244,5 +244,5 @@ Gemfile:
 -include $(ms)/visual.mk
 
 -include $(ms)/wrapR.mk
--include $(ms)/pandoc.mk
+## -include $(ms)/pandoc.mk
 # -include $(ms)/oldlatex.mk
