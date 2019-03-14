@@ -61,7 +61,7 @@ Permutation binomials
 ---------------------
 
 If we didn’t know the binomial formula, we could do the same thing by
-simulating (it’s not clear what the point is, since we ‘’do’’ know the
+simulating (it’s not clear what the point is, since we *do* know the
 binomial formula, but I’ll get back to that). For each hypothetical
 value of *p*, we could simulate the process of randomly deciding who
 showed a positive response 10,000 or so times, and get an accurate
@@ -74,7 +74,7 @@ standard way to think about simulating a binomial outcome is to compare
 the success probability *p* to a uniform random number *U*<sub>*i*</sub>
 (from 0-1) for each individual *i*: if your random number
 *U*<sub>*i*</sub> &lt; *p*, then you have a positive vaccine response,
-otherwise not. But we can choose the *U*<sub>*i*</sub> values ‘’first’’,
+otherwise not. But we can choose the *U*<sub>*i*</sub> values *first*,
 and then decide what *p* is. This will have the same result – and we can
 essentially test every value of *p* at once, since once we’ve chosen the
 values of *U*<sub>*i*</sub>, we know which values of *p* are consistent
