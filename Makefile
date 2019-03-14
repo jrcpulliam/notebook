@@ -30,9 +30,23 @@ $(ms)/Makefile:
 
 -include $(ms)/os.mk
 -include $(ms)/perl.def
--include $(ms)/git.def
 
-##################################################################
+######################################################################
+
+# Posts
+
+# Posts are made from drafts as a side effect of making *.post
+Sources += $(wildcard _posts/*.*)
+Sources += post.pl
+
+Ignore += *.post
+## permBinom.post: 
+%.post: %.post.md post.pl
+	$(PUSH)
+	$(shell_execute)
+%.post.md: %.md
+	perl -npe 's/layout:\s+page/layout: post/' $< > $@
+
 
 ## sucker bet
 
@@ -44,6 +58,20 @@ alice.Rout: alice.R
 
 %.rmd: %.wikitext wtrmd.pl
 	$(PUSH)
+
+######################################################################
+
+## rmd ⇒ md pipeline
+
+## permBinom.md: permBinom.rmd
+%.rmd.md: %.rmd
+	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
+
+%.yaml.md: %.rmd
+	perl -nE "last if /^$$/; print; END{say}" $< > $@
+
+%.md: %.yaml.md %.rmd.md
+	$(cat)
 
 ######################################################################
 
@@ -98,11 +126,11 @@ allmd = $(wildcard *.md)
 rmd = $(wildcard *.rmd)
 rmdmd = $(rmd:rmd=md)
 
-notmd += $(wildcard *.post.md) $(rmdmd)
-
+notmd += $(wildcard *.post.md *.yaml.md *.rmd.md) $(rmdmd)
 sourcemd = $(filter-out $(notmd), $(allmd))
 
 Sources += $(rmd) $(sourcemd) updates.html
+Ignore += $(notmd)
 
 # Sources += $(wildcard materials/*.*)
 Sources += $(wildcard _drafts/*.md)
@@ -114,23 +142,6 @@ products:
 
 products/%: % products
 	$(CP) $< $@
-
-######################################################################
-
-# Posts
-
-# Posts are made from drafts as a side effect of making *.post
-Sources += $(wildcard _posts/*.*)
-Sources += post.pl
-
-Ignore += *.post
-sucker.post: sucker.post.md post.pl
-%.post: %.post.md post.pl
-	$(PUSH)
-	$(shell_execute)
-%.post.md: %.md
-	perl -npe 's/layout:\s+page/layout: post/' $< > $@
-
 
 ######################################################################
 

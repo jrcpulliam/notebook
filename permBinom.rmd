@@ -1,3 +1,8 @@
+---
+layout: page
+title: Permutation binomial
+---
+
 ## Binomial tests 
 
 The standard frequentist binomial test can be conceptualized by a permutation test. This conceptualization can be expanded to more difficult problems (like risk ratios in a 2x2 table).
@@ -63,13 +68,7 @@ btest <- function(x, n, reps=5000, P=0.025){
 
 
 ```{r}
-set.seed(seed)
 btest(x, n)
 ```
 
-So now we have an interesting conceptualization, and also a reasonably fast, accurate method of estimating binomial confidence intervals which could be used in the event that all of the copies of the binomial formula were destroyed in some sort of freak accident.
-
-## A permutation risk-ratio test 
-
-The point of course, is that we can easily use the same sampling approach to make valid tests for other quantities that can be estimated from binomial trials. The key one is the risk ratio.
-
+This is suspiciously close to the answer above. So now we have an interesting conceptualization, and also a reasonably fast, accurate method of estimating binomial confidence intervals which could be used in the event that all of the copies of the binomial formula were destroyed in some sort of freak accident.
