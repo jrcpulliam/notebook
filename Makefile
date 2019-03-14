@@ -106,7 +106,7 @@ Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
 post: current.post
-current.md: 19.md
+current.md: sucker.md
 	perl -npe 's/layout:\s+page/layout: post/' $< > $@
 
 current.html: trapman.md
