@@ -40,9 +40,16 @@ alice.Rout: alice.R
 # http://localhost:4111/notebook/conditional_kernel.html
 conditional_kernel.html: conditional_kernel.md
 
+combinations.Rout: combinations.R
+
+vitaminA.Rout: vitaminA.R
+
 unitary.Rout: unitary.R
 birthday.Rout: unitary.Rout birthday.R
 fourunits.Rout: unitary.Rout fourunits.R
+
+## Explore RE trick and other multivariate stuff at data lunch
+multivariate.Rout: multivariate.R
 
 martini.Rout: martini.R
 
