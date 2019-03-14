@@ -42,7 +42,6 @@ alice.Rout: alice.R
 
 ## Wiki import dev
 
-Sources += $(wildcard *.rmd)
 %.rmd: %.wikitext wtrmd.pl
 	$(PUSH)
 
@@ -95,7 +94,15 @@ milli.Rout: checkstats.Rout milli.R
 ## materials and products are both deprecated for git_push; wonder if anything there matters
 ## Materials
 
-Sources += $(wildcard *.md) updates.html
+allmd = $(wildcard *.md)
+rmd = $(wildcard *.rmd)
+rmdmd = $(rmd:rmd=md)
+
+notmd += $(wildcard *.post.md) $(rmdmd)
+
+sourcemd = $(filter-out $(notmd), $(allmd))
+
+Sources += $(rmd) $(sourcemd) updates.html
 
 # Sources += $(wildcard materials/*.*)
 Sources += $(wildcard _drafts/*.md)
@@ -116,8 +123,7 @@ products/%: % products
 Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
-post: current.post
-Ignore += current.post
+Ignore += *.post
 sucker.post: sucker.post.md post.pl
 %.post: %.post.md post.pl
 	$(PUSH)
