@@ -38,6 +38,13 @@ alice.Rout: alice.R
 
 ##################################################################
 
+## Wiki import dev
+
+permBinom.rmd: pernBinom.wikitext wtrmd.pl
+	$(PUSH)
+
+######################################################################
+
 # http://localhost:4111/notebook/conditional_kernel.html
 conditional_kernel.html: conditional_kernel.md
 
