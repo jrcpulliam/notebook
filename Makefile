@@ -8,6 +8,7 @@
 
 ## Suppress pandoc (don't want to pandoc here, we want to make serve instead)
 
+
 ### Hooks for the editor to set the default target
 current: target
 -include target.mk
