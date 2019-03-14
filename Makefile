@@ -5,6 +5,7 @@
 
 ## Suppress pandoc (don't want to pandoc here, we want to make serve instead)
 ## Links from posts are broken. Link to regular pages for now??
+## Maybe change the local /notebook? Inelegant!
 
 ### Hooks for the editor to set the default target
 current: target

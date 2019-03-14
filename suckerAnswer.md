@@ -26,63 +26,41 @@ than Alice's advantage; together, they are bigger.
 
 ### Calculation
 
-We call the probability of getting to Alice's point from the starting
-position $$p_A = 1/6$$, and the probability of getting to Bob's point
-$$p_B=5/36$$. The relative odds of these two is 6:5, which is the
-strength of Alice's initial advantage.
+We call the probability of getting to Alice's point from the starting position $$p_A = 1/6$$, and the probability of getting to Bob's point $$p_B=5/36$$. The relative odds of these two is 6:5, which is the strength of Alice's initial advantage.
 
-We have another route to Bob's point, though. Getting there through
-Alice's point from the start is 1/6 as likely as going directly. So the
-total probability of going from start to Bob's point is 7/6 as likely as
-going directly. This changes our starting odds by a factor of 6:7
+We have another route to Bob's point, though. Getting there through Alice's point from the start is 1/6 as likely as going directly. So the total probability of going from start to Bob's point is 7/6 as likely as going directly. This changes our starting odds by a factor of 6:7
 
-Finally, the probability of winning before leaving Bob's point (taking
-into account the probability of staying) is 36/31 times greater than the
-probability of winning directly. This is because there are 5 ways to
-stay on the point, and thus 31 total ways to leave, out of a total of
-36. So we have another factor of 31:36.
+Finally, the probability of winning before leaving Bob's point (taking into account the probability of staying) is 36/31 times greater than the probability of winning directly. This is because there are 5 ways to stay on the point, and thus 31 total ways to leave, out of a total of 36. So we have another factor of 31:36.
 
-Multiplying (6:5)*(6:7)*(31:36) gives the correct odds for Alice
-winning of 31:35.
+Multiplying (6:5)*(6:7)*(31:36) gives the correct odds for Alice winning of 31:35.
 
-This may seem fast and loose. Rather than filling in all the details
-with argument, I'll try a more direct calculation.
+This may seem fast and loose. Rather than filling in all the details with argument, I'll try a more direct calculation.
 
 ## Direct argument
 
-We can write simultaneous equations for the probability of Alice winning
-$$W_s$$ from each of the three possible states of the system, by
-looking at the probability of going to any other state, or winning, or
-losing.
+We can write simultaneous equations for the probability of Alice winning $$W_s$$ from each of the three possible states of the system, by looking at the probability of going to any other state, or winning, or losing.
 
-Call the states 0 (starting state); A (Alice's point); and B. The
-probability of moving from 0 to state $$s$$ is called $$p_s$$ -- these
-are also the probabilities of where you move from other states, except
-that sometimes somebody wins instead.
+Call the states 0 (starting state); A (Alice's point); and B. The probability of moving from 0 to state $$s$$ is called $$p_s$$ -- these are also the probabilities of where you move from other states, except that sometimes somebody wins instead.
 
 Alice's winning probability for the game is:
 
 $$W_0 = p_0 W_0 + p_A W_A + p_B w_B$$.
 
-If Alice's point is rolled when we're already at her point, she just
-wins, so:
+If Alice's point is rolled when we're already at her point, she just wins, so:
 
 $$W_A = p_0 W_0 + p_A + p_B W_B$$
 
-Similarly, if Alice's point is rolled when we're at Bob's point, she
-just loses:
+Similarly, if Alice's point is rolled when we're at Bob's point, she just loses:
 
 $$W_B = p_0 W_0 + p_B W_B$$
 
 We [solve these simultaneous equations](suckerSimul.html) to get:
 
-$$W_0 = \frac{(1-p_B)p_A}{(p_A+p_B)}$$, corresponding to odds for
-Alice of
+$$W_0 = \frac{(1-p_B)p_A}{(p_A+p_B)}$$, corresponding to odds for Alice of
 
 $$\frac{p_A}{1+p_A} : \frac{p_B}{1-p_B}$$.
 
-Substituting $$p_A = 1/6$$ and $$p_B = 5/36$$ yields the same odds we
-got in the previous section.
+Substituting $$p_A = 1/6$$ and $$p_B = 5/36$$ yields the same odds we got in the previous section.
 
 ## Backward argument
 
@@ -94,13 +72,11 @@ Well, there must be some 7-7 combinations that don't end the game. Every game en
 
 If the odds of Alice winning are $$A:B$$, the total number of 7-7 and 8-7 pairs satisfy $$A + 1/6 A + 1/6 B: B$$. This must equal $$6:5$$, so we cross multiply (and also multiply both sides by 6):
 
-$$30 A + 5 A + 5 B = 36 B$$, or $$35A = 31B$$. 
+$$30 A + 5 A + 5 B = 36 B$$, or $$35A = 31B$$.
 
 Thinking backwards gives the computationally simplest way to get the answer!
 
-And there's something else cool here. The way that expectations balance
-out means that, in some real sense, 7-7 is less likely to be achieved
-first *because* it's more likely to be achieved repeatedly.
+And there's something else cool here. The way that expectations balance out means that, in some real sense, 7-7 is less likely to be achieved first *because* it's more likely to be achieved repeatedly.
 
 Please see [my blog post on this subject](http://jd-mathbio.blogspot.tw/2014/07/walt-sent-me-this-puzzle-reworded-from_8.html) to comment.
 
