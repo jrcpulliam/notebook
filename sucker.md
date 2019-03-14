@@ -20,7 +20,7 @@ The true probability of Alice winning is 47.0%.
 
 ## Answers
 
-I've written up [some ways to think about the answer](/suckerAnswer.html), if you're sure you're ready to look. Here's an excerpt that you might want to think about, before clicking:
+I've written up [some ways to think about the answer](suckerAnswer.html), if you're sure you're ready to look. Here's an excerpt that you might want to think about, before clicking:
 
 _If we look at all consecutive pairs, the naive probabilities must
 apply: on average 6 out of every 216 pairs must be 7-7 and 5 out of

@@ -107,7 +107,7 @@ Sources += post.pl
 
 Ignore += current.post
 post: current.post
-current.md: sucker.md
+current.md: 
 	perl -npe 's/layout:\s+page/layout: post/' $< > $@
 
 current.post: current.md post.pl
