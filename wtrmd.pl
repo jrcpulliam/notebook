@@ -10,6 +10,7 @@ while(<>){
 		s|.*</source-file>.*|```|;
 		s/.*source-file.*filename="([^"]*)\.R".*/```{r}/;
 		s/\$\$/\$/g;
+		s|<project-file[^/]*filename="([^"]*)"[^/]*/>|[$1]($1)|g;
 		say;
 	}
 }

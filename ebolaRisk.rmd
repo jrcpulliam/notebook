@@ -1,0 +1,187 @@
+
+## The question 
+
+Some data on ebola risk:
+
+[risk.Routput](risk.Routput)
+
+We would like to calculate a risk ratio and a CI.
+
+Files:
+
+```{r}
+
+died <- c(837, 2)
+total <- c(1303, 11)
+
+# died <- c(500, 320)
+# total <- c(3000, 3000)
+
+survived <- total-died
+
+treat <- c("untreated", "treated")
+```
+
+
+```{r}
+riskm <- matrix(c(survived, died), nrow=2)
+rownames(riskm) <- treat
+colnames(riskm) <- c("survived", "died")
+
+risk <- as.table(riskm)
+print(risk)
+```
+
+```{r}
+survm <- matrix(c(died, survived), nrow=2)
+rownames(survm) <- c("treated", "untreated")
+colnames(survm) <- c("survived", "died")
+
+surv <- as.table(survm)
+print(surv)
+```
+
+## Summary 
+
+I have calculated the risk ratio below in four ways that seem reasonable. The CIs from the binomial test account only for variance in the treated pool, but that seems OK, since it is at least an order of magnitude higher than that in in the untreated pool. I think of that as the best guess ''for this problem'' – but it can't be used for problems where group sizes are closer. 
+
+Here are the results
+
+* Binomial: (0.035, 0.806)
+* epitools: (0.081, 0.992)
+* epitools boot: (0.000, 0.692)
+* epicalc: (0.12, 0.67)
+* glm: (0.051, 0.721)
+
+## First try 
+
+CIs for risk ratios are hard in general, and this is a special case, so I'm going to try a short-cut. We have a sample of ~1000 for the untreated, and ~10 for the treated case. So as a first cut, we could just assume that we know the baseline risk, and calculate a confidence interval for the risk in treated people. 
+
+[binom.Routput](binom.Routput)
+
+Files:
+
+
+```{r}
+baseline <- died[[1]]/total[[1]]
+b <- binom.test(died[[2]], total[[2]], p=baseline)
+print(c(rr=b$estimate/baseline))
+print(c(rrci = b$conf.int/baseline))
+```
+
+''If'' we accept the binom.test as the gold standard in the limit of large denominator size (and the only knock on it is that it's too conservative), then we are looking for well-motivated, reasonably calculated CIs that are a bit to somewhat wider than these. We have yet to find these, after many tries.
+
+## epitools 
+
+Using what seems like the right code produces CIs that go way too close to 1 -- in particular, it's ''less'' conservative on that side than the correct-but-conservative binomial, even in the large-untreated-pop limit. What seems to be going on is that the Wald intervals are too wide, and the "small" correction is ineffectual. The bootstrap test seems very naïve, and it's disappointing that it can't rule out a RR of 0. It is also insufficiently conservative on the other side.
+
+[epitools.Rout](epitools.Rout)
+
+
+```{r}
+library(epitools)
+
+epitab(risk, method="riskratio", riskratio="wald")
+
+epitab(risk, method="riskratio", riskratio="small")
+
+epitab(risk, method="riskratio", riskratio="boot")
+
+```
+
+## epicalc 
+
+epicalc gives CIs that are much narrower than binom.test, which also seems wrong. It could be aggressively correcting for conservatism, I guess. 
+
+[epicalc.Rout](epicalc.Rout)
+
+
+```{r}
+require(epicalc)
+csi(died[[2]], survived[[2]], died[[1]], survived[[1]])
+```
+
+## glm 
+
+What if we try to use glm? We use a log link to get a (logged) risk ratio. This gives an answer pretty close to binom.test but also narrower, which still seems bad (in the sense that I don't want to use it; it seems entirely understandable that the glm intervals would be off).
+
+[glm.Rout](glm.Rout)
+
+
+```{r}
+library(MASS)
+m <- glm(survm~treat, family=binomial(link=log))
+print(summary(m))
+c <- confint(m)
+print(c)
+print(exp(-c[2, ]))
+```
+
+## New stuff 
+
+''in development''
+
+
+```{r}
+sprob <- function(ns, nf){
+	vals <- c(0, sort(runif(ns+nf)), 1)
+	return(c(low=vals[ns+1], high=vals[ns+2]))
+}
+
+btest <- function(ns, nf, reps=5000, P=0.025){
+	offset <- round(reps*P)
+	r <- replicate(reps, sprob(ns=ns, nf=nf))
+	return(c(
+		low=sort(r["low", ])[offset],
+		high=sort(r["high", ])[1+reps-offset]
+	))
+}
+
+rr <- function(ts, tf, us, uf){
+	t <- sprob(ts, tf)
+	u <- sprob(us, uf)
+	return(c(
+		low = t[["low"]]/u[["high"]],
+		high = t[["high"]]/u[["low"]]
+	))
+}
+
+rrtest <- function(ts, tf, us, uf, reps=5000, P=0.025){
+	offset <- round(reps*P)
+	r <- replicate(reps, rr(ts, tf, us, uf))
+	return(c(
+		low=sort(r["low", ])[offset],
+		high=sort(r["high", ])[1+reps-offset]
+	))
+}
+
+rrtest(2, 9, 837, 466)
+```
+
+[sample.Rout](sample.Rout)
+
+[sample.Rout.make.log](sample.Rout.make.log)
+
+[[Category:Ebola math]]
+
+## Binomial permutation probability 
+
+[[Permutation binomials]]
+
+```{r}
+sprob <- function(ns, nf){
+	vals <- c(0, sort(runif(ns+nf)), 1)
+	return(runif(n=1, min=vals[ns+1], max=vals[ns+2]))
+}
+
+permProb <- function(ns, nf, reps){
+	return(replicate(reps, sprob(ns=ns, nf=nf)))
+}
+
+hist(permProb(ns=20, nf=81, reps=1000))
+```
+
+[bprob.Rout.png](bprob.Rout.png)
+
+[bprob.Rout.png.make.log](bprob.Rout.png.make.log)
+
