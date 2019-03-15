@@ -167,13 +167,14 @@ islr_boot.Rout: islr_boot.R
 moments.html: moments.md
 moments.Rout: moments.R
 
-# http://localhost:4111/notebook/diversity.html
-diversity.html: diversity.md
+# http://localhost:4111/notebook/diversity.html: diversity.md
 
 ## Branch text, hopefully for a manuscript
-## Why does this
 Ignore += rarity.html
 rarity.html: rarity.md
+
+## Playing with Simpson
+simpson.Rout: simpson.R
 
 # Developing
 sir.Rout: sir.R
