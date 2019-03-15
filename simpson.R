@@ -58,5 +58,9 @@ print(mean(1/r2))
 print(hist(1-1/r1, main="Even", xlab="index"))
 print(hist(1-1/r2, main="Uneven", xlab="index"))
 
+plot(table(1-1/r1), main="Even", xlab="index")
+print(table(1-1/r1), main="Even", xlab="index")
+print(MASS::fractions(sort(unique(1-1/r1))))
+
 print(hist(r1, main="Even", xlab="diversity"))
 print(hist(r2, main="Uneven", xlab="diversity"))

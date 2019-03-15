@@ -175,6 +175,7 @@ rarity.html: rarity.md
 
 ## Playing with Simpson
 simpson.Rout: simpson.R
+checkplot.Rout: checkplot.R
 
 # Developing
 sir.Rout: sir.R
