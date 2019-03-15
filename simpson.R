@@ -30,15 +30,27 @@ appRange <- function(com, size, reps){
 	return(app)
 }
 
+ci <- function(l, P=0.025){
+	reps <- length(l)
+	offset <- floor(P*reps)
+	return(c(
+		low=sort(l)[offset],
+		high=sort(l)[1+reps-offset]
+	))
+}
+
 com1 <- c(1, 1, 1, 1)
 com2 <- c(1, rep(1/(mini-1), mini))
 
 r1 <- appRange(com1, 40, 1000)
-
 r2 <- appRange(com2, 40, 1000)
+
 
 print(mean(r1))
 print(mean(r2))
+
+print(ci(r1))
+print(ci(r2))
 
 print(mean(1/r1))
 print(mean(1/r2))
