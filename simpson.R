@@ -10,16 +10,29 @@ sExact <- function (com){
 }
 
 sApp <- function(samp){
-	
+	n <- sum(samp)
+	return(1/(
+		sum((samp/n)*((samp-1)/(n-1)))
+	))
 }
 
-cSamp <- function(com, n){
-	sp <- sample(1:length(com), size=n, prob=com, replace=TRUE)
+cSamp <- function(com, size){
+	sp <- sample(1:length(com), size=size, prob=com, replace=TRUE)
 	tab <- table(sp)
 	return(as.vector(tab))
+}
+
+appRange <- function(com, size, reps){
+	app <- numeric(reps)
+	for (i in 1:reps){
+		app[[i]] <- sApp(cSamp(com, size))
+	}
+	return(app)
 }
 
 com1 <- c(1, 1, 1, 1)
 com2 <- c(1, rep(1/(mini-1), mini))
 
-print(cSamp(com2, 20))
+print(mean(appRange(com1, 10, 1000)))
+print(mean(appRange(com2, 10, 1000)))
+
