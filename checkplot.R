@@ -10,7 +10,6 @@ dtest <- function(x, n, p){
 	p2 <- binom.test(x, n, p = p
 		, alternative = c("greater")
 	)$p.value
-	print(c(p1=p1, p2=p2))
 	return((p1 + 1 - p2)/2)
 }
 
