@@ -3,8 +3,11 @@
 # http://dushoff.github.io/notebook/
 # make serve
 
-# http://localhost:4111/notebook/rarity.html
-# http://dushoff.github.io/notebook/rarity.html
+## Suppress pandoc (don't want to pandoc here, we want to make serve instead)
+
+## URL problem:
+## Use relative pathnames for plain pages; /notebook/ for posts.
+## Move on!
 
 ### Hooks for the editor to set the default target
 current: target
@@ -27,9 +30,54 @@ $(ms)/Makefile:
 
 -include $(ms)/os.mk
 -include $(ms)/perl.def
--include $(ms)/git.def
+
+######################################################################
+
+# Posts
+
+# Posts are made from drafts as a side effect of making *.post
+Sources += $(wildcard _posts/*.*)
+Sources += post.pl
+
+Ignore += *.post
+## permBinom.post: 
+%.post: %.post.md post.pl
+	$(PUSH)
+	$(shell_execute)
+%.post.md: %.md
+	perl -npe 's/layout:\s+page/layout: post/' $< > $@
+
+
+## sucker bet
+
+alice.Rout: alice.R
 
 ##################################################################
+
+## Wiki import dev
+
+%.rmd: %.wikitext wtrmd.pl
+	$(PUSH)
+
+######################################################################
+
+## rmd ⇒ md pipeline
+
+## ebolaRisk.rmd: ebolaRisk.wikitext wtrmd.pl
+## nomogram.md: nomogram.rmd
+## permBinom.md: permBinom.rmd
+## permTables.md: permTables.wikitext; pandoc -f mediawiki -o $@ $<
+
+%.rmd.md: %.rmd
+	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
+
+%.yaml.md: %.rmd
+	perl -nE "last if /^$$/; print; END{say}" $< > $@
+
+%.md: %.yaml.md %.rmd.md
+	$(cat)
+
+######################################################################
 
 # http://localhost:4111/notebook/conditional_kernel.html
 conditional_kernel.html: conditional_kernel.md
@@ -78,7 +126,15 @@ milli.Rout: checkstats.Rout milli.R
 ## materials and products are both deprecated for git_push; wonder if anything there matters
 ## Materials
 
-Sources += $(wildcard *.md) updates.html
+allmd = $(wildcard *.md)
+rmd = $(wildcard *.rmd)
+rmdmd = $(rmd:rmd=md)
+
+notmd += $(wildcard *.post.md *.yaml.md *.rmd.md) $(rmdmd)
+sourcemd = $(filter-out $(notmd), $(allmd))
+
+Sources += $(rmd) $(sourcemd) updates.html
+Ignore += $(notmd)
 
 # Sources += $(wildcard materials/*.*)
 Sources += $(wildcard _drafts/*.md)
@@ -90,25 +146,6 @@ products:
 
 products/%: % products
 	$(CP) $< $@
-
-######################################################################
-
-# Posts
-
-# Posts are made from drafts as a side effect of making *.post
-Sources += $(wildcard _posts/*.*)
-Sources += post.pl
-
-post: current.post
-current.md: 19.md
-	perl -npe 's/layout:\s+page/layout: post/' $< > $@
-
-current.html: trapman.md
-
-current.post: current.md post.pl
-%.post: %.md post.pl
-	$(PUSH)
-	$(shell_execute)
 
 ######################################################################
 
@@ -134,13 +171,15 @@ islr_boot.Rout: islr_boot.R
 moments.html: moments.md
 moments.Rout: moments.R
 
-# http://localhost:4111/notebook/diversity.html
-diversity.html: diversity.md
+# http://localhost:4111/notebook/diversity.html: diversity.md
 
 ## Branch text, hopefully for a manuscript
-## Why does this
 Ignore += rarity.html
 rarity.html: rarity.md
+
+## Playing with Simpson
+simpson.Rout: simpson.R
+checkplot.Rout: checkplot.R
 
 # Developing
 sir.Rout: sir.R
@@ -237,5 +276,5 @@ Gemfile:
 -include $(ms)/visual.mk
 
 -include $(ms)/wrapR.mk
--include $(ms)/pandoc.mk
+## -include $(ms)/pandoc.mk
 # -include $(ms)/oldlatex.mk

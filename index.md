@@ -3,11 +3,7 @@ layout: page
 title: Overview
 ---
 
-[Current entry (probably in progress)](current.html)
-
 This is a publicly readable site, but not really intended for the public. It is by and for Jonathan Dushoff, and is intended to get me to write up notes in a nice form. It is modelled loosely on Carl Boettiger's lab notebook.
-
-Need a better plan for how to ship things out to a more public site.
 
 # Updates (newest at top)
 <!-- # [Updates](updates.html) -->
