@@ -33,6 +33,17 @@ $(ms)/Makefile:
 
 ######################################################################
 
+## Knitting
+
+mre.md: mre.rmd
+	Rscript -e "knitr::knit('$<')"
+
+mre.rmd.md: mre.md
+	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
+
+
+######################################################################
+
 # Posts
 
 # Posts are made from drafts as a side effect of making *.post
