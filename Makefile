@@ -33,6 +33,9 @@ $(ms)/Makefile:
 
 ######################################################################
 
+## Li's lambda
+lambda.Rout: lambda.R
+
 ## Knitting
 
 mre.md: mre.rmd
