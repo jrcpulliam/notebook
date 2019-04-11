@@ -33,9 +33,12 @@ $(ms)/Makefile:
 
 ######################################################################
 
+Sources += $(wildcard *.mac)
+Ignore += *.out
+max = maxima < $< | tee $@
 ## Binomial random effects
 randInt.out: randInt.mac
-	maxima < $< | tee $@
+	$(max)
 
 ## Li's lambda
 lambda.Rout: lambda.R
