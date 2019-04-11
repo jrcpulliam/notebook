@@ -1,5 +1,11 @@
+library(ggplot2)
+
 set.seed(444332)
+
+reps <- 5e2
+dmax <- 4
 reps <- 5e3
+dmax <- 20
 
 euclid <- function(v1, v2){
 	return(sqrt(mean((v1-v2)^2)))
@@ -15,24 +21,28 @@ lam <- function(vlist){
 	return((max(D)-median(D))/min(D))
 }
 
-lsamp <- function(dim){
+lsamp <- function(dim, rfun){
 	vl <- list()
 	for(i in 1:4){
-		vl[[i]] <- rnorm(dim)
+		vl[[i]] <- rfun(dim)
 	}
 	return(lam(vl))
 }
 
-lsim <- function(dim, reps){
+lsim <- function(dim, reps, rfun=rnorm){
 	return(sapply(1:reps, function(r){
-		return(lsamp(dim))
+		return(lsamp(dim, rfun))
 	}))
 }
 
-for (d in 1:12){
-	s <- lsim(d, reps)
-	print(c(m = mean(s), σ=sd(s)))
-	## print(hist(s))
+lcurve <- function(dmax, reps, rfun=rnorm){
+	lc <- sapply(1:dmax, function(d){
+		s <- lsim(d, reps, rfun)
+		return(c(d=d, m = mean(s), σ=sd(s)))
+	})
+	lc <- as.data.frame(t(lc))
+	return(lc)
 }
 
-
+ndat <- lcurve(dmax, reps)
+cdat <- lcurve(dmax, reps, rcauchy)

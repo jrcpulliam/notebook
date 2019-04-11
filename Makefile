@@ -33,8 +33,20 @@ $(ms)/Makefile:
 
 ######################################################################
 
+## Binomial random effects
+randInt.out: randInt.mac
+	maxima < $< | tee $@
+
 ## Li's lambda
 lambda.Rout: lambda.R
+lampix.Rout: lambda.Rout lampix.R
+
+## Magnificent mu
+mu.Rout: mu.R
+mupix.Rout: mu.Rout mupix.R
+
+## What is dimension?
+balls.Rout: balls.R
 
 ## Knitting
 
