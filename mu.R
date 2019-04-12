@@ -13,10 +13,12 @@ mu <- function(D){
 
 msamp <- function(dim, rfun){
 	if(dim==Inf){
-		bl <- abs(rfun(4))
+		bl <- rfun(3)
+		c <- mean(bl)
+		bl <- abs(bl-c)
 		D <- c(bl[[1]]+bl[[3]]
-			, bl[[1]]+bl[[4]]
-			, bl[[3]]+bl[[4]]
+			, bl[[1]]+bl[[2]]
+			, bl[[3]]+bl[[2]]
 		)
 	}
 	else{
