@@ -1,6 +1,8 @@
 
 assume (sig>0);
 f:  exp(-(x-mu)^2/(2*sig^2))/(sig*sqrt(2*%pi))$
+l: 1$
 l: 1/(1+exp(-x))$
 
 fullratsimp(integrate(l*f, x, minf, inf));
+

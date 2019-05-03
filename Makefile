@@ -36,9 +36,13 @@ $(ms)/Makefile:
 Sources += $(wildcard *.mac)
 Ignore += *.out
 max = maxima < $< | tee $@
+
 ## Binomial random effects
 randInt.out: randInt.mac
 	$(max)
+
+## What is a correlation matrix?
+correlate.Rout: correlate.R
 
 ## Li's lambda
 lambda.Rout: lambda.R
