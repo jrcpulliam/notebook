@@ -33,11 +33,17 @@ $(ms)/Makefile:
 
 ######################################################################
 
+ind_ricker.Rout: ind_ricker.R
+
+## Baseball hit streaks (inefficient confirmation of easy algebra)
+streak.Rout: streak.R
+
 Sources += $(wildcard *.mac)
 Ignore += *.out
 max = maxima < $< | tee $@
 
 ## Binomial random effects
+## I don't know why I thought this integral was doable
 randInt.out: randInt.mac
 	$(max)
 
