@@ -90,6 +90,8 @@ Ignore += *.post
 
 alice.Rout: alice.R
 
+streaks.Rout: streaks.R
+
 ##################################################################
 
 ## Wiki import dev
