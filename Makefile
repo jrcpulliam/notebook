@@ -86,7 +86,6 @@ Ignore += *.post
 %.post.md: %.md
 	perl -npe 's/layout:\s+page/layout: post/' $< > $@
 
-
 ## sucker bet
 
 alice.Rout: alice.R

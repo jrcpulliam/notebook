@@ -12,7 +12,7 @@ rtrajectory <- function(r, scale, n0=NULL, steps=200){
 	return(n)
 }
 
-plotTrajectory <- function(r, scale, n0=NULL, steps=200, start=NULL){
+plotDynamics <- function(r, scale, n0=NULL, steps=200, start=NULL){
 	n <- rtrajectory(r, scale, n0=NULL, steps=200)/scale
 	if (is.null(start)) start=steps-50
 	plot(start:steps, n[start:steps]
@@ -20,13 +20,19 @@ plotTrajectory <- function(r, scale, n0=NULL, steps=200, start=NULL){
 		, ylab = "Density"
 		, type = "l"
 	)
-	title (main = paste("r =", r, "; scale =", scale))
+	title (main = paste("Time: r =", r, "; scale =", scale))
+
+	plot(n[(start:steps)-1], n[start:steps]
+		, xlab = "Generation"
+		, ylab = "Density"
+	)
+	title (main = paste("Phase: r =", r, "; scale =", scale))
 }
 
 plotSet <- function(rlist, slist, n0=NULL, steps=200, start=NULL){
 	for(r in rlist){
 		for (s in slist){
-			plotTrajectory(r, s, n0, steps, start)
+			plotDynamics(r, s, n0, steps, start)
 		}
 	}
 }
