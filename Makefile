@@ -33,6 +33,45 @@ $(ms)/Makefile:
 
 ######################################################################
 
+ind_ricker.Rout: ind_ricker.R
+
+## Baseball hit streaks (inefficient confirmation of easy algebra)
+streak.Rout: streak.R
+
+Sources += $(wildcard *.mac)
+Ignore += *.out
+max = maxima < $< | tee $@
+
+## Binomial random effects
+## I don't know why I thought this integral was doable
+randInt.out: randInt.mac
+	$(max)
+
+## What is a correlation matrix?
+correlate.Rout: correlate.R
+
+## Li's lambda
+lambda.Rout: lambda.R
+lampix.Rout: lambda.Rout lampix.R
+
+## Magnificent mu
+mu.Rout: mu.R
+mupix.Rout: mu.Rout mupix.R
+
+## What is dimension?
+balls.Rout: balls.R
+
+## Knitting
+
+mre.md: mre.rmd
+	Rscript -e "knitr::knit('$<')"
+
+mre.rmd.md: mre.md
+	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
+
+
+######################################################################
+
 # Posts
 
 # Posts are made from drafts as a side effect of making *.post
@@ -65,7 +104,13 @@ streaks.Rout: streaks.R
 
 ## rmd ⇒ md pipeline
 
+## ebolaRisk.rmd: ebolaRisk.wikitext wtrmd.pl
+## nomogram.md: nomogram.rmd
 ## permBinom.md: permBinom.rmd
+## permTables.md: permTables.wikitext; pandoc -f mediawiki -o $@ $<
+
+Ignore += *rmd_files
+
 %.rmd.md: %.rmd
 	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
 
@@ -177,6 +222,7 @@ rarity.html: rarity.md
 
 ## Playing with Simpson
 simpson.Rout: simpson.R
+checkplot.Rout: checkplot.R
 
 # Developing
 sir.Rout: sir.R

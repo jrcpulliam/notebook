@@ -1,0 +1,9 @@
+---
+layout: page
+title: Introduction to R page
+---
+
+``` {r}
+print(2+3)
+```
+
