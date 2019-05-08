@@ -37,6 +37,8 @@ ind_ricker.Rout: ind_ricker.R
 
 ## Baseball hit streaks (inefficient confirmation of easy algebra)
 streak.Rout: streak.R
+## And how does identical work?
+identical.Rout: identical.R
 
 Sources += $(wildcard *.mac)
 Ignore += *.out
@@ -89,8 +91,6 @@ Ignore += *.post
 ## sucker bet
 
 alice.Rout: alice.R
-
-streaks.Rout: streaks.R
 
 ##################################################################
 
