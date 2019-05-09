@@ -33,6 +33,8 @@ $(ms)/Makefile:
 
 ######################################################################
 
+imputation.Rout: imputation.R
+
 ind_ricker.Rout: ind_ricker.R
 
 ## Baseball hit streaks (inefficient confirmation of easy algebra)
@@ -50,7 +52,8 @@ randInt.out: randInt.mac
 	$(max)
 
 ## What is a correlation matrix?
-correlate.Rout: correlate.R
+correlate.Rout: correlate.R rclean.pl
+	R --vanilla < $< | perl -wf rclean.pl > $@
 
 ## Li's lambda
 lambda.Rout: lambda.R
