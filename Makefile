@@ -74,6 +74,13 @@ mre.md: mre.rmd
 mre.rmd.md: mre.md
 	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
 
+## Bail on googlesheets because it requires "publishing"
+maya.Rout: maya.R
+
+## https://docs.google.com/spreadsheets/d/1qTYPV7PXb_5EVyG2SoxuAdlzXRfvJxgRUOwAgbYwS7s
+## downcall blood.xlsx ##
+Sources += blood.xlsx
+blood.Rout: blood.xlsx blood.R
 
 ######################################################################
 
