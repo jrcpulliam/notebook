@@ -78,6 +78,7 @@ mre.rmd.md: mre.md
 maya.Rout: maya.R
 
 ## ln -s ~/Dropbox/maya ##
+Ignore += maya
 ## downcall maya/blood.xlsx ##
 blood.Rout: maya/blood.xlsx blood.R
 
