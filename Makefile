@@ -1,7 +1,7 @@
 # notebook (gh-pages branch, which is the only one I use)
 # http://localhost:4111/notebook/
 # http://dushoff.github.io/notebook/
-# make serve
+# make serve ##
 
 ## Suppress pandoc (don't want to pandoc here, we want to make serve instead)
 
@@ -58,6 +58,8 @@ correlate.Rout: correlate.R rclean.pl
 ## Li's lambda
 lambda.Rout: lambda.R
 lampix.Rout: lambda.Rout lampix.R
+
+Sources += snowball.md
 
 ## Magnificent mu
 mu.Rout: mu.R
@@ -329,4 +331,5 @@ Gemfile:
 
 -include $(ms)/wrapR.mk
 ## -include $(ms)/pandoc.mk
+## Use make serve instead
 # -include $(ms)/oldlatex.mk
