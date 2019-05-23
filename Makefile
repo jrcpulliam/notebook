@@ -79,10 +79,10 @@ mre.rmd.md: mre.md
 ## Bail on googlesheets because it requires "publishing"
 maya.Rout: maya.R
 
-## https://docs.google.com/spreadsheets/d/1qTYPV7PXb_5EVyG2SoxuAdlzXRfvJxgRUOwAgbYwS7s
-## downcall blood.xlsx ##
-Sources += blood.xlsx
-blood.Rout: blood.xlsx blood.R
+## ln -s ~/Dropbox/maya ##
+Ignore += maya
+## downcall maya/blood.xlsx ##
+blood.Rout: maya/blood.xlsx blood.R
 
 ######################################################################
 
