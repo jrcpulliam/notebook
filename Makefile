@@ -1,7 +1,7 @@
 # notebook (gh-pages branch, which is the only one I use)
 # http://localhost:4111/notebook/
 # http://dushoff.github.io/notebook/
-# make serve
+# make serve ##
 
 ## Suppress pandoc (don't want to pandoc here, we want to make serve instead)
 
@@ -59,6 +59,8 @@ correlate.Rout: correlate.R rclean.pl
 lambda.Rout: lambda.R
 lampix.Rout: lambda.Rout lampix.R
 
+Sources += snowball.md
+
 ## Magnificent mu
 mu.Rout: mu.R
 mupix.Rout: mu.Rout mupix.R
@@ -75,9 +77,10 @@ mre.rmd.md: mre.md
 	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
 
 ## Bail on googlesheets because it requires "publishing"
-maya.Rout: maya.R
+## maya.Rout: maya.R
 
 ## ln -s ~/Dropbox/maya ##
+Ignore += maya
 ## downcall maya/blood.xlsx ##
 blood.Rout: maya/blood.xlsx blood.R
 
@@ -328,4 +331,5 @@ Gemfile:
 
 -include $(ms)/wrapR.mk
 ## -include $(ms)/pandoc.mk
+## Use make serve instead
 # -include $(ms)/oldlatex.mk
