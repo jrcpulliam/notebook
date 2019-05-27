@@ -266,7 +266,7 @@ era.out: era.pl
 	$(PUSH)
 era.Rout: era.out era.R
 
-## Fractions
+## Fractions (Rationals and their "sizes")
 fractions.Rout: fractions.R
 
 ##################################################################
