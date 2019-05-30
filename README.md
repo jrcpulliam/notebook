@@ -1,1 +1,1 @@
-This README was made automatically by makestuff and should be changed.
+This is the back end for [JD's notebook](http://dushoff.github.io/notebook/)
