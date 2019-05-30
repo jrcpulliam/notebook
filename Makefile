@@ -3,7 +3,7 @@
 # http://dushoff.github.io/notebook/
 # make serve ##
 
-## Suppress pandoc (don't want to pandoc here, we want to make serve instead)
+## Suppress pandoc (don't want to pandoc here, make serve instead)
 
 ## URL problem:
 ## Use relative pathnames for plain pages; /notebook/ for posts.
