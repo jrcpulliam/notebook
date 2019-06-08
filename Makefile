@@ -76,11 +76,13 @@ mre.md: mre.rmd
 mre.rmd.md: mre.md
 	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
 
-## Bail on googlesheets because it requires "publishing"
+## Bail on googlesheets package because it requires "publishing"
 ## maya.Rout: maya.R
 
 ## ln -s ~/Dropbox/maya ##
 Ignore += maya
+
+## https://docs.google.com/spreadsheets/d/1qTYPV7PXb_5EVyG2SoxuAdlzXRfvJxgRUOwAgbYwS7s/
 ## downcall maya/blood.xlsx ##
 blood.Rout: maya/blood.xlsx blood.R
 
