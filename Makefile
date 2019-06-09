@@ -33,6 +33,12 @@ $(ms)/Makefile:
 
 ######################################################################
 
+## Meeting with Elisha and John about tsetse survival and 
+## pseudo-geometric distributions
+
+## http://localhost:4111/notebook/insect_geometry.html
+Sources += insect_geometry.md
+
 imputation.Rout: imputation.R
 
 ind_ricker.Rout: ind_ricker.R
