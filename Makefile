@@ -37,6 +37,7 @@ $(ms)/Makefile:
 ## pseudo-geometric distributions
 
 ## http://localhost:4111/notebook/insect_geometry.html
+# http://dushoff.github.io/notebook/insect_geometry.html
 Sources += insect_geometry.md
 
 imputation.Rout: imputation.R

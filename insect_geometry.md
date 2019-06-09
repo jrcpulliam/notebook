@@ -20,7 +20,7 @@ The key parameters are:
 
 Some notes:
 * $$p_c$$ should include the probability of being female, since we're only going to count females. We are therefore not particularly interested in the case $$p_c=1$$.
-* We suspect that we _are_ particularly interested in the case $$p_o=1$$, however (corresponding to not counting flies until the ovulate).
+* We suspect that we _are_ particularly interested in the case $$p_o=1$$, however (corresponding to not counting flies until they ovulate).
 * Changing the counting time should correspond to changing $$p_c$$ and $$p_o$$, but keeping their product $$p_r=p_cp_o$$ the same.
 
 ## Hypotheses
