@@ -33,12 +33,17 @@ $(ms)/Makefile:
 
 ######################################################################
 
+## Cute factoring trick and median factors for Alex
+maxFactor.Rout: maxFactor.R
+
 ## Meeting with Elisha and John about tsetse survival and 
 ## pseudo-geometric distributions
 
 ## http://localhost:4111/notebook/insect_geometry.html
 # http://dushoff.github.io/notebook/insect_geometry.html
-Sources += insect_geometry.md
+## http://localhost:4111/notebook/are.html
+# http://dushoff.github.io/notebook/are.html
+Sources += insect_geometry.md are.md
 
 imputation.Rout: imputation.R
 

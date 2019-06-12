@@ -16,7 +16,7 @@ We don't decide in advance when we count tsetses: it could be at any of three ke
 The key parameters are:
 * $$p_c$$, the probability of survival from deposition to counting time
 * $$p_o$$, the probability of survival from counting time to ovulation
-* $$p_l$$, the probability of successfully completing a loop
+* $$p_\ell$$, the probability of successfully completing a loop
 
 Some notes:
 * $$p_c$$ should include the probability of being female, since we're only going to count females. We are therefore not particularly interested in the case $$p_c=1$$.
