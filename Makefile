@@ -3,7 +3,7 @@
 # http://dushoff.github.io/notebook/
 # make serve ##
 
-## Suppress pandoc (don't want to pandoc here, we want to make serve instead)
+## Suppress pandoc (don't want to pandoc here, make serve instead)
 
 ## URL problem:
 ## Use relative pathnames for plain pages; /notebook/ for posts.
@@ -32,6 +32,18 @@ $(ms)/Makefile:
 -include $(ms)/perl.def
 
 ######################################################################
+
+## Cute factoring trick and median factors for Alex
+maxFactor.Rout: maxFactor.R
+
+## Meeting with Elisha and John about tsetse survival and 
+## pseudo-geometric distributions
+
+## http://localhost:4111/notebook/insect_geometry.html
+# http://dushoff.github.io/notebook/insect_geometry.html
+## http://localhost:4111/notebook/are.html
+# http://dushoff.github.io/notebook/are.html
+Sources += insect_geometry.md are.md
 
 imputation.Rout: imputation.R
 
@@ -76,11 +88,13 @@ mre.md: mre.rmd
 mre.rmd.md: mre.md
 	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
 
-## Bail on googlesheets because it requires "publishing"
+## Bail on googlesheets package because it requires "publishing"
 ## maya.Rout: maya.R
 
 ## ln -s ~/Dropbox/maya ##
 Ignore += maya
+
+## https://docs.google.com/spreadsheets/d/1qTYPV7PXb_5EVyG2SoxuAdlzXRfvJxgRUOwAgbYwS7s/
 ## downcall maya/blood.xlsx ##
 blood.Rout: maya/blood.xlsx blood.R
 
@@ -269,7 +283,7 @@ era.out: era.pl
 	$(PUSH)
 era.Rout: era.out era.R
 
-## Fractions
+## Fractions (Rationals and their "sizes")
 fractions.Rout: fractions.R
 
 ##################################################################
