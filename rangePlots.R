@@ -65,11 +65,11 @@ print(rangePlot(normT, title="Good"))
 print(rangePlot(expT, title="Exponential"))
 print(rangePlot(normX, title="Non-independent"))
 
-print(rangePlot(normT, orderFun=blob, title="Good"))
-print(rangePlot(expT, orderFun=blob, title="Exponential"))
-print(rangePlot(normX, orderFun=blob, title="Non-independent"))
+print(rangePlot(normT, orderFun=blob, title="Good (blob)"))
+print(rangePlot(expT, orderFun=blob, title="Exponential (blob)"))
+print(rangePlot(normX, orderFun=blob, title="Non-independent (blob)"))
 
-print(rangePlot(normT, orderFun=milli, title="Good"))
-print(rangePlot(expT, orderFun=milli, title="Exponential"))
-print(rangePlot(normX, orderFun=milli, title="Non-independent"))
+print(rangePlot(normT, orderFun=milli, title="Good (milli)"))
+print(rangePlot(expT, orderFun=milli, title="Exponential (milli)"))
+print(rangePlot(normX, orderFun=milli, title="Non-independent (milli)"))
 
