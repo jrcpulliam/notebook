@@ -187,7 +187,7 @@ checkstats.Rout: checkdata.Rout checkstats.R
 ## Do checks
 checkfuns.Rout: checkstats.Rout checkfuns.R
 
-milli.Rout: checkstats.Rout milli.R
+rangePlots.Rout: checkstats.Rout rangePlots.R
 
 ######################################################################
 
