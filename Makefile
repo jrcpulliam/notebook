@@ -1,7 +1,7 @@
 # notebook (gh-pages branch, which is the only one I use)
 # http://localhost:4111/notebook/
 # http://dushoff.github.io/notebook/
-# make serve
+# make serve ##
 
 ## Suppress pandoc (don't want to pandoc here, we want to make serve instead)
 
@@ -55,6 +55,11 @@ randInt.out: randInt.mac
 correlate.Rout: correlate.R rclean.pl
 	R --vanilla < $< | perl -wf rclean.pl > $@
 
+
+######################################################################
+
+## Is this whole section about dimension and Susan Holmes?
+
 ## Li's lambda
 lambda.Rout: lambda.R
 lampix.Rout: lambda.Rout lampix.R
@@ -66,13 +71,42 @@ mupix.Rout: mu.Rout mupix.R
 ## What is dimension?
 balls.Rout: balls.R
 
-## Knitting
+######################################################################
+
+## Knitting (hybrid ideas brought together 2019 Jun 25 (Tue))
 
 mre.md: mre.rmd
 	Rscript -e "knitr::knit('$<')"
 
 mre.rmd.md: mre.md
 	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
+
+## Wiki import dev
+
+%.rmd: %.wikitext wtrmd.pl
+	$(PUSH)
+
+## rmd ⇒ md pipeline
+
+## ebolaRisk.rmd: ebolaRisk.wikitext wtrmd.pl
+## nomogram.md: nomogram.rmd
+## permBinom.md: permBinom.rmd
+## permTables.md: permTables.wikitext; pandoc -f mediawiki -o $@ $<
+
+Ignore += *rmd_files
+
+%.rmd.md: %.rmd
+	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
+
+%.yaml.md: %.rmd
+	perl -nE "last if /^$$/; print; END{say}" $< > $@
+
+%.md: %.yaml.md %.rmd.md
+	$(cat)
+
+######################################################################
+
+######################################################################
 
 ## Bail on googlesheets because it requires "publishing"
 maya.Rout: maya.R
@@ -104,32 +138,6 @@ alice.Rout: alice.R
 
 ##################################################################
 
-## Wiki import dev
-
-%.rmd: %.wikitext wtrmd.pl
-	$(PUSH)
-
-######################################################################
-
-## rmd ⇒ md pipeline
-
-## ebolaRisk.rmd: ebolaRisk.wikitext wtrmd.pl
-## nomogram.md: nomogram.rmd
-## permBinom.md: permBinom.rmd
-## permTables.md: permTables.wikitext; pandoc -f mediawiki -o $@ $<
-
-Ignore += *rmd_files
-
-%.rmd.md: %.rmd
-	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
-
-%.yaml.md: %.rmd
-	perl -nE "last if /^$$/; print; END{say}" $< > $@
-
-%.md: %.yaml.md %.rmd.md
-	$(cat)
-
-######################################################################
 
 # http://localhost:4111/notebook/conditional_kernel.html
 conditional_kernel.html: conditional_kernel.md
@@ -161,6 +169,8 @@ walt.out: walt.in walt.pl
 ######################################################################
 
 ## checkplots and millipedes
+
+Sources += checkplots.md
 
 ## Create data
 checkdata.Rout: checkdata.R
