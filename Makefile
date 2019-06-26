@@ -39,6 +39,7 @@ ind_ricker.Rout: ind_ricker.R
 
 ## Baseball hit streaks (inefficient confirmation of easy algebra)
 streak.Rout: streak.R
+
 ## And how does identical work?
 identical.Rout: identical.R
 
@@ -54,7 +55,6 @@ randInt.out: randInt.mac
 ## What is a correlation matrix?
 correlate.Rout: correlate.R rclean.pl
 	R --vanilla < $< | perl -wf rclean.pl > $@
-
 
 ######################################################################
 
@@ -106,8 +106,6 @@ Ignore += *rmd_files
 
 ######################################################################
 
-######################################################################
-
 ## Bail on googlesheets because it requires "publishing"
 maya.Rout: maya.R
 
@@ -139,22 +137,24 @@ alice.Rout: alice.R
 ##################################################################
 
 
+## Early Trapman-interval math. Should be subsumed by Park et al. MS
 # http://localhost:4111/notebook/conditional_kernel.html
 conditional_kernel.html: conditional_kernel.md
 
 combinations.Rout: combinations.R
 
+## This was a live-coding statistical sampling session; not sure why it was ever here or if I ever put it somewhere good.
 vitaminA.Rout: vitaminA.R
 
+## Unitary fractions game (with Gavin)
 unitary.Rout: unitary.R
 birthday.Rout: unitary.Rout birthday.R
 fourunits.Rout: unitary.Rout fourunits.R
 
-## Explore RE trick and other multivariate stuff at data lunch
-multivariate.Rout: multivariate.R
-
+## A numeric check about volumes in a martini glass (a problem which confused me)
 martini.Rout: martini.R
 
+## It seems impossible that this was ever useful
 quiz.Rout: quiz.R
 
 gamma_shape.Rout: gamma_shape.R

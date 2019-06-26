@@ -6,5 +6,6 @@ x <- rnorm(num)
 
 library(nlme)
 
-n <- lme(cbind(y1, y2) ~ x)
-summary(n)
+## Need a grouping term for lme
+## n <- lme(cbind(y1, y2) ~ x)
+## summary(n)
