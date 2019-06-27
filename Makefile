@@ -169,6 +169,7 @@ walt.out: walt.in walt.pl
 ######################################################################
 
 ## checkplots and millipedes
+## Mostly deprecated in favor of modular version below
 
 Sources += checkplots.md
 
@@ -181,13 +182,16 @@ checkstats.Rout: checkdata.Rout checkstats.R
 ## Do checkplots
 checkfuns.Rout: checkstats.Rout checkfuns.R
 
-milli.Rout: checkstats.Rout milli.R
+## rangePlots moved to modular pipeline
 
 ####### Modularized diagnostic plots
 
-### A set of fake data
+## plotfuns.R
+
+### Sets of fake data
 
 lndata.Rout: lndata.R
+gamdata.Rout: gamdata.R
 
 ## Stats on a list of lists of fake data (or something)
 
@@ -197,8 +201,12 @@ lndata.Rout: lndata.R
 	$(run-R)
 
 ## checkplot
-## lndata.listplots.Rout: listplots.R
-%.listplots.Rout: %.liststats.Rout listplots.R
+## gamdata.listplots.Rout: listplots.R
+%.listplots.Rout: %.liststats.Rout plotfuns.Rout listplots.R
+	$(run-R)
+
+## lndata.rangePlots.Rout: rangePlots.R
+%.rangePlots.Rout: %.liststats.Rout rangePlots.R
 	$(run-R)
 
 ######################################################################
