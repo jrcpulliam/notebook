@@ -3,7 +3,7 @@
 # http://dushoff.github.io/notebook/
 # make serve ##
 
-## Suppress pandoc (don't want to pandoc here, make serve instead)
+## Suppress pandoc (don't want to pandoc here, we want to make serve instead)
 
 ## URL problem:
 ## Use relative pathnames for plain pages; /notebook/ for posts.
@@ -33,24 +33,13 @@ $(ms)/Makefile:
 
 ######################################################################
 
-## Cute factoring trick and median factors for Alex
-maxFactor.Rout: maxFactor.R
-
-## Meeting with Elisha and John about tsetse survival and 
-## pseudo-geometric distributions
-
-## http://localhost:4111/notebook/insect_geometry.html
-# http://dushoff.github.io/notebook/insect_geometry.html
-## http://localhost:4111/notebook/are.html
-# http://dushoff.github.io/notebook/are.html
-Sources += insect_geometry.md are.md
-
 imputation.Rout: imputation.R
 
 ind_ricker.Rout: ind_ricker.R
 
 ## Baseball hit streaks (inefficient confirmation of easy algebra)
 streak.Rout: streak.R
+
 ## And how does identical work?
 identical.Rout: identical.R
 
@@ -67,11 +56,13 @@ randInt.out: randInt.mac
 correlate.Rout: correlate.R rclean.pl
 	R --vanilla < $< | perl -wf rclean.pl > $@
 
+######################################################################
+
+## Is this whole section about dimension and Susan Holmes?
+
 ## Li's lambda
 lambda.Rout: lambda.R
 lampix.Rout: lambda.Rout lampix.R
-
-Sources += snowball.md
 
 ## Magnificent mu
 mu.Rout: mu.R
@@ -80,7 +71,9 @@ mupix.Rout: mu.Rout mupix.R
 ## What is dimension?
 balls.Rout: balls.R
 
-## Knitting
+######################################################################
+
+## Knitting (hybrid ideas brought together 2019 Jun 25 (Tue))
 
 mre.md: mre.rmd
 	Rscript -e "knitr::knit('$<')"
@@ -88,13 +81,36 @@ mre.md: mre.rmd
 mre.rmd.md: mre.md
 	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
 
-## Bail on googlesheets package because it requires "publishing"
-## maya.Rout: maya.R
+## Wiki import dev
+
+%.rmd: %.wikitext wtrmd.pl
+	$(PUSH)
+
+## rmd ⇒ md pipeline
+
+## ebolaRisk.rmd: ebolaRisk.wikitext wtrmd.pl
+## nomogram.md: nomogram.rmd
+## permBinom.md: permBinom.rmd
+## permTables.md: permTables.wikitext; pandoc -f mediawiki -o $@ $<
+
+Ignore += *rmd_files
+
+%.rmd.md: %.rmd
+	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
+
+%.yaml.md: %.rmd
+	perl -nE "last if /^$$/; print; END{say}" $< > $@
+
+%.md: %.yaml.md %.rmd.md
+	$(cat)
+
+######################################################################
+
+## Bail on googlesheets because it requires "publishing"
+maya.Rout: maya.R
 
 ## ln -s ~/Dropbox/maya ##
 Ignore += maya
-
-## https://docs.google.com/spreadsheets/d/1qTYPV7PXb_5EVyG2SoxuAdlzXRfvJxgRUOwAgbYwS7s/
 ## downcall maya/blood.xlsx ##
 blood.Rout: maya/blood.xlsx blood.R
 
@@ -120,49 +136,25 @@ alice.Rout: alice.R
 
 ##################################################################
 
-## Wiki import dev
 
-%.rmd: %.wikitext wtrmd.pl
-	$(PUSH)
-
-######################################################################
-
-## rmd ⇒ md pipeline
-
-## ebolaRisk.rmd: ebolaRisk.wikitext wtrmd.pl
-## nomogram.md: nomogram.rmd
-## permBinom.md: permBinom.rmd
-## permTables.md: permTables.wikitext; pandoc -f mediawiki -o $@ $<
-
-Ignore += *rmd_files
-
-%.rmd.md: %.rmd
-	Rscript -e 'library("rmarkdown"); render("$<", output_format="md_document", output_file="$@")'
-
-%.yaml.md: %.rmd
-	perl -nE "last if /^$$/; print; END{say}" $< > $@
-
-%.md: %.yaml.md %.rmd.md
-	$(cat)
-
-######################################################################
-
+## Early Trapman-interval math. Should be subsumed by Park et al. MS
 # http://localhost:4111/notebook/conditional_kernel.html
 conditional_kernel.html: conditional_kernel.md
 
 combinations.Rout: combinations.R
 
+## This was a live-coding statistical sampling session; not sure why it was ever here or if I ever put it somewhere good.
 vitaminA.Rout: vitaminA.R
 
+## Unitary fractions game (with Gavin)
 unitary.Rout: unitary.R
 birthday.Rout: unitary.Rout birthday.R
 fourunits.Rout: unitary.Rout fourunits.R
 
-## Explore RE trick and other multivariate stuff at data lunch
-multivariate.Rout: multivariate.R
-
+## A numeric check about volumes in a martini glass (a problem which confused me)
 martini.Rout: martini.R
 
+## It seems impossible that this was ever useful
 quiz.Rout: quiz.R
 
 gamma_shape.Rout: gamma_shape.R
@@ -177,6 +169,8 @@ walt.out: walt.in walt.pl
 ######################################################################
 
 ## checkplots and millipedes
+
+Sources += checkplots.md
 
 ## Create data
 checkdata.Rout: checkdata.R
@@ -301,7 +295,7 @@ era.out: era.pl
 	$(PUSH)
 era.Rout: era.out era.R
 
-## Fractions (Rationals and their "sizes")
+## Fractions
 fractions.Rout: fractions.R
 
 ##################################################################
@@ -363,5 +357,4 @@ Gemfile:
 
 -include $(ms)/wrapR.mk
 ## -include $(ms)/pandoc.mk
-## Use make serve instead
 # -include $(ms)/oldlatex.mk
