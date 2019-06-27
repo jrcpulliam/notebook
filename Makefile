@@ -184,10 +184,28 @@ checkdata.Rout: checkdata.R
 ## Run tests
 checkstats.Rout: checkdata.Rout checkstats.R
 
-## Do checks
+## Do checkplots
 checkfuns.Rout: checkstats.Rout checkfuns.R
 
 milli.Rout: checkstats.Rout milli.R
+
+####### Modularized diagnostic plots
+
+### A set of fake data
+
+lndata.Rout: lndata.R
+
+## Stats on a list of lists of fake data (or something)
+
+## lm
+## lndata.liststats.Rout: liststats.R
+%.liststats.Rout: %.Rout liststats.R
+	$(run-R)
+
+## checkplot
+## lndata.listplots.Rout: listplots.R
+%.listplots.Rout: %.liststats.Rout listplots.R
+	$(run-R)
 
 ######################################################################
 
