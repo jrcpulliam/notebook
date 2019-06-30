@@ -157,6 +157,12 @@ martini.Rout: martini.R
 ## It seems impossible that this was ever useful
 quiz.Rout: quiz.R
 
+## Testing the RData pipeline??
+## Answer: you need better documentation
+## Also: RData is generally hidden in wrapR, since it's meant to be called indirectly
+wrap.Rout: wrap.R
+unwrap.Rout: wrap.Rout unwrap.R
+
 gamma_shape.Rout: gamma_shape.R
 
 # Log-plus-one as a scale
