@@ -1,5 +1,6 @@
 # notebook (gh-pages branch, which is the only one I use)
 # http://localhost:4111/notebook/
+# http://localhost:4111/notebook/colors.html
 # http://dushoff.github.io/notebook/
 # make serve ##
 
@@ -55,6 +56,18 @@ randInt.out: randInt.mac
 ## What is a correlation matrix?
 correlate.Rout: correlate.R rclean.pl
 	R --vanilla < $< | perl -wf rclean.pl > $@
+
+######################################################################
+
+## Share on twitter or somewhere?
+## Developed from Brent D.
+## Moved here for Mike R.
+
+colors.Rout: colors.R
+colors.Rout.png: colors.R
+Ignore += colors.small.png
+colors.small.png: colors.Rout.png
+	convert -scale 10% $< $@
 
 ######################################################################
 
