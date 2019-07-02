@@ -211,6 +211,8 @@ checkfuns.Rout: checkstats.Rout checkfuns.R
 
 lndata.Rout: lndata.R
 gamdata.Rout: gamdata.R
+tdata.Rout: tdata.R
+cauchy.Rout: cauchy.R
 
 ## Stats on a list of lists of fake data (or something)
 
@@ -220,11 +222,14 @@ gamdata.Rout: gamdata.R
 	$(run-R)
 
 ## checkplot
+## lndata.listplots.Rout: listplots.R
 ## gamdata.listplots.Rout: listplots.R
+## tdata.listplots.Rout: listplots.R
+## cauchy.listplots.Rout: listplots.R
 %.listplots.Rout: %.liststats.Rout plotfuns.Rout listplots.R
 	$(run-R)
 
-## lndata.rangePlots.Rout: rangePlots.R
+## tdata.rangePlots.Rout: rangePlots.R
 %.rangePlots.Rout: %.liststats.Rout rangePlots.R
 	$(run-R)
 
