@@ -1,6 +1,6 @@
 # notebook (gh-pages branch, which is the only one I use)
+# http://localhost:4111/notebook/mice.html
 # http://localhost:4111/notebook/
-# http://localhost:4111/notebook/colors.html
 # http://dushoff.github.io/notebook/
 # make serve ##
 
@@ -216,12 +216,11 @@ cauchy.Rout: cauchy.R
 
 ## Stats on a list of lists of fake data (or something)
 
-## lm
-## lndata.liststats.Rout: liststats.R
 %.liststats.Rout: %.Rout liststats.R
 	$(run-R)
 
 ## checkplot
+## http://dushoff.github.io/notebook/git_push/lndata.listplots.Rout.pdf
 ## lndata.listplots.Rout: listplots.R
 ## gamdata.listplots.Rout: listplots.R
 ## tdata.listplots.Rout: listplots.R
@@ -350,6 +349,16 @@ pythagoras.cp.html: cp.pl
 
 %.cp.html: _site/%.html cp.pl
 	$(PUSH)
+
+######################################################################
+
+## Studying imputation
+
+## Learn about MICE
+
+mice.Rout: mice.R
+
+Sources += mice.md
 
 ######################################################################
 
