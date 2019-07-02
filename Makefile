@@ -136,7 +136,7 @@ Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
 Ignore += *.post
-## permBinom.post: 
+## colors.post: 
 %.post: %.post.md post.pl
 	$(PUSH)
 	$(shell_execute)
