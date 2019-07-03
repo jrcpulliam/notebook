@@ -1,4 +1,5 @@
 # notebook (gh-pages branch, which is the only one I use)
+# http://localhost:4111/notebook/mice.html
 # http://localhost:4111/notebook/
 # http://dushoff.github.io/notebook/
 # make serve ##
@@ -55,6 +56,18 @@ randInt.out: randInt.mac
 ## What is a correlation matrix?
 correlate.Rout: correlate.R rclean.pl
 	R --vanilla < $< | perl -wf rclean.pl > $@
+
+######################################################################
+
+## Share on twitter or somewhere?
+## Developed from Brent D.
+## Moved here for Mike R.
+
+colors.Rout: colors.R
+colors.Rout.png: colors.R
+Ignore += colors.small.png
+colors.small.png: colors.Rout.png
+	convert -scale 10% $< $@
 
 ######################################################################
 
@@ -123,7 +136,7 @@ Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
 Ignore += *.post
-## permBinom.post: 
+## colors.post: 
 %.post: %.post.md post.pl
 	$(PUSH)
 	$(shell_execute)
@@ -157,6 +170,12 @@ martini.Rout: martini.R
 ## It seems impossible that this was ever useful
 quiz.Rout: quiz.R
 
+## Testing the RData pipeline??
+## Answer: you need better documentation
+## Also: RData is generally hidden in wrapR, since it's meant to be called indirectly
+wrap.Rout: wrap.R
+unwrap.Rout: wrap.Rout unwrap.R
+
 gamma_shape.Rout: gamma_shape.R
 
 # Log-plus-one as a scale
@@ -169,6 +188,7 @@ walt.out: walt.in walt.pl
 ######################################################################
 
 ## checkplots and millipedes
+## Mostly deprecated in favor of modular version below
 
 Sources += checkplots.md
 
@@ -181,24 +201,35 @@ checkstats.Rout: checkdata.Rout checkstats.R
 ## Do checkplots
 checkfuns.Rout: checkstats.Rout checkfuns.R
 
-milli.Rout: checkstats.Rout milli.R
+## rangePlots moved to modular pipeline
 
 ####### Modularized diagnostic plots
 
-### A set of fake data
+## plotfuns.R
+
+### Sets of fake data
 
 lndata.Rout: lndata.R
+gamdata.Rout: gamdata.R
+tdata.Rout: tdata.R
+cauchy.Rout: cauchy.R
 
 ## Stats on a list of lists of fake data (or something)
 
-## lm
-## lndata.liststats.Rout: liststats.R
 %.liststats.Rout: %.Rout liststats.R
 	$(run-R)
 
 ## checkplot
+## http://dushoff.github.io/notebook/git_push/lndata.listplots.Rout.pdf
 ## lndata.listplots.Rout: listplots.R
-%.listplots.Rout: %.liststats.Rout listplots.R
+## gamdata.listplots.Rout: listplots.R
+## tdata.listplots.Rout: listplots.R
+## cauchy.listplots.Rout: listplots.R
+%.listplots.Rout: %.liststats.Rout plotfuns.Rout listplots.R
+	$(run-R)
+
+## tdata.rangePlots.Rout: rangePlots.R
+%.rangePlots.Rout: %.liststats.Rout rangePlots.R
 	$(run-R)
 
 ######################################################################
@@ -318,6 +349,16 @@ pythagoras.cp.html: cp.pl
 
 %.cp.html: _site/%.html cp.pl
 	$(PUSH)
+
+######################################################################
+
+## Studying imputation
+
+## Learn about MICE
+
+mice.Rout: mice.R
+
+Sources += mice.md
 
 ######################################################################
 
