@@ -228,7 +228,7 @@ cauchy.Rout: cauchy.R
 %.listplots.Rout: %.liststats.Rout plotfuns.Rout listplots.R
 	$(run-R)
 
-## tdata.rangePlots.Rout: rangePlots.R
+## lndata.rangePlots.Rout: rangePlots.R
 %.rangePlots.Rout: %.liststats.Rout rangePlots.R
 	$(run-R)
 
