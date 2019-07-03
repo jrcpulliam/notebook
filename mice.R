@@ -1,13 +1,4 @@
 library(mice)
-
-data <- airquality
-data[4:10,3] <- rep(NA,7)
-data[1:5,4] <- NA
-
-data <- data[-c(5,6)]
-
-tempData <- mice(data)
-
 library(dplyr)
 
 set.seed(1344)
