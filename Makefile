@@ -221,6 +221,13 @@ cauchy.Rout: cauchy.R
 
 ######################################################################
 
+## Constrained quadratic
+## Arising from rubella project
+
+cq.Rout: cq.R
+
+######################################################################
+
 ## materials and products are both deprecated for git_push; wonder if anything there matters
 ## Materials
 
