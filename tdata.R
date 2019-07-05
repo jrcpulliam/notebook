@@ -1,7 +1,7 @@
 library(tidyverse)
 
 numSims <- 2e3
-tRange <- seq(2, 10, length.out=9)
+tRange <- seq(1, 6, length.out=6)
 
 points <- 8
 set.seed(7084)
