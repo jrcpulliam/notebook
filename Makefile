@@ -129,6 +129,15 @@ blood.Rout: maya/blood.xlsx blood.R
 
 ######################################################################
 
+## mkdir MMEDaccounts ##
+Ignore += MMEDaccounts
+
+## downcall MMEDaccounts/2019.xlsx ##
+mmed2019.Rout: MMEDaccounts/2019.xlsx MMEDaccounts.R
+	$(run-R)
+
+######################################################################
+
 # Posts
 
 # Posts are made from drafts as a side effect of making *.post
