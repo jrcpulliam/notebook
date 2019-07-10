@@ -3,15 +3,23 @@ layout: page
 title: Are distributions
 ---
 
+This was useful, but is not careful enough about spinoffs (how many individuals are actually created at different levels). Be careful!
+
 The Are distribution and the link to tsetse loops
 
-Let $$p+q=1$$ for convenience
+$$r$$ is the probability of reaching the loop; $$\ell$$ is the probability of looping.
 
-* $$ P = a q p^k$$
-* $$ φ = 1-a + \frac{aq}{1-px}$$
-* $$ R = φ'(1) = ap/q$$
-* $$ E = φ(E)$$ seems solved by $$E = 1$$ _or_ $$\frac{1-ap}{p}$$
+* The probability of $$k$$ offspring is $$ P_k = r (1-\ell) \ell^k$$
+* The associated generating function is $$ φ(x) = 1-r + \frac{r(1-\ell)}{1-\ell x}$$
+* The reproductive number is $$ R = φ'(1)/r = \ell/(1-\ell)$$
+* $$ E = φ(E)$$ is solved by $$E = 1$$ _or_ $$\frac{1-rp}{\ell}$$
 
-If $$a=1$$, this behaves as expected: $$R=p/q$$, $$E=1/R$$ (when $$R≥1$$).
+Solve for $$\ell = \frac{R}{R+r}$$ and substitute:
 
-When $$a<1$$ we need to adjust. The probability of extinction from the count point is related to the probability of extinction from the loop point: $$E_c = 1- p_o + p_oE_\ell$$
+* $$ E = \frac{R+r-rR}{R} $$
+
+This becomes interpretable if we write the "forever" probability $$F=1-E$$
+
+* $$ F = \frac{r(R-1)}{R}$$:
+
+it's the probability of reaching the loop times the probability of surviving forever once the loop is reached.

@@ -1,5 +1,5 @@
 # notebook (gh-pages branch, which is the only one I use)
-# http://localhost:4111/notebook/mice.html
+# http://localhost:4111/notebook/are.html
 # http://localhost:4111/notebook/
 # http://dushoff.github.io/notebook/
 # make serve ##
@@ -68,6 +68,12 @@ colors.Rout.png: colors.R
 Ignore += colors.small.png
 colors.small.png: colors.Rout.png
 	convert -scale 10% $< $@
+
+######################################################################
+
+## Elisha and tsetse
+
+Sources += are.md
 
 ######################################################################
 
