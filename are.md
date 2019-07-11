@@ -18,3 +18,7 @@ Results:
 * R should depend on $$p_r$$ but not on $$p_c$$ or $$p_m$$
 * Extinction probability $$E$$ _should_ depend on where we count:
 	* Forever probability $$F=1-E$$ should be $$\frac{p_m(R-1)}{R}$$
+
+Technique:
+
+For each geometric distribution, we ignore empty loops and compare the probability of success to the probability of death.
