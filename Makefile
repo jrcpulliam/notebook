@@ -291,6 +291,8 @@ islr_boot.Rout: islr_boot.R
 moments.html: moments.md
 moments.Rout: moments.R
 
+######################################################################
+
 # http://localhost:4111/notebook/diversity.html: diversity.md
 
 ## Branch text, hopefully for a manuscript
@@ -300,6 +302,14 @@ rarity.html: rarity.md
 ## Playing with Simpson
 simpson.Rout: simpson.R
 checkplot.Rout: checkplot.R
+
+## Shannon samples
+## Terrible scattershot approach; not sure this will ever work
+## Idea was to come up with an formula for expected sample Shannon diversity
+## to make better fake diversity communities
+shannon.Rout: shannon.R
+
+######################################################################
 
 # Developing
 sir.Rout: sir.R
