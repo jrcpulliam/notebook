@@ -18,5 +18,5 @@ while(<>){
 	next if /^#/;
 	chomp;
 	my $s = sublimate($_);
-	say "$_ ⇒ $s" unless $_==$s;
+	die "$_ ⇒ $s" unless $_==$s;
 }

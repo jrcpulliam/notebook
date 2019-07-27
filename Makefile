@@ -1,5 +1,5 @@
 # notebook (gh-pages branch, which is the only one I use)
-# http://localhost:4111/notebook/mice.html
+# http://localhost:4111/notebook/are.html
 # http://localhost:4111/notebook/
 # http://dushoff.github.io/notebook/
 # make serve ##
@@ -71,6 +71,12 @@ colors.small.png: colors.Rout.png
 
 ######################################################################
 
+## Elisha and tsetse
+
+Sources += are.md
+
+######################################################################
+
 ## Is this whole section about dimension and Susan Holmes?
 
 ## Li's lambda
@@ -126,6 +132,15 @@ maya.Rout: maya.R
 Ignore += maya
 ## downcall maya/blood.xlsx ##
 blood.Rout: maya/blood.xlsx blood.R
+
+######################################################################
+
+## mkdir MMEDaccounts ##
+Ignore += MMEDaccounts
+
+## downcall MMEDaccounts/2019.xlsx ##
+mmed2019.Rout: MMEDaccounts/2019.xlsx MMEDaccounts.R
+	$(run-R)
 
 ######################################################################
 
@@ -188,24 +203,11 @@ walt.out: walt.in walt.pl
 ######################################################################
 
 ## checkplots and millipedes
-## Mostly deprecated in favor of modular version below
 
 Sources += checkplots.md
 
-## Create data
-checkdata.Rout: checkdata.R
-
-## Run tests
-checkstats.Rout: checkdata.Rout checkstats.R
-
-## Do checkplots
-checkfuns.Rout: checkstats.Rout checkfuns.R
-
-## rangePlots moved to modular pipeline
-
 ####### Modularized diagnostic plots
-
-## plotfuns.R
+## checkFuns.R ##
 
 ### Sets of fake data
 
@@ -225,12 +227,22 @@ cauchy.Rout: cauchy.R
 ## gamdata.listplots.Rout: listplots.R
 ## tdata.listplots.Rout: listplots.R
 ## cauchy.listplots.Rout: listplots.R
-%.listplots.Rout: %.liststats.Rout plotfuns.Rout listplots.R
+%.listplots.Rout: %.liststats.Rout checkFuns.Rout listplots.R
 	$(run-R)
 
 ## lndata.rangePlots.Rout: rangePlots.R
 %.rangePlots.Rout: %.liststats.Rout rangePlots.R
+
+## tdata.rangePlots.Rout: rangePlots.R
+%.rangePlots.Rout: %.liststats.Rout checkFuns.Rout rangePlots.R
 	$(run-R)
+
+######################################################################
+
+## Constrained quadratic
+## Arising from rubella project
+
+cq.Rout: cq.R
 
 ######################################################################
 
@@ -262,6 +274,7 @@ products/%: % products
 ## sublime.md
 ## sublime.Rout: sublime.R
 
+Sources += sublime.in
 sublime.out: sublime.in sublime.pl
 	$(PUSH)
 
@@ -289,6 +302,8 @@ islr_boot.Rout: islr_boot.R
 moments.html: moments.md
 moments.Rout: moments.R
 
+######################################################################
+
 # http://localhost:4111/notebook/diversity.html: diversity.md
 
 ## Branch text, hopefully for a manuscript
@@ -298,6 +313,14 @@ rarity.html: rarity.md
 ## Playing with Simpson
 simpson.Rout: simpson.R
 checkplot.Rout: checkplot.R
+
+## Shannon samples
+## Terrible scattershot approach; not sure this will ever work
+## Idea was to come up with an formula for expected sample Shannon diversity
+## to make better fake diversity communities
+shannon.Rout: shannon.R
+
+######################################################################
 
 # Developing
 sir.Rout: sir.R

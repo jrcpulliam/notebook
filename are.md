@@ -3,15 +3,22 @@ layout: page
 title: Are distributions
 ---
 
-The Are distribution and the link to tsetse loops
+Get a copy of a diagram (or diagram code) from Elisha
 
-Let $$p+q=1$$ for convenience
+My current thought is that we should have:
 
-* $$ P = a q p^k$$
-* $$ φ = 1-a + \frac{aq}{1-px}$$
-* $$ R = φ'(1) = ap/q$$
-* $$ E = φ(E)$$ seems solved by $$E = 1$$ _or_ $$\frac{1-ap}{p}$$
+* $$p_r$$ is the probability that a deposited larva reaches the ovulation loop. this is a product, $$p_r$$ = $$p_c p_m$$
+	* $$p_c$$ is the probability that a deposited larva reaches whatever stage we imagine counting at
+	* $$p_m$$ is the probability that a counted larva reaches the ovulation loop
+* $$p_\ell$$ is the probability of successfully completing the loop
+* $$p_d$$ is the probability of depositing an egg, given loop completion
 
-If $$a=1$$, this behaves as expected: $$R=p/q$$, $$E=1/R$$ (when $$R≥1$$).
+Results:
 
-When $$a<1$$ we need to adjust. The probability of extinction from the count point is related to the probability of extinction from the loop point: $$E_c = 1- p_o + p_oE_\ell$$
+* R should depend on $$p_r$$ but not on $$p_c$$ or $$p_m$$
+* Extinction probability $$E$$ _should_ depend on where we count:
+	* Forever probability $$F=1-E$$ should be $$\frac{p_m(R-1)}{R}$$
+
+Technique:
+
+For each geometric distribution, we ignore empty loops and compare the probability of success to the probability of death.
