@@ -258,6 +258,13 @@ products:
 products/%: % products
 	$(CP) $< $@
 
+## sublime and excellent models
+## sublime.md
+## sublime.Rout: sublime.R
+
+sublime.out: sublime.in sublime.pl
+	$(PUSH)
+
 ######################################################################
 
 # Scripts
