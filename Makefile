@@ -295,6 +295,8 @@ incidence.Rout: boot/inc01.xls fitting_code/routines.Rout incidence.R
 
 pardirs += fitting_code
 
+Ignore += $(pardirs)
+
 ######################################################################
 
 # Scripts
