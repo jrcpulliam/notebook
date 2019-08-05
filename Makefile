@@ -280,6 +280,21 @@ Sources += sublime.in
 sublime.out: sublime.in sublime.pl
 	$(PUSH)
 
+
+######################################################################
+
+## Boot camp
+
+## mkdir boot ##
+## downcall boot/ ##
+Ignore += $(wildcard boot/*)
+
+############## simple incidence -- bailed for time (and dis-modularity of old work flow)
+incidence.Rout: boot/inc01.xls fitting_code/routines.Rout incidence.R
+	$(run-R)
+
+pardirs += fitting_code
+
 ######################################################################
 
 # Scripts
