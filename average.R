@@ -1,3 +1,4 @@
+par(cex=1.6)
 ave <- read.table(input_files[[1]])
 
 with(ave, plot(V1, V2
