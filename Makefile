@@ -411,6 +411,15 @@ Sources += mice.md
 
 ######################################################################
 
+## A probably stupid attempt to process information about airline movies
+## Actually, could be useful for taking a list of movies to look up on rt and not worrying so much about Air Canada nonsense.
+## Could modularize AC parsing and RT linking. In theory.
+## … interrupted in the middle to do work
+
+# ac.html: rotten.pl
+ac.md: ac.dump rotten.pl
+	$(PUSH)
+
 # Images
 
 # Things we want pushed and referred to
@@ -446,5 +455,5 @@ Gemfile:
 -include $(ms)/visual.mk
 
 -include $(ms)/wrapR.mk
-## -include $(ms)/pandoc.mk
+-include $(ms)/pandoc.mk
 # -include $(ms)/oldlatex.mk
