@@ -416,7 +416,7 @@ Sources += mice.md
 ## Could modularize AC parsing and RT linking. In theory.
 ## … interrupted in the middle to do work
 
-# ac.html: rotten.pl
+# http://localhost:4111/notebook/ac.html
 ac.md: ac.dump rotten.pl
 	$(PUSH)
 
