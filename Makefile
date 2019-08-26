@@ -34,6 +34,18 @@ $(ms)/Makefile:
 
 ######################################################################
 
+## Bolker-style google sheet doodle poll
+## I spent too much time on this, but did it wrong
+## Dates and times should be unitary, so that it can calculate 
+## when it's tomorrow somewhere
+## Or else, just add an asterisk?
+## That would be better for matching the current mixed line format
+
+doodle.csv: doodle.in doodle.pl
+	$(PUSH)
+
+######################################################################
+
 imputation.Rout: imputation.R
 
 ind_ricker.Rout: ind_ricker.R
