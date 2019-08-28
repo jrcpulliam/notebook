@@ -46,6 +46,10 @@ doodle.csv: doodle.in doodle.pl
 
 ######################################################################
 
+## EPL table insanity
+
+premiere.Rout: premiere.R
+
 imputation.Rout: imputation.R
 
 ind_ricker.Rout: ind_ricker.R
@@ -429,8 +433,7 @@ Sources += mice.md
 ## … interrupted in the middle to do work
 
 # http://localhost:4111/notebook/ac.html
-ac.md: ac.dump rotten.pl
-	$(PUSH)
+## ac.md: ac.dump rotten.pl; $(PUSH)
 
 # Images
 
