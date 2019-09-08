@@ -7,8 +7,9 @@ use POSIX;
 
 my $min=1; 
 my $max=1000; 
-my $pow=3;
-my $num=3;
+my $pow=4;
+my $num=2;
+my $stop=1;
 
 my %tab;
 
@@ -26,5 +27,6 @@ foreach my $sum (@sums){
 		foreach my $sol (@{$tab{$sum}}){
 			say join ", ", @{$sol};
 		}
+		exit if $stop;
 	}
 }
