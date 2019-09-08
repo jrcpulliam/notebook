@@ -16,21 +16,6 @@ current: target
 
 ##################################################################
 
-## Edit hooks
-# make files
-
-Sources = Makefile README.md LICENSE.md
-
-ms = makestuff
-Sources += $(ms)
-Makefile: $(ms)/Makefile
-
-$(ms)/%.mk: $(ms)/Makefile ;
-$(ms)/Makefile:
-	git submodule update -i
-
--include $(ms)/os.mk
--include $(ms)/perl.def
 
 ######################################################################
 
@@ -466,9 +451,20 @@ Gemfile:
 
 ######################################################################
 
--include $(ms)/git.mk
--include $(ms)/visual.mk
+### Makestuff
 
+Sources += Makefile
+
+Ignore += makestuff
+msrepo = https://github.com/dushoff
+Makefile: makestuff/Makefile
+makestuff/Makefile:
+	git clone $(msrepo)/makestuff
+	ls $@
+
+-include makestuff/os.mk
+-include makestuff/git.mk
+-include makestuff/visual.mk
+-include makestuff/projdir.mk
 -include $(ms)/wrapR.mk
 -include $(ms)/pandoc.mk
-# -include $(ms)/oldlatex.mk
