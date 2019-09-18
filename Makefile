@@ -229,6 +229,7 @@ cauchy.Rout: cauchy.R
 
 ## Stats on a list of lists of fake data (or something)
 
+lndata.liststats.Rout:
 %.liststats.Rout: %.Rout liststats.R
 	$(run-R)
 
@@ -241,6 +242,7 @@ cauchy.Rout: cauchy.R
 %.listplots.Rout: %.liststats.Rout checkFuns.Rout listplots.R
 	$(run-R)
 
+## lndata.rangePlots.Rout.pdf.gp:
 ## lndata.rangePlots.Rout: rangePlots.R
 %.rangePlots.Rout: %.liststats.Rout rangePlots.R
 
@@ -474,5 +476,5 @@ makestuff/Makefile:
 -include makestuff/git.mk
 -include makestuff/visual.mk
 -include makestuff/projdir.mk
--include $(ms)/wrapR.mk
--include $(ms)/pandoc.mk
+-include makestuff/wrapR.mk
+-include makestuff/pandoc.mk
