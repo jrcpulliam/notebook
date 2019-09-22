@@ -1,3 +1,4 @@
+https://www.nature.com.libaccess.lib.mcmaster.ca/articles/s41586-019-1507-6
 # notebook (gh-pages branch, which is the only one I use)
 # http://localhost:4111/notebook/are.html
 # http://localhost:4111/notebook/
@@ -249,6 +250,8 @@ lndata.liststats.Rout:
 ## tdata.rangePlots.Rout: rangePlots.R
 %.rangePlots.Rout: %.liststats.Rout checkFuns.Rout rangePlots.R
 	$(run-R)
+
+roswellCheck.Rout: roswellCheck.R
 
 ######################################################################
 
