@@ -18,6 +18,8 @@ current: target
 
 ######################################################################
 
+mirvish.Rout: mirvish.R
+
 ## Levin sums
 
 powerSum.Rout: powerSum.R
