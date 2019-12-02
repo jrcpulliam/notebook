@@ -18,14 +18,16 @@ current: target
 
 ######################################################################
 
-mirvish.Rout: mirvish.R
-
 ## Levin sums
 
 powerSum.Rout: powerSum.R
 
 powerSum.out: powerSum.pl
 	$(PUSH)
+
+## Adler palindromes
+
+alpal.Rout: alpal.R
 
 ######################################################################
 
