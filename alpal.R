@@ -1,30 +1,38 @@
 library(dplyr)
 
 itop <- 99
-jtop <- 99
-rtop <- 9999
+jtop <- 100
+rmin <- 10000
+rmax <- 99999
 ss <- function(x,sep=""){
 	return(strsplit(x, sep)[[1]])
 }
 
 rev10 <- function(x){
-	return(x
+	return(sprintf("%8.0f", x)
 		%>% as.character %>% ss()
 		%>% rev() %>% paste(collapse="") %>% as.numeric()
 	)
 }
 
+rev10(100003)
+
+ct <- 0
 for (i in 1:itop){
 	for(j in (i+1):jtop){
 		ir <- rev10(i)
-		if (ir >= i){
-			jr <- rev10(j)
+		jr <- rev10(j)
+		if (ir > i || (ir=i && jr >= j)){
 			rr <- rev10(i**2+j**2)
-			if ((rr == rev10(i)**2+rev10(j)**2) && (rr<=rtop)){
-				print(c(i, j))
+			## print(c(i, j, rr))
+			if (
+				(rr == rev10(i)**2+rev10(j)**2)
+				&& (rr<=rmax) && (rr>=rmin)
+			){
+				ct <- ct+1
 			}
 		}
 	}
 }
 
-print(37**2)
+print(ct)
