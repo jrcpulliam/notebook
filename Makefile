@@ -219,7 +219,7 @@ walt.out: walt.in walt.pl
 
 ## checkplots and millipedes
 
-Sources += checkplots.md
+Sources += checkplots.Rmd
 
 ####### Modularized diagnostic plots
 ## checkFuns.R ##
@@ -246,15 +246,37 @@ lndata.liststats.Rout:
 %.listplots.Rout: %.liststats.Rout checkFuns.Rout listplots.R
 	$(run-R)
 
-## lndata.rangePlots.Rout.pdf.gp:
-## lndata.rangePlots.Rout: rangePlots.R
-%.rangePlots.Rout: %.liststats.Rout rangePlots.R
+## lndata.pianoPlots.Rout: pianoPlots.R
+## gamdata.pianoPlots.Rout: pianoPlots.R
+## tdata.pianoPlots.Rout: pianoPlots.R
+## cauchy.pianoPlots.Rout: pianoPlots.R
+%.pianoPlots.Rout: %.liststats.Rout checkFuns.Rout pianoPlots.R
+	$(run-R)
+
+## tdata.rangePlots.Rout: rangePlots.R
+%.rangePlots.Rout: checkFuns.Rout %.liststats.Rout rangePlots.R
+	$(run-R)
+
+## lndata.slugPlots.Rout: slugPlots.R
+## gamdata.slugPlots.Rout: slugPlots.R
+## tdata.slugPlots.Rout: slugPlots.R
+## cauchy.slugPlots.Rout: slugPlots.R
+%.slugPlots.Rout: checkFuns.Rout %.liststats.Rout slugPlots.R
+	$(run-R)
 
 ## tdata.rangePlots.Rout: rangePlots.R
 %.rangePlots.Rout: %.liststats.Rout checkFuns.Rout rangePlots.R
 	$(run-R)
 
+## What is this??
 roswellCheck.Rout: roswellCheck.R
+
+### How to do the binomial?
+
+binom.Rout: checkFuns.Rout binom.R
+
+### The simplest example
+freqPiano.Rout: checkFuns.Rout freqPiano.R
 
 ######################################################################
 

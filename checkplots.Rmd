@@ -1,0 +1,37 @@
+---
+layout: page
+title: Checkplots for stats
+---
+
+By my definition a good statistical method produces P values consistent with its assumptions. We can empirically observe what statistical methods are good in simple cases, and use this as a basis for testing more involved statistical methods.
+
+Available tools include calculating "coverage", making "piano plots" or making "range plots".
+
+These tools can be used for either Bayesian or frequentist approaches, but have to be developed differently.
+
+Currently working on discrete-value problems
+
+## P value distributions
+
+Although we're usually better off looking at confidence intervals than P values, I argue that good CIs should be _based on_ P values, and thus looking at P values is a good way to evaluate a statistical method.
+
+A P value is meant to represent the probability that something would happen by chance under a set of assumptions. Thus, it should be distributed _uniformly_ if those assumptions are met, and we can robustly test a statistical method by examining distributions of P values generated in the hypothetical case when the assumptions are perfectly met.
+
+How to examine these P values is an interesting question. I believe that methods based on hypothesis testing are probably ill-advised, because they introduce complications and are only valuable when we expect tests to actually be perfect (in which case we can usually prove it). Eyeballing plots obviously has its own problems, but I'm going to head in that direction.
+
+Under the _frequentist_ paradigm, the P value is the probability that something as extreme as the observed value could be generated under the null hypothesis. Under the _Bayesian_ paradigm, it's the probability that such a value could be generated in a completely specificied model world.
+
+All of this works more nicely with one-tailed P values. I really don't believe two-tailed P values are a thing: ideally, a two-tailed test should be done by halving α, not by awkwardly trying to combine tails. CI and inference examples here will be conceptually two-tailed, meaning I will use a nominal α of 0.05, implemented as a one-tailed α=0.025.
+
+### Piano plots
+
+My current method of visualizing a distribution of simulated P values is with “piano plots”. This is just a histogram of P values, with a reference line.
+
+### A frequentist example
+
+
+## To do
+
+Make things purrier
+
+Use one-sided t tests in liststats.R (or not; then there's no easy way to get CI)
