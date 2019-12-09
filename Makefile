@@ -285,6 +285,8 @@ freqPiano.Rout: checkFuns.Rout freqPiano.R
 
 cq.Rout: cq.R
 
+meeus.Rout: meeus.R
+
 ######################################################################
 
 ## materials and products are both deprecated for git_push; wonder if anything there matters
