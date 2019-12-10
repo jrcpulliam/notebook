@@ -275,6 +275,8 @@ roswellCheck.Rout: roswellCheck.R
 
 binom.Rout: checkFuns.Rout binom.R
 
+blaker.Rout: blaker.R
+
 ### The simplest example
 freqPiano.Rout: checkFuns.Rout freqPiano.R
 
