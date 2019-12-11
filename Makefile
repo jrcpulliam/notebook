@@ -18,6 +18,12 @@ current: target
 
 ######################################################################
 
+## Crazy stats (error and conflation)
+
+conflation.Rout: conflation.R
+
+######################################################################
+
 ## Levin sums
 
 powerSum.Rout: powerSum.R
@@ -39,6 +45,8 @@ alpal.Rout: alpal.R
 ## That would be better for matching the current mixed line format
 
 ## See google spreadsheets (QMEE 2019, Theobio lab, searched for times of day)
+Ignore += doodle.csv
+Sources += doodle.in
 doodle.csv: doodle.in doodle.pl
 	$(PUSH)
 
