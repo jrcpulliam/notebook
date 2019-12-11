@@ -38,6 +38,7 @@ alpal.Rout: alpal.R
 ## Or else, just add an asterisk?
 ## That would be better for matching the current mixed line format
 
+## See google spreadsheets (QMEE 2019, Theobio lab, searched for times of day)
 doodle.csv: doodle.in doodle.pl
 	$(PUSH)
 
