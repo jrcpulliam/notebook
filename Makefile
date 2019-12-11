@@ -144,7 +144,7 @@ maya.Rout: maya.R
 ## ln -s ~/Dropbox/maya ##
 Ignore += maya
 ## https://docs.google.com/spreadsheets/d/1qTYPV7PXb_5EVyG2SoxuAdlzXRfvJxgRUOwAgbYwS7s/edit#gid=581089094
-## downcall maya/blood.xlsx ##
+## file maya/blood.xlsx ##
 blood.Rout: maya/blood.xlsx blood.R
 ## maya/notes.txt
 
