@@ -19,6 +19,12 @@ current: target
 ######################################################################
 
 StochasticModels_Lab1.Rout: StochasticModels_Lab1.R
+## Crazy stats (error and conflation)
+## Inspired by the tsetse
+
+conflation.Rout: conflation.R
+
+######################################################################
 
 ## Levin sums
 
@@ -40,6 +46,9 @@ alpal.Rout: alpal.R
 ## Or else, just add an asterisk?
 ## That would be better for matching the current mixed line format
 
+## See google spreadsheets (QMEE 2019, Theobio lab, searched for times of day)
+Ignore += doodle.csv
+Sources += doodle.in
 doodle.csv: doodle.in doodle.pl
 	$(PUSH)
 
@@ -146,7 +155,7 @@ maya.Rout: maya.R
 ## ln -s ~/Dropbox/maya ##
 Ignore += maya
 ## https://docs.google.com/spreadsheets/d/1qTYPV7PXb_5EVyG2SoxuAdlzXRfvJxgRUOwAgbYwS7s/edit#gid=581089094
-## downcall maya/blood.xlsx ##
+## file maya/blood.xlsx ##
 blood.Rout: maya/blood.xlsx blood.R
 ## maya/notes.txt
 
@@ -276,6 +285,8 @@ roswellCheck.Rout: roswellCheck.R
 ### How to do the binomial?
 
 binom.Rout: checkFuns.Rout binom.R
+
+blaker.Rout: blaker.R
 
 ### The simplest example
 freqPiano.Rout: checkFuns.Rout freqPiano.R
