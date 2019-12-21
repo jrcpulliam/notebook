@@ -18,6 +18,8 @@ current: target
 
 ######################################################################
 
+StochasticModels_Lab1.Rout: StochasticModels_Lab1.R
+
 ## Levin sums
 
 powerSum.Rout: powerSum.R
