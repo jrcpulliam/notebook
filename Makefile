@@ -18,6 +18,13 @@ current: target
 
 ######################################################################
 
+## Statistical foundations/philosophy
+
+Sources += exponential_tails.md
+
+
+######################################################################
+
 StochasticModels_Lab1.Rout: StochasticModels_Lab1.R
 ## Crazy stats (error and conflation)
 ## Inspired by the tsetse

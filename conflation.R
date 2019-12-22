@@ -1,8 +1,8 @@
+library(ggplot2); theme_set(theme_bw())
 set.seed(1232)
 nobs <- 100
 
 ## Additive case
-
 
 samples <- 1000
 xnoise <- 0.8
@@ -18,8 +18,8 @@ density_median <- 100
 density_spread <- 100
 pi <- 3.1416
 delta_true <- 0.4
-density_oe <- 100
-b_oe <- 100 ## No real hook for this
+density_oe <- 20
+b_oe <- 2 ## No real hook for this; shouldn't affect much
 
 ## δ = sqrt(1/(π b D))
 ## b = 1/(π D δ²)
@@ -37,3 +37,18 @@ delta_calc <- sqrt(1/(pi*b_obs*density_obs))
 
 summary(lm(log(delta_calc)~log(density_obs)))
 
+dat <- data.frame(
+	density_obs, b_obs, delta_calc
+)
+
+print(
+	ggplot(dat, aes(x=density_obs, y=delta_calc))
+	+ scale_y_log10()
+	+ scale_x_log10()
+	+ geom_point()
+	+ geom_smooth(method="lm")
+
+)
+
+## should stop for now until I can see the variation in the D estimates
+## They seem to recalculate δ to be consistent with a current value of D, which looks bad
