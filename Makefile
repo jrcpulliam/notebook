@@ -18,6 +18,8 @@ current: target
 
 ######################################################################
 
+recursive_logs.Rout: recursive_logs.R
+
 ## Statistical foundations/philosophy
 
 Sources += exponential_tails.md
