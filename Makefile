@@ -29,6 +29,10 @@ StochasticModels_Lab1.Rout: StochasticModels_Lab1.R
 ## Crazy stats (error and conflation)
 ## Inspired by the tsetse
 
+tsetse: dir=~/Dropbox
+tsetse:
+	$(alwayslinkdir)
+tsetse_density.Rout: tsetse/deMeeus.csv tsetse_density.R
 conflation.Rout: conflation.R
 
 ######################################################################
