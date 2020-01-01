@@ -56,3 +56,5 @@ print(
 	)
 	+ geom_point(data=Shots, aes(color=NULL, y=height))
 )
+
+print(Shots, n=100)
