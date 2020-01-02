@@ -30,6 +30,7 @@ StochasticModels_Lab1.Rout: StochasticModels_Lab1.R
 ## Crazy stats (error and conflation)
 ## Inspired by the tsetse
 
+Ignore += tsetse
 tsetse: dir=~/Dropbox
 tsetse:
 	$(alwayslinkdir)
@@ -462,8 +463,8 @@ which.Rout: which.R
 
 # Maybe just give up on blogger…
 
+Ignore += *.cp.html
 ## pythagoras.cp.html: cp.pl
-
 %.cp.html: _site/%.html cp.pl
 	$(PUSH)
 
