@@ -24,7 +24,6 @@ recursive_logs.Rout: recursive_logs.R
 
 Sources += exponential_tails.md
 
-
 ######################################################################
 
 StochasticModels_Lab1.Rout: StochasticModels_Lab1.R
@@ -36,6 +35,8 @@ tsetse:
 	$(alwayslinkdir)
 tsetse_density.Rout: tsetse/deMeeus.csv tsetse_density.R
 conflation.Rout: conflation.R
+Sources += conflation.md
+conflation_products: conflation.Rout-0.png.gp conflation.Rout-1.png.gp conflation.Rout.pdf.gp
 
 ######################################################################
 
@@ -461,7 +462,7 @@ which.Rout: which.R
 
 # Maybe just give up on blogger…
 
-pythagoras.cp.html: cp.pl
+## pythagoras.cp.html: cp.pl
 
 %.cp.html: _site/%.html cp.pl
 	$(PUSH)

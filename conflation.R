@@ -2,8 +2,6 @@ library(ggplot2); theme_set(theme_bw())
 library(dplyr)
 library(purrr)
 
-## Additive case
-
 ## δ = sqrt(1/(π b D))
 ## b = 1/(π D δ²)
 ## This is appropriately unitless! One point for deMeeus (or their sources)
