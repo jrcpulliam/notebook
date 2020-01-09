@@ -24,6 +24,8 @@ recursive_logs.Rout: recursive_logs.R
 
 Sources += exponential_tails.md
 
+exponential_tails.Rout: exponential_tails.R
+
 
 ######################################################################
 
