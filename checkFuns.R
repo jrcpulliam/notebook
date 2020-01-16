@@ -1,5 +1,16 @@
+
+## In the middle of modularizing: checkplot should be wpPlot and should call pianoplot
 checkplot <- function(stats, breaks=seq(0,1,0.05), tag="", Wmin=0){
 	stats <- filter(stats, W>Wmin)
+	return(ggplot(stats, aes(p))
+		+ geom_histogram(breaks=breaks)
+		+ geom_hline(yintercept=nrow(stats)/(length(breaks)-1))
+		+ ggtitle(tag)
+	)
+}
+
+pianoPlot <- function(pvec, breaks=seq(0,1,0.05), tag=""){
+	stats <- data.frame(p=pvec)
 	return(ggplot(stats, aes(p))
 		+ geom_histogram(breaks=breaks)
 		+ geom_hline(yintercept=nrow(stats)/(length(breaks)-1))

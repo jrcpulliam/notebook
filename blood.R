@@ -43,6 +43,7 @@ print(
 	+ geom_line()
 	+ geom_point()
 	+ scale_y_log10()
+	+ xlim(c(as.POSIXct("2019-08-01"), NA))
 	+ geom_hline(yintercept=1, linetype="dashed")
 	+ geom_hline(yintercept=anc_high/anc_floor
 		, linetype="dashed", color=col[1]
@@ -55,3 +56,5 @@ print(
 	)
 	+ geom_point(data=Shots, aes(color=NULL, y=height))
 )
+
+print(Shots, n=100)

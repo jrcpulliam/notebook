@@ -1,9 +1,12 @@
 ## Maybe replace this upstream (calculate means?) some time when I have internet access
+## This is a source of instability for unstable distributions; better to use the theoretical mean
 grandMean <- function(datList){
 	mv <- sapply(datList, mean)
 	return(mean(mv))
 }
 
+## Why do I fiddle p instead of doing the one-sided test?
+## Because it's the efficient way to get CIs at the same time
 multT <- function(datList, m=0){
 	df <- as.data.frame(t(sapply(datList, function(d){
 		t <- t.test(d-m)

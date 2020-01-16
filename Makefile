@@ -14,6 +14,46 @@
 current: target
 -include target.mk
 
+-include makestuff/perl.def
+
+######################################################################
+
+recursive_logs.Rout: recursive_logs.R
+
+## Statistical foundations/philosophy
+
+Sources += exponential_tails.md
+
+exponential_tails.Rout: exponential_tails.R
+
+
+######################################################################
+
+StochasticModels_Lab1.Rout: StochasticModels_Lab1.R
+## Crazy stats (error and conflation)
+## Inspired by the tsetse
+
+Ignore += tsetse
+tsetse: dir=~/Dropbox
+tsetse:
+	$(alwayslinkdir)
+tsetse_density.Rout: tsetse/deMeeus.csv tsetse_density.R
+conflation.Rout: conflation.R
+Sources += conflation.md
+conflation_products: conflation.Rout-0.png.gp conflation.Rout-1.png.gp conflation.Rout.pdf.gp
+
+######################################################################
+
+## Levin sums
+
+powerSum.Rout: powerSum.R
+
+powerSum.out: powerSum.pl
+	$(PUSH)
+
+## Adler palindromes
+
+alpal.Rout: alpal.R
 
 ######################################################################
 
@@ -24,6 +64,9 @@ current: target
 ## Or else, just add an asterisk?
 ## That would be better for matching the current mixed line format
 
+## See google spreadsheets (QMEE 2019, Theobio lab, searched for times of day)
+Ignore += doodle.csv
+Sources += doodle.in
 doodle.csv: doodle.in doodle.pl
 	$(PUSH)
 
@@ -205,7 +248,7 @@ walt.out: walt.in walt.pl
 
 ## checkplots and millipedes
 
-Sources += checkplots.md
+Sources += checkplots.Rmd
 
 ####### Modularized diagnostic plots
 ## checkFuns.R ##
@@ -219,6 +262,7 @@ cauchy.Rout: cauchy.R
 
 ## Stats on a list of lists of fake data (or something)
 
+lndata.liststats.Rout:
 %.liststats.Rout: %.Rout liststats.R
 	$(run-R)
 
@@ -231,12 +275,39 @@ cauchy.Rout: cauchy.R
 %.listplots.Rout: %.liststats.Rout checkFuns.Rout listplots.R
 	$(run-R)
 
-## lndata.rangePlots.Rout: rangePlots.R
-%.rangePlots.Rout: %.liststats.Rout rangePlots.R
+## lndata.pianoPlots.Rout: pianoPlots.R
+## gamdata.pianoPlots.Rout: pianoPlots.R
+## tdata.pianoPlots.Rout: pianoPlots.R
+## cauchy.pianoPlots.Rout: pianoPlots.R
+%.pianoPlots.Rout: %.liststats.Rout checkFuns.Rout pianoPlots.R
+	$(run-R)
+
+## tdata.rangePlots.Rout: rangePlots.R
+%.rangePlots.Rout: checkFuns.Rout %.liststats.Rout rangePlots.R
+	$(run-R)
+
+## lndata.slugPlots.Rout: slugPlots.R
+## gamdata.slugPlots.Rout: slugPlots.R
+## tdata.slugPlots.Rout: slugPlots.R
+## cauchy.slugPlots.Rout: slugPlots.R
+%.slugPlots.Rout: checkFuns.Rout %.liststats.Rout slugPlots.R
+	$(run-R)
 
 ## tdata.rangePlots.Rout: rangePlots.R
 %.rangePlots.Rout: %.liststats.Rout checkFuns.Rout rangePlots.R
 	$(run-R)
+
+## What is this??
+roswellCheck.Rout: roswellCheck.R
+
+### How to do the binomial?
+
+binom.Rout: checkFuns.Rout binom.R
+
+blaker.Rout: blaker.R
+
+### The simplest example
+freqPiano.Rout: checkFuns.Rout freqPiano.R
 
 ######################################################################
 
@@ -244,6 +315,8 @@ cauchy.Rout: cauchy.R
 ## Arising from rubella project
 
 cq.Rout: cq.R
+
+meeus.Rout: meeus.R
 
 ######################################################################
 
@@ -393,8 +466,8 @@ which.Rout: which.R
 
 # Maybe just give up on blogger…
 
-pythagoras.cp.html: cp.pl
-
+Ignore += *.cp.html
+## pythagoras.cp.html: cp.pl
 %.cp.html: _site/%.html cp.pl
 	$(PUSH)
 
@@ -464,5 +537,5 @@ makestuff/Makefile:
 -include makestuff/git.mk
 -include makestuff/visual.mk
 -include makestuff/projdir.mk
--include $(ms)/wrapR.mk
--include $(ms)/pandoc.mk
+-include makestuff/wrapR.mk
+-include makestuff/pandoc.mk

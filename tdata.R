@@ -1,10 +1,10 @@
 library(tidyverse)
 
-numSims <- 2e3
-tRange <- seq(1, 6, length.out=6)
+numSims <- 1e4
+tRange <- seq(6, 1)
 
 points <- 8
-set.seed(7084)
+set.seed(7083)
 
 dat <- list()
 
