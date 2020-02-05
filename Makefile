@@ -229,6 +229,11 @@ martini.Rout: martini.R
 ## It seems impossible that this was ever useful
 quiz.Rout: quiz.R
 
+## pandigital fibs
+pf.Rout: pf.R
+pf.out: pf.pl
+	$(PUSH)
+
 ## Testing the RData pipeline??
 ## Answer: you need better documentation
 ## Also: RData is generally hidden in wrapR, since it's meant to be called indirectly
