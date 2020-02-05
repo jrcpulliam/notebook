@@ -29,6 +29,8 @@ exponential_tails.Rout: exponential_tails.R
 
 ######################################################################
 
+rrr.html: rrr.md
+
 StochasticModels_Lab1.Rout: StochasticModels_Lab1.R
 ## Crazy stats (error and conflation)
 ## Inspired by the tsetse
