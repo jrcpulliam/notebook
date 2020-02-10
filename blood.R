@@ -36,14 +36,13 @@ longTests <- (Tests
 Symptoms$height <- symPlot
 Shots$height <- shotPlot
 
-print(
+mainPlot <- (
 	ggplot(longTests, aes(x=date, y=level, color=measure))
 	+ scale_color_manual(values=col)
 	+ scale_size_area()
 	+ geom_line()
 	+ geom_point()
 	+ scale_y_log10()
-	+ xlim(c(as.POSIXct("2019-08-01"), NA))
 	+ geom_hline(yintercept=1, linetype="dashed")
 	+ geom_hline(yintercept=anc_high/anc_floor
 		, linetype="dashed", color=col[1]
@@ -56,5 +55,12 @@ print(
 	)
 	+ geom_point(data=Shots, aes(color=NULL, y=height))
 )
+
+print(mainPlot)
+print(mainPlot + xlim(c(as.POSIXct("2019-08-01"), NA)))
+print(mainPlot + xlim(c(as.POSIXct("2019-12-01"), NA)))
+
+## Does not work because of extra data sets
+## print(mainPlot %+% filter(longTests, date>as.POSIXct("2020-01-01")))
 
 print(Shots, n=100)
