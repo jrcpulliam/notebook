@@ -13,4 +13,4 @@ I'm curious what people with typical color vision think. If all the colors look 
 
 ![Small red and green dots differentiated by hue, or not](/notebook/git_push/colors.small.png)
 
-[The R (and rgb) codes](/colors.R)
+[The R (and rgb) codes](/notebook/colors.R)
