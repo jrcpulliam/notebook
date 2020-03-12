@@ -18,6 +18,12 @@ current: target
 
 ######################################################################
 
+## COVID curves with Bolker
+
+flattening.Rout: flattening.R
+
+######################################################################
+
 recursive_logs.Rout: recursive_logs.R
 
 ## Statistical foundations/philosophy
