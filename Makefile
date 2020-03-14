@@ -20,6 +20,7 @@ current: target
 
 ## COVID curves with Bolker
 
+# flattening.Rout.pdf.gp:
 flattening.Rout: flattening.R
 
 ######################################################################
