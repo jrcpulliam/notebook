@@ -3,11 +3,12 @@ library(dplyr)
 library(tidyr)
 library(ggplot2); theme_set(theme_bw(base_size=20))
 
+R <- seq(4, 1, length.out=200)
+cutPoint <- 0.4
+
 redFun <- function(v){
 	return((v[[1]]-v)/v[[1]])
 }
-
-R <- seq(4, 1, length.out=200)
 
 peak <- (R-1-log(R))/R
 total <- 1 + lambertW(-R*exp(-R))/R
@@ -34,5 +35,5 @@ bigPlot <- (ggplot(longReduce, aes(R, Reduction, color=Outcome))
 print(bigPlot)
 
 print(bigPlot
-	%+% filter(longReduce, R<=0.25)
+	%+% filter(longReduce, R<=cutPoint)
 )

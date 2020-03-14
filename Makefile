@@ -21,6 +21,7 @@ current: target
 ## COVID curves with Bolker
 
 # flattening.Rout.pdf.gp:
+## http://dushoff.github.io/notebook/git_push/flattening.Rout.pdf
 flattening.Rout: flattening.R
 
 ######################################################################
