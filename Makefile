@@ -73,6 +73,7 @@ alpal.Rout: alpal.R
 ## That would be better for matching the current mixed line format
 
 ## See google spreadsheets (QMEE 2019, Theobio lab, searched for times of day)
+## Current versions are called MacDoodle, so I can have my own schedule baked in
 Ignore += doodle.csv
 Sources += doodle.in
 doodle.csv: doodle.in doodle.pl
