@@ -3,6 +3,8 @@ layout: page
 title: Sero-surveys
 ---
 
+You can comment on [the tweeted version of this article](https://twitter.com/jd_mathbio/status/1240819955769147392)
+
 It's time for serious consideration of sero-surveys.
 
 Lockdown cannot continue forever. Governments and societies will be facing tough choices about COVID soon. These choices should be made with as much information as possible.
