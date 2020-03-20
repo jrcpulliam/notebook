@@ -14,12 +14,12 @@ It's important to distinguish between case-fatality and infection-fatality. Case
 Both disease and infection can be hard to define, but disease is typically much harder to pin down, with definitions and their applications changing with place and time.
 Both ratios are important, but it is IFR which is critical for planning.
 
-Unless an effective vaccine is rapidly deployed, the large majority of people in many – perhaps most – societies will fight off a coronavirus infection and develop antibodies within the next few years. We want to know the proportion of _everyone_ that is likely to be hospitalized, die, or suffer other serious consequences.
+Unless an effective vaccine is rapidly deployed, the majority of people around the globe will fight off coronavirus infection and develop antibodies within the next few years. We want to know the proportion of _everyone_ that is likely to be suffer serious consequences, or die.
 
 Now is a critical time. 
-It is only now becoming possible to contemplate large-scale sero-surveys, and there is not much time left before we have to make hard choices about balancing between Disease Control and economic concerns.
+It is only now becoming possible to contemplate large-scale sero-surveys, and there is not much time left before we have to make hard choices about balancing between disease control and vital economic and social concerns.
 
-Doing these surveys will not be easy. Effort spent gathering information about people infected in the past will inevitably take some attention away from those infected in the present or near future. Even were the long-term benefit more clear that it is, this is not an easy choice. International cooperation will also be important. Places that already have large numbers of cases have more information to provide, but less resources to spare on gathering information for the future.
+Doing these surveys will not be easy. Effort spent gathering information about people infected in the past will inevitably take some attention away from those infected in the present or near future. Even were the long-term benefit more clear, this is not an easy choice. International cooperation will also be important. Places that already have large numbers of cases have more information to provide, but less resources to spare on gathering information for the future.
 
 Nonetheless, gathering this information could be immeasureably valuable in planning. We need to weigh this value now.
 
