@@ -206,7 +206,7 @@ Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
 Ignore += *.post
-## colors.post: 
+## serosurvey.post: 
 %.post: %.post.md post.pl
 	$(PUSH)
 	$(shell_execute)
