@@ -1,7 +1,7 @@
 # notebook (gh-pages branch, which is the only one I use)
 # http://localhost:4111/notebook/covid.html
 # http://localhost:4111/notebook/
-# http://dushoff.github.io/notebook/
+# http://dushoff.github.io/notebook/covid.html
 # make serve ##
 
 ## Suppress pandoc (don't want to pandoc here, we want to make serve instead)
