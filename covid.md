@@ -7,6 +7,8 @@ title: Preparing for the storm
 
 _Jonathan Dushoff, 2020 Mar 23_
 
+[Please comment on twitter](https://twitter.com/jd_mathbio/status/1242100169786753024)
+
 COVID-19 presents humanity with a new kind of challenge. We're faced with a pandemic that could kill tens of millions of people. But we also have resources for confronting the disease that could not have been imagined decades ago, including: genetic sequences, sophisticated blood tests, and powerful computer models.
 
 Right now, much of the world is experiencing an eerie calm before a likely storm. Regions that have taken strong actions to reduce transmission – like closing schools, restricting movement, and limiting commerce – have at least bought some time, hopefully time that will be used to make good decisions.
