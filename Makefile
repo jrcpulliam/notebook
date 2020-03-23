@@ -1,7 +1,7 @@
 # notebook (gh-pages branch, which is the only one I use)
-# http://localhost:4111/notebook/serosurvey.html
+# http://localhost:4111/notebook/covid.html
 # http://localhost:4111/notebook/
-# http://dushoff.github.io/notebook/serosurvey.html
+# http://dushoff.github.io/notebook/
 # make serve ##
 
 ## Suppress pandoc (don't want to pandoc here, we want to make serve instead)
@@ -122,7 +122,7 @@ colors.small.png: colors.Rout.png
 
 ######################################################################
 
-Sources += serosurvey.md
+Sources += serosurvey.md covid.md
 
 ## Elisha and tsetse
 
@@ -206,7 +206,7 @@ Sources += $(wildcard _posts/*.*)
 Sources += post.pl
 
 Ignore += *.post
-## serosurvey.post: 
+## covid.post: 
 %.post: %.post.md post.pl
 	$(PUSH)
 	$(shell_execute)
