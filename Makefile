@@ -26,6 +26,8 @@ flattening.Rout: flattening.R
 
 ######################################################################
 
+ningbo.Rout: ningbo.R
+
 recursive_logs.Rout: recursive_logs.R
 
 ## Statistical foundations/philosophy
