@@ -26,6 +26,9 @@ flattening.Rout: flattening.R
 
 ######################################################################
 
+## Packages for ICES and Earn
+packages.Rout: packages.R
+
 ningbo.Rout: ningbo.R
 
 recursive_logs.Rout: recursive_logs.R
