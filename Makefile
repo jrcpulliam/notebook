@@ -18,6 +18,19 @@ current: target
 
 ######################################################################
 
+## Test curving
+
+test_curve.Rout: test_curve.R
+
+Sources += curve.mac
+curve.mac.out: curve.mac
+	maxima -b $< > $@
+
+logcurve.mac.out: logcurve.mac
+	maxima -b $< > $@
+
+######################################################################
+
 ## COVID curves with Bolker
 
 # flattening.Rout.pdf.gp:
