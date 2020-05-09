@@ -18,6 +18,7 @@ current: target
 
 ######################################################################
 
+Sources += close.pdf close.txt
 close.pdf: close.txt
 	pdfroff $< | cpdf -crop "0.9in 10.8in 1.8in 0.2in" -stdin -o $@ 
 
