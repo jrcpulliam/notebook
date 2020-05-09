@@ -18,6 +18,9 @@ current: target
 
 ######################################################################
 
+close.pdf: close.txt
+	pdfroff $< | cpdf -crop "0.9in 10.8in 1.8in 0.2in" -stdin -o $@ 
+
 ## Test curving
 
 test_curve.Rout: test_curve.R
@@ -573,3 +576,4 @@ makestuff/Makefile:
 -include makestuff/projdir.mk
 -include makestuff/wrapR.mk
 -include makestuff/pandoc.mk
+-include makestuff/forms.mk
