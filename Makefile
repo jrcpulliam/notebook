@@ -262,10 +262,17 @@ martini.Rout: martini.R
 ## It seems impossible that this was ever useful
 quiz.Rout: quiz.R
 
+## Test a method for solving an Euler problem (didn't look at answer, just confirmed to make sure I was giving Walt good advice)
 ## pandigital fibs
-pf.Rout: pf.R
 pf.out: pf.pl
 	$(PUSH)
+
+######################################################################
+
+alldirs += answer_match
+Ignore += answer_match
+
+######################################################################
 
 ## Testing the RData pipeline??
 ## Answer: you need better documentation
