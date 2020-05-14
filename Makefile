@@ -35,6 +35,13 @@ logcurve.mac.out: logcurve.mac
 
 ######################################################################
 
+## mixing matrices
+
+mixpref.Rout: mixpref.R
+
+Sources += rsa.tsv
+rsapref.Rout: rsa.tsv mixpref.Rout rsapref.R
+
 ## COVID curves with Bolker
 
 # flattening.Rout.pdf.gp:
