@@ -37,7 +37,9 @@ logcurve.mac.out: logcurve.mac
 
 ## mixing matrices
 
-## pandoc hetSusc.wikitext -o hetSusc.md ##
+## This is bad because it escapes all the math
+%.md: %.wikitext
+	pandoc -f mediawiki -t ghm -o $@ $< 
 
 mixpref.Rout: mixpref.R
 
