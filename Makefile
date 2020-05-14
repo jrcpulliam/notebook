@@ -18,6 +18,8 @@ current: target
 
 ######################################################################
 
+prefmat.Rout: prefmat.R
+
 ## COVID curves with Bolker
 
 # flattening.Rout.pdf.gp:
