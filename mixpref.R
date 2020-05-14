@@ -22,12 +22,13 @@ pref2mix <- function(phi, T=NULL){
 	return(rho)
 }
 
-mix2pref <- function(rho, T=NULL
+mix2pref <- function(rho
 	, delta=1, alpha=0.1
 	, iterations=20, verbose=FALSE
 ){
 	rho <- symMat(rho)
 	nr <- nrow(rho)
+	T <- rowSums(rho)
 
 	phi <- alpha*matrix(rep(1, nr^2)
 		, nrow = nr
@@ -42,14 +43,14 @@ mix2pref <- function(rho, T=NULL
 	return(phi)
 }
 
-mixAdj <- function(rho, T=NULL, Tnew
+mixAdj <- function(rho, Tnew
 	, delta=1, alpha=0.1
 	, iterations=20, verbose=FALSE
 ){
 	rho <- symMat(rho)
 
-	if(is.null(T)) T <- rowSums(rho)
-	phi_est <- mix2pref(rho, T, delta, alpha, iterations, verbose)
+	T <- rowSums(rho)
+	phi_est <- mix2pref(rho, delta, alpha, iterations, verbose)
 	return(pref2mix(phi_est, Tnew))
 }
 
