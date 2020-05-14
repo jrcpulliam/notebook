@@ -37,6 +37,8 @@ logcurve.mac.out: logcurve.mac
 
 ## mixing matrices
 
+## pandoc hetSusc.wikitext -o hetSusc.md ##
+
 mixpref.Rout: mixpref.R
 
 Sources += rsa.tsv
