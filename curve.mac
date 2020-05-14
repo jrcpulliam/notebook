@@ -1,0 +1,23 @@
+h: 1/2$ /* Actual number of hard questions */
+nh: 0 $ /* Desired number of hard questions */
+q: 10$ /* Hardness ratio */
+
+/* Score as a function of skill ratio r */
+pfun : w1*q1*r/(1+q1*r) + w2*q2*r/(1+q2*r)$
+eq1 : p = pfun;
+
+/* Solve for skill ratio as a function of score */
+rlist : solve(eq1, r)$
+r1 : rhs(rlist[1])$
+
+/* Substitute estimated hardness to estimate actual skill*/
+rcalc : fullratsimp(at (r1, [w1=1-h, w2=h, q1=q, q2=1]));
+
+/* Substitute desired hardness and estimated skill to get new score */
+pnew : at(pfun, [w1=1-nh, w2=nh, q1=q, q2=1]);
+padj :  fullratsimp(at (pnew, [r=rcalc]));
+
+/* Plot the curve (and y=x for reference) */
+plot2d([padj, p], [p, 0, 1]);
+
+string(padj);

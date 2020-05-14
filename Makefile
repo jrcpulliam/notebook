@@ -18,7 +18,22 @@ current: target
 
 ######################################################################
 
-prefmat.Rout: prefmat.R
+Sources += close.pdf close.txt
+close.pdf: close.txt
+	pdfroff $< | cpdf -crop "0.9in 10.8in 1.8in 0.2in" -stdin -o $@ 
+
+## Test curving
+
+test_curve.Rout: test_curve.R
+
+Sources += curve.mac
+curve.mac.out: curve.mac
+	maxima -b $< > $@
+
+logcurve.mac.out: logcurve.mac
+	maxima -b $< > $@
+
+######################################################################
 
 ## COVID curves with Bolker
 
@@ -27,6 +42,9 @@ prefmat.Rout: prefmat.R
 flattening.Rout: flattening.R
 
 ######################################################################
+
+## Packages for ICES and Earn
+packages.Rout: packages.R
 
 ningbo.Rout: ningbo.R
 
@@ -244,10 +262,17 @@ martini.Rout: martini.R
 ## It seems impossible that this was ever useful
 quiz.Rout: quiz.R
 
+## Test a method for solving an Euler problem (didn't look at answer, just confirmed to make sure I was giving Walt good advice)
 ## pandigital fibs
-pf.Rout: pf.R
 pf.out: pf.pl
 	$(PUSH)
+
+######################################################################
+
+alldirs += answer_match
+Ignore += answer_match
+
+######################################################################
 
 ## Testing the RData pipeline??
 ## Answer: you need better documentation
@@ -559,3 +584,4 @@ makestuff/Makefile:
 -include makestuff/projdir.mk
 -include makestuff/wrapR.mk
 -include makestuff/pandoc.mk
+-include makestuff/forms.mk
