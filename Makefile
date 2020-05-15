@@ -35,6 +35,8 @@ logcurve.mac.out: logcurve.mac
 
 ######################################################################
 
+sandbox.Rout: sandbox.R
+
 ## Heterogeneous susceptibility notes
 
 Sources += hetSusc.wikitext
