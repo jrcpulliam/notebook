@@ -39,7 +39,7 @@ mix2pref <- function(rho
 		, nrow = nr
 	) + (delta-alpha)*diag(rep(1, nr))
 
-	for (i in 1:10){
+	for (i in 1:iterations){
 		rhoc <- pref2mix(phi, T)
 		if(verbose) print(rhoc)
 		phi <- phi*rho/rhoc
