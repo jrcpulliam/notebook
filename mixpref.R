@@ -1,4 +1,3 @@
-
 ### Functions
 
 symMat <- function(m){
@@ -6,9 +5,10 @@ symMat <- function(m){
 	stopifnot(nrow(m) == ncol(m))
 
 	return((m+t(m))/2)
-	
 }
 
+## Make a mixing matrix from a preference matrix and a Total activity vector
+## If not specified, T is just 1s
 pref2mix <- function(phi, T=NULL){
 
 	phi <- symMat(phi)
@@ -22,6 +22,11 @@ pref2mix <- function(phi, T=NULL){
 	return(rho)
 }
 
+## Fit a preference matrix to a given mixing matrix
+## The idea is that we can later adjust T and get a new mixing matrix 
+## that matches the new T and is roughly consistent with the old mixing matrix
+## The fit uses a crude, recursive approach that seems to work OK
+## It would be good to add checks
 mix2pref <- function(rho
 	, delta=1, alpha=0.1
 	, iterations=20, verbose=FALSE
@@ -43,6 +48,9 @@ mix2pref <- function(rho
 	return(phi)
 }
 
+## This is the key function, it takes a mixing matrix, symmetrizes it,
+## and tries to return a new mixing matrix with the supplied total activity
+## and similar "preferences"
 mixAdj <- function(rho, Tnew
 	, delta=1, alpha=0.1
 	, iterations=20, verbose=FALSE
@@ -53,6 +61,16 @@ mixAdj <- function(rho, Tnew
 	phi_est <- mix2pref(rho, delta, alpha, iterations, verbose)
 	return(pref2mix(phi_est, Tnew))
 }
+
+## To apply
+## Convert Prem to a total-contact matrix (multiply columns (?) by pops)
+## Symmetrize
+## Take the margin (total-activity vector ⇒ T)
+## There are decisions involved in applying to a new population
+## The simplest way might be divide T by old pop sizes to get indiv activity
+## then multiply by new pop sizes to get Tnew
+## Run mixAdj to get a new rho.
+## Then adjust that to whatever version the program wants (divide by new pops, maybe)
 
 ### Values
 

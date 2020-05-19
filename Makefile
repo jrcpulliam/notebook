@@ -35,12 +35,27 @@ logcurve.mac.out: logcurve.mac
 
 ######################################################################
 
-## mixing matrices
+sandbox.Rout: sandbox.R
+
+## Heterogeneous susceptibility notes
+
+Sources += hetSusc.wikitext
+## This is bad because it escapes all the math
+%.md: %.wikitext
+	pandoc -f mediawiki -t ghm -o $@ $< 
+
+######################################################################
+
+## Adjust mixing matrices using the balance trick of Busenberg and CCC
+## This is an ALPHA version
 
 mixpref.Rout: mixpref.R
 
+## Try an RSA example -- NOT properly adjusted
 Sources += rsa.tsv
 rsapref.Rout: rsa.tsv mixpref.Rout rsapref.R
+
+######################################################################
 
 ## COVID curves with Bolker
 
