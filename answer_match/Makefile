@@ -1,5 +1,5 @@
 
-## This is McMaster pandemic: ontario subdir
+## This is answerMatch, a misplaced set of test-comparison tools
 
 current: target
 -include target.mk
